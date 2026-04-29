@@ -4,7 +4,7 @@
 - **Project Name**: タコ中 (たこちゅう)
 - **Project Type**: Greenfield
 - **Start Date**: 2026-04-29T00:00:00Z
-- **Current Stage**: INCEPTION - Application Design v1.0 ✅ **2026-04-29 ユーザー承認済み**（5 成果物 + OI-14 解消）／次ステージ: **Units Generation**
+- **Current Stage**: INCEPTION - Units Generation v1.0 ✅ **2026-04-29 ユーザー承認済み**（3 成果物 + 8 Unit + Documentation セクション）／**INCEPTION フェーズ完了**／次フェーズ: **CONSTRUCTION**
 - **Hackathon**: AWS Summit Japan 2026 AI-DLC ハッカソン応募作品
 - **Critical Deadlines**:
   - 書類審査エントリー: 2026-05-10 23:59 JST
@@ -44,7 +44,7 @@
 - [x] User Stories (Part 1 + Part 2 完了 - **2026-04-29 ユーザー承認済み**)
 - [x] Workflow Planning (execution-plan.md v1.3 完了 - **2026-04-29 ユーザー承認済み**)
 - [x] Application Design (5 成果物 v1.0 完了 - **2026-04-29 ユーザー承認済み**: components / component-methods / services / component-dependency / application-design)
-- [ ] Units Generation (次ステージ - 9 Unit が C1〜C9 と 1:1 で確定済み、各 Unit の Construction 入力資料を準備)
+- [x] Units Generation (3 成果物 v1.0 完了 - **2026-04-29 ユーザー承認済み**: unit-of-work / unit-of-work-dependency / unit-of-work-story-map / **8 Unit + Documentation 1 セクション**)
 
 ### CONSTRUCTION Phase
 - [ ] Per-Unit Loop
