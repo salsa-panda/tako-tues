@@ -527,6 +527,60 @@ v1.3 で抜本変更されたセクション:
 
 ---
 
+## Application Design - User Answers Received
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "Done"（application-design-plan.md の [Answer]: タグに記入: Q1=D, Q2=B, Q3=A, Q4=B, Q5=C, Q6=A, Q7=C, Q8=B, Q9=A, Q10=A, Q11=A, Q12=A）
+**AI Response**: 曖昧性チェック実施。Q5=C と Q10=A に follow-up 質問（Q5-α: Lambda 集約粒度の具体化 / Q10-α: フロントエンドフレームワーク絞り込み）を提示
+**Status**: Follow-up 質問提示
+**Context**: INCEPTION - Application Design
+
+---
+
+## Application Design - Approval (Final)
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "承認します"
+**AI Response**: Application Design ステージを承認確定。aidlc-state.md を更新
+**Status**: ✅ Application Design ステージ完了
+**Approved Artifacts**:
+- aidlc-docs/inception/application-design/components.md (v1.0)
+- aidlc-docs/inception/application-design/component-methods.md (v1.0)
+- aidlc-docs/inception/application-design/services.md (v1.0)
+- aidlc-docs/inception/application-design/component-dependency.md (v1.0)
+- aidlc-docs/inception/application-design/application-design.md (v1.0)
+**Resolved Open Items**: OI-14（レシピ JSON Schema 確定）
+**Next Stage**: INCEPTION - Units Generation
+**Context**: INCEPTION - Application Design 全成果物承認済み
+
+---
+
+## Application Design - Follow-up Answers
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "C->C1\nA->A3"
+**AI Response**: 全質問回答確定。設計成果物を生成:
+- Q5-α=C-1: API Monolith Lambda 1 + スケジューラ Lambda 5 = 計 6 関数
+- Q10-α=A-3: Vite + React
+生成ファイル:
+- aidlc-docs/inception/application-design/components.md（9 コンポーネントの責務 + Iteration 0 範囲 + FR Coverage Matrix）
+- aidlc-docs/inception/application-design/component-methods.md（レイヤード 4 層のメソッドシグネチャ + StimulusGenerator Protocol）
+- aidlc-docs/inception/application-design/services.md（Lambda 6 関数構成 + ApiMonolith ルーティング + EventBridge カスタムバス + DynamoDB Single-table 設計）
+- aidlc-docs/inception/application-design/component-dependency.md（依存マトリクス + データフロー + 4 ユースケースシーケンス + 共有契約 5 件 + テスト境界）
+- aidlc-docs/inception/application-design/application-design.md（統合参照ドキュメント）
+解消した Open Items: OI-14（レシピ JSON Schema）
+**Status**: 設計成果物生成完了、ユーザー承認待ち
+**Context**: INCEPTION - Application Design 完了直前
+
+---
+
+## Application Design - Stage Start
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "Application Designステージへ進んで"
+**AI Response**: `.aidlc-rule-details/inception/application-design.md` Step 1-7 に従い、application-design-plan.md v1.0 を作成。Walking Skeleton 立ち上げに必要な共有契約・コンポーネント境界を確定するための 12 問の質問を埋め込み（Component Identification 2 / Component Methods 2 / Service Layer Design 2 / Component Dependencies 2 / Design Patterns 2 / Walking Skeleton 接続 2）。
+**Status**: ユーザー回答待ち（[Answer]: タグへの記入）
+**Plan File**: aidlc-docs/inception/plans/application-design-plan.md
+**Context**: INCEPTION - Application Design (Plan)
+
+---
+
 ## Workflow Planning - Approval (Final)
 **Timestamp**: 2026-04-29T00:00:00Z
 **User Input**: "aidlc-docs/inception/plans/execution-plan.mdは承認します。承認処理をしてからコミットして"

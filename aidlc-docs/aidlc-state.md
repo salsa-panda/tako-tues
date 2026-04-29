@@ -4,7 +4,7 @@
 - **Project Name**: タコ中 (たこちゅう)
 - **Project Type**: Greenfield
 - **Start Date**: 2026-04-29T00:00:00Z
-- **Current Stage**: INCEPTION - Workflow Planning v1.3 ✅ **2026-04-29 ユーザー承認済み**（要件 v1.7 + Stories v1.3 + Story-Board v1.3 + execution-plan.md v1.3 / Walking Skeleton ファースト + 反復モデル）／次ステージ: **Application Design**
+- **Current Stage**: INCEPTION - Application Design v1.0 ✅ **2026-04-29 ユーザー承認済み**（5 成果物 + OI-14 解消）／次ステージ: **Units Generation**
 - **Hackathon**: AWS Summit Japan 2026 AI-DLC ハッカソン応募作品
 - **Critical Deadlines**:
   - 書類審査エントリー: 2026-05-10 23:59 JST
@@ -43,8 +43,8 @@
 - [x] Requirements Analysis (完了 - **2026-04-29 ユーザー承認済み**)
 - [x] User Stories (Part 1 + Part 2 完了 - **2026-04-29 ユーザー承認済み**)
 - [x] Workflow Planning (execution-plan.md v1.3 完了 - **2026-04-29 ユーザー承認済み**)
-- [ ] Application Design (EXECUTE 予定 - 共有契約確定が中心：DynamoDB スキーマ / EventBridge イベント / REST API / Web Push ペイロード / レシピ JSON Schema)
-- [ ] Units Generation (EXECUTE 予定 - 審査基準上必須化、9 Unit 暫定)
+- [x] Application Design (5 成果物 v1.0 完了 - **2026-04-29 ユーザー承認済み**: components / component-methods / services / component-dependency / application-design)
+- [ ] Units Generation (次ステージ - 9 Unit が C1〜C9 と 1:1 で確定済み、各 Unit の Construction 入力資料を準備)
 
 ### CONSTRUCTION Phase
 - [ ] Per-Unit Loop
