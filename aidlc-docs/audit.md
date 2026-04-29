@@ -412,3 +412,136 @@ Apple HealthKit と連携し、
 **Context**: INCEPTION - User Stories 全成果物承認済み
 
 ---
+
+## Workflow Planning - Stage Start
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "Workflow Planning  に進んでください"
+**AI Response**: `.aidlc-rule-details/inception/workflow-planning.md` の手順に従い、Workflow Planning ステージを開始。requirements.md (v1.6) と stories.md (v1.2) を再ロードして詳細スコープ分析・各ステージ EXECUTE/SKIP 判断・Mermaid 可視化を含む `aidlc-docs/inception/plans/execution-plan.md` v1.0 を作成。
+**Status**: 実行中（ユーザー承認待ち）
+**Context**: INCEPTION - Workflow Planning Step 1〜8 完了
+**Decisions**:
+- Reverse Engineering: SKIPPED（Greenfield）
+- Application Design: EXECUTE（新規コンポーネント・サービス境界・外部統合点を 0 から定義）
+- Units Generation: EXECUTE（OI-11 解消、ハッカソン審査基準「Unit 分解の適切さ」のため必須化、9 Unit 暫定）
+- Per-Unit Construction（Functional Design / NFR Requirements / NFR Design / Infrastructure Design / Code Generation）: 全 EXECUTE
+- Build and Test: EXECUTE（ALWAYS）
+- Operations: PLACEHOLDER のまま、Build and Test 内で運用ドキュメント補完
+**Risk Level**: Medium（技術スタック既知だが 5/10 / 5/30 / 6/26 の固定期日と複数統合点）
+
+---
+
+## Workflow Planning - レシピ動的生成の安全性指摘
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "レシピ生成は、生成するのではなくて、材料と紐付けて、いくつか事前に美味しいレシピを持っておくべき。生成してしまうのはユーザー体験として危ない"
+**AI Response**: ユーザーの指摘は妥当（食材分量・火加減・調理時間で生成 AI のハルシネーションが起きると食中毒等の実害につながる）。レシピ動的生成方針を撤回するための 4 つの設計選択肢（A: 管理方式 / B: マッピング / C: アミーゴ口調 / D: Bedrock 用途）を提示。
+**Status**: 設計判断のための質問提示
+**Context**: INCEPTION - Workflow Planning（レシピ生成アーキテクチャ見直し）
+
+---
+
+## Workflow Planning - 「Bedrock 活用」が審査基準に書かれているかの確認
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "aws/bedrock活用ってどこかに書いてあった？？"
+**AI Response**: 確認の結果、`reference/context.md` §0.4 と参加規約 PDF の審査基準には「Bedrock 活用」「AWS 活用度」は**明示されていない**。直前メッセージで「ハッカソン審査の AWS / Bedrock 活用度を保ちつつ」と書いたのは誤り。審査基準は (書類審査) Intent 明確さ / Unit 分解 / 創造性とテーマ適合性 / ドキュメント品質、(予選) MVP 完成度 / AI-DLC プロセスの実践と工夫 / 創造性とテーマ適合性 / プレゼン、(決勝) デモと完成度 / AI-DLC プロセス / 創造性とビジネス価値 / プレゼン。Bedrock 採用は加点ではなく**任意の技術選択**であることを訂正。修正後の Q-D' を提示。
+**Status**: 訂正完了、選択肢を再提示
+**Context**: INCEPTION - Workflow Planning（誤情報の訂正）
+
+---
+
+## Workflow Planning - レシピ静的化の決定
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "レシピはレポジトリに入れて管理したい。\n  更新は頻繁ではない\n  Q-B: キット種別 ↔ レシピの対応設計: B1\n  Q-C: 「アミーゴ口調」の扱い: C1\nQ-D->D2"
+**AI Response**: 決定事項を確定し関連ドキュメントを更新:
+- レシピ管理: A1（リポジトリ同梱の静的 JSON、`assets/recipes/*.json`）
+- キット種別 ↔ レシピ: B1（1:1 固定）
+- アミーゴ口調: C1（手書きキュレーション）
+- Bedrock 用途: D2（レシピは静的、煽り文 FR-6.1 / 誘惑 Push FR-6.2 のみ Bedrock 動的生成）
+更新ファイル:
+- requirements.md → v1.7（FR-2.3 / FR-4.2 / Tech Stack / OI-12,13 解消＋OI-12'/13' 追加 / Scenario A,C,F 修正 / §9 サマリ修正）
+- stories.md → v1.3（US-T13 / US-M04 を静的レシピ前提に書き換え、FR Coverage 修正）
+- story-board.md → v1.3（Week 1 タイムライン / 月曜夜の文言 / Bonus #4 訂正 / "Bedrock 活用" 表現を「AI-DLC プロセス + 創造性 + ドキュメント品質」に訂正 / 再生成ボタン削除）
+- personas.md（Bedrock レシピ言及 4 箇所を訂正）
+- execution-plan.md → v1.1（U4 名称変更、Bedrock 関連箇所縮減、OI 表更新）
+**Status**: ドキュメント更新完了、ユーザー承認待ち
+**Context**: INCEPTION - Workflow Planning + Requirements v1.7 + Stories v1.3 + Story-Board v1.3
+
+---
+
+## Workflow Planning - スケジュールにバッファと並行性を要求
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "書類審査関係なく、スケジュールはバッファを持たせるべき\n実装と計画の試行錯誤が大事なので、なんどか手戻りできるようなバッファをもたせたい。\nPOC作成は書類審査と関係なくやりきりたい\n実装がシリアルなので同時にできるものは同時にやりたい.\nunitはloosly coupledであってほしい"
+**AI Response**: 4 つの方針提示と 3 つの確認質問:
+- 書類審査トラックと PoC トラックの分離
+- 3 種類のバッファ（手戻り／統合／凍結）の明示
+- Track A〜D の並行進行設計
+- Unit Coupling Principles の新設
+- Q1（書類審査時点の目標水準）／Q2（チーム人数）／Q3（PoC 完成基準）を確認
+**Status**: 質問提示
+**Context**: INCEPTION - Workflow Planning（タイムライン再設計）
+
+---
+
+## Workflow Planning - スケジュール再設計の決定
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "Q1->  - B. 書類 + Unit 1〜2 個のスケルトンコード（CDK + Auth + Intake の最小動作）\nQ2-> B. 2 人以上（チーム結成済 / 結成予定）: 真の並行が可能、Track A〜D を分担できる\nQ3->A"
+**AI Response**: 決定事項を確定し execution-plan.md を v1.2 に更新:
+- Q1=B: 書類審査時点で U1+U2 のスケルトン動作（CDK + Auth + Intake）
+- Q2=B: チーム並行前提で Track A〜D を設計
+- Q3=A: PoC 完成基準 = E2E シナリオ全通り（強制発注 → 材料受領 → 24h カウントダウン → 罰 / リセット）
+v1.2 で追加された主要セクション:
+- §1.5 Scheduling Philosophy（書類審査トラック / PoC トラックの分離、3 種類のバッファ、並行可能なものは並行）
+- §5 Unit Coupling Principles（疎結合 5 原則 P1〜P5、共有契約、Track A〜D 構成）
+- §6 Estimated Timeline（並行トラックガント、バッファ合計 27 日、PoC やりきり判定基準）
+- §4 Suggested Units テーブルに Track 列と依存列を追加
+- §9 Notes に v1.2 補足（バッファは削らない・PoC は予選に縛られない）
+**Status**: ドキュメント更新完了、ユーザー承認待ち
+**Context**: INCEPTION - Workflow Planning v1.2
+
+---
+
+## Workflow Planning - バッファの有効性指摘
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "バッファーはこれではないです。 バッファーを有効利用するには 動いている状態の アプリを見る必要があるので フェーズを分けるだけだと そのバッファーを有効利用でき ないです。まずは作り切るところをできるだけ早くやっ た方がいいと思います。"
+**AI Response**: 指摘を受けて Walking Skeleton + 連続反復モデルへの転換方針を提示。バッファ = 時間枠から反復回数へ。Q-α（Iteration 0 の最小範囲）と Q-β（反復サイクル長）を確認質問として提示
+**Status**: 質問提示
+**Context**: INCEPTION - Workflow Planning（開発モデル抜本転換）
+
+---
+
+## Workflow Planning - Walking Skeleton モデルの決定
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "Qのアルファは Cです。実装は全部AIがやります。Q-β:C"
+**AI Response**: 決定事項を確定し execution-plan.md を v1.3 に更新:
+- Q-α=C: Iteration 0 では ChatGPT GPT を切り離す。AWS 側 E2E に集中
+- 実装は全て AI（Claude Code 等）が行う前提
+- Q-β=C: 連続反復スタイル（集中時間で動かす→気付く→直す）
+v1.3 で抜本変更されたセクション:
+- §1.5 Scheduling Philosophy（Walking Skeleton + 連続反復に転換）
+- §1.6 v1.3 への転換理由（v1.2 が間違っていた点を明記）
+- §5.3 Walking Skeleton 構成（並行トラック A〜D を撤回し、Iteration 0 の薄い立ち上げ + Iteration 1 以降の機能横断反復に再定義）
+- §6 Estimated Timeline（マイルストーンに WS 追加、フェーズフロー Mermaid、Iteration 0 の最小範囲表、反復スタイル、反復回数見積 12〜17 サイクル、PoC やりきり判定）
+- §4 Suggested Units（Track 列を Iteration 0 列に変更、各 Unit の最小範囲を明示）
+- §9 Notes（v1.2 → v1.3 修正理由・反復回数は減らさない・凍結期間のみ時間枠）
+**Status**: ドキュメント更新完了、ユーザー承認待ち
+**Context**: INCEPTION - Workflow Planning v1.3
+
+---
+
+## Workflow Planning - Approval (Final)
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "aidlc-docs/inception/plans/execution-plan.mdは承認します。承認処理をしてからコミットして"
+**AI Response**: Workflow Planning ステージを承認確定し、commit 処理を実施
+**Status**: ✅ Workflow Planning ステージ完了
+**Approved Artifacts**:
+- aidlc-docs/inception/plans/execution-plan.md (v1.3)
+- aidlc-docs/inception/requirements/requirements.md (v1.7)
+- aidlc-docs/inception/user-stories/stories.md (v1.3)
+- aidlc-docs/inception/user-stories/story-board.md (v1.3)
+- aidlc-docs/inception/user-stories/personas.md（Bedrock 言及訂正）
+- aidlc-docs/aidlc-state.md（Workflow Planning 承認・Architectural Decisions 反映）
+- aidlc-docs/audit.md（本エントリ含む）
+**Next Stage**: INCEPTION - Application Design（共有契約の確定が中心: DynamoDB スキーマ / EventBridge イベントスキーマ / REST API 契約 / Web Push ペイロード / レシピ JSON Schema）
+**AI Action**: aidlc-state.md の Workflow Planning ステージを完了マーク、git commit を実行
+**Context**: INCEPTION - Workflow Planning v1.3 + Requirements v1.7 + Stories v1.3 + Story-Board v1.3 全て承認済み
+
+---
