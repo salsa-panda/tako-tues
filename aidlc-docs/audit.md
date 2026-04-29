@@ -235,3 +235,180 @@ Apple HealthKit と連携し、
 **Context**: INCEPTION - 次ステージ準備
 
 ---
+
+## User Stories - Stage Selection
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "A) User Stories ステージへ進む（推奨。UX 深掘りも統合）"
+**AI Action**: User Stories ステージ Part 1 (Planning) を開始
+**Context**: INCEPTION - User Stories Part 1 開始
+
+---
+
+## User Stories Part 1 - Assessment & Plan Created
+**Timestamp**: 2026-04-29T00:00:00Z
+**AI Action**:
+- Step 1: アセスメント書 aidlc-docs/inception/plans/user-stories-assessment.md を作成
+  - Decision: Execute (High Priority 6項目該当、ハッカソン審査基準と完全一致)
+- Step 2-7: ストーリー計画書 aidlc-docs/inception/plans/story-generation-plan.md を作成
+  - Plan Outline (チェックリスト): Methodology / Mandatory Artifacts / UX Deep Dive Artifacts / Hackathon-specific / Validation の5セクション・全 18 ステップ
+  - 質問: 全 18 問・6 カテゴリ（ペルソナ設計／ストーリー構造／UX 深掘り／強制発注体験／シュール演出／ハッカソン特有）
+- 追加成果物として story-board.md（UX 深掘り用）を計画に含めた
+**Status**: ⛔ GATE - ユーザー回答待ち（story-generation-plan.md 内の [Answer]: タグ）
+**Context**: INCEPTION - User Stories Part 1 Step 7 完了
+
+---
+
+## User Stories Part 1 - Answers Received & Analysis
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "Done"
+**Answers Recorded** (story-generation-plan.md):
+- Q1: 2 / Q2: A,B / Q3: B / Q4: B+C / Q5: B / Q6: D / Q7: A / Q8: B / Q9: D
+- Q10: A (補足: 初回無料トライアル、翌週から強制ループ)
+- Q11: C / Q12: D / Q13: D / Q14: D
+- Q15: A (補足: 絵文字なし)
+- Q16: A / Q17: A,B,D / Q18: D
+**Step 9 Analysis - Ambiguity Detected**:
+- Q2: A,B 2人とも主要なのか主従関係があるのか不明
+- Q10: 無料トライアル期間の長さが未定義
+- Q15: 絵文字なしの代替の視覚言語が未定義
+**AI Action**: aidlc-docs/inception/plans/story-generation-clarification-questions.md を作成し3問の追質問
+**Status**: ⛔ GATE - ユーザー追回答待ち
+**Context**: INCEPTION - User Stories Part 1 Step 9-10
+
+---
+
+## User Stories Part 1 - Clarification Answers Received & Plan Approved
+**Timestamp**: 2026-04-29T00:00:00Z
+**Clarification Answers**:
+- Clarification 1 (Q2 主従): D — 役割分担（A=コア依存ループ体験者、B=SNS バイラル拡散役）
+- Clarification 2 (Q10 トライアル): A — 1 週間トライアル、翌月曜から強制ループ
+- Clarification 3 (Q15 視覚言語): D — SVG イラスト + 大胆タイポ
+**User Approval**: "承認"
+**Status**: ✅ Plan Approved
+**Next**: Part 2 (Generation) — Step 15 以降を実行
+**Context**: INCEPTION - User Stories Part 1 完了 / Part 2 開始
+
+---
+
+## User Stories Part 2 - Generation Complete
+**Timestamp**: 2026-04-29T00:00:00Z
+**AI Action**: 計画書のチェックリスト Step A〜R を順次実行し、3 成果物を生成
+**Generated Artifacts**:
+1. aidlc-docs/inception/user-stories/personas.md
+   - タロウ（30代男性エンジニア・コア依存ループ体験者）
+   - ミナミ（20代女性 SNS インフルエンサー・バイラル拡散役）
+   - 役割分担型（Clarification 1=D 反映）
+2. aidlc-docs/inception/user-stories/stories.md
+   - 全 15 ストーリー（タロウ 12、ミナミ 3）
+   - Connextra + Job Story 併用、Given/When/Then BDD
+   - INVEST セルフチェック済、全 FR カバー、テーマ適合性確認済
+3. aidlc-docs/inception/user-stories/story-board.md
+   - Mermaid Gantt（Week 0/1）+ Sequence（バイラル波及）
+   - 通知トーン Level A→B→C 例文集（メキシコ風キャラ "アミーゴ・タコス"）
+   - UI コピー（強制発注通告／キャンセル試行／強制マンゴーウィーク／サルサ警告／エラー）
+   - SVG イラスト一覧、タイポルール、配色ガイド（絵文字なし、ポップカラフル）
+   - 審査員に刺さる瞬間 3 選、決勝プレゼン構成案
+**Plan Checklist**: 全 18 ステップ完了（[x] マーク済）
+**Status**: ⛔ GATE - User Stories ステージ全体のユーザー承認待ち
+**Context**: INCEPTION - User Stories Part 2 完了
+
+---
+
+## Concept Re-scoping (v1.5) — 「タコスが生活の一部になる」へ深化
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "承認しましたがrequiremenに戻りたいです。タコスそのものが届くのではなくて材料が届いてそれを作らせたいです。その上で再度ペルソナを考えてほしい"
+**Follow-up Q&A**:
+- Q-1 (材料の具体度): C — ハイブリッド（通常週 Type A タコスキット、強制バリエーションウィークは Type B 食材ばら売り）
+- Q-2 (レシピ提供): A — 材料と一緒にレシピも配信（PWA 表示／Push 送信）
+- Q-3 (作った記録): B — 「作った（=食べた）」の 1 ステータス
+- Q-4 (ペルソナ方向): A,D — タロウは「料理から逃げたい像」、ミナミは「料理動画投稿の SNS 軸」。コンセプトは "料理させること" ではなく "**タコスが生活の一部になる**"
+- Q-5 (Tシャツ罰条件): B — 受け取り後 24 時間以内に作らない → 火曜夕に変更
+**Changes Applied — Requirements v1.5**:
+- ヘッダーに v1.5 履歴
+- 1.3 Concept Statement を「タコスが生活の一部になる」に刷新
+- 1.4 設計原則を 4 → 6 項目に拡張（"生活侵食" "作らせる" を追加）
+- FR-1.2 Tシャツ罰を "24 時間ルール" に変更
+- FR-1.3 摂取記録を「作った（=食べた）」1 ステータスに整理
+- FR-2.2 をキット種別 (Type A 専用キット / Type B 食材ばら売り) のハイブリッドに
+- FR-2.3 を新規「レシピ配信」セクションに置換（Bedrock 生成）
+- FR-2.4/FR-2.5 にリナンバ
+- FR-4.1/4.2 に 24h カウントダウン + 今週の調理ガイドカードを追加
+- Scenario A,B,C,E を v1.5 表現に修正、Scenario F (材料受け取り＋レシピ配信) 新設
+- Tech Stack に AI レシピ生成行を追加
+- Key Requirements Summary を 12 項目に再構成
+- バイラル要素のメッセージ更新
+- Open Items に OI-12 (Bedrock コスト) と OI-13 (リトライ戦略) を追加
+**Changes Applied — Personas v1.1**:
+- タロウを「料理から逃げたい像（料理スキル中の下、家でタコスを作ったことがない）」に強化
+- ミナミを「料理動画投稿の SNS 軸（TikTok 縦動画、勝手に届いた材料で作るシリーズ）」に拡張
+- Persona Mapping に FR-2.3 レシピ配信、FR-4.1 カウントダウン、FR-2.4 リネーム反映
+**Changes Applied — Stories v1.1**:
+- US-T05 (モック配送) を US-T13 (材料受け取り + レシピ配信) に置換・拡張
+- US-T14 (24 時間カウントダウン) 新規追加
+- US-T06 (Tシャツ罰) を 24 時間ルールに修正（火曜朝→火曜夜）
+- US-M04 (料理動画投稿シリーズ) 新規追加
+- US-M05 ("罰受けました" 投稿シリーズ) 新規追加
+- 全ストーリー数 15 → 17、Persona × Story Coverage 更新、Hackathon Theme Alignment v1.1 更新
+**Changes Applied — Story-Board v1.1**:
+- Mermaid Gantt に US-T13 / US-T14 を追加、24 時間カウントダウン期間を明示
+- タロウの典型的な火曜タイムラインを v1.1 化（カウントダウン残り時間でエスカレーション）
+- ミナミの SNS 投稿を 3 連発 → 5 連発（料理動画 + 罰受けました）に拡張
+- UI コピー 6.4/6.5/6.6 (24h タイマー / 調理ガイド / 罰受けましたヒーローカード) 新規追加
+- SVG イラスト一覧に kit-box / clock-countdown / recipe-scroll を追加
+- プレゼン構成案を 7 項目に再編、Bonus #4 (24h + Bedrock レシピ) を審査員に刺さる瞬間として追加
+**Status**: ⛔ GATE - 引き続きユーザー承認待ち（v1.5/v1.1 全体）
+**Context**: INCEPTION - Requirements v1.5 / User Stories v1.1 同時更新完了
+
+---
+
+## Trigger Consolidation (v1.6) — サルサ通知統合 + 24h ウィンドウエスカレーション
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**:
+1. "Scenario A はTシャツ強制発注と同じタイミングがトリガー(ScenarioBと同じ)で良いです。食べるのは火曜日の前提です"
+2. "Push無視カウンタ昇格 (US-T09) Push通知のトーン上昇イベントの時間がユーザーにとってどうしようもない. 24時間カウントダウンのなかで, Push通知の上昇カウンタを上げてほしい"
+**AI Analysis**:
+- 旧 FR-1.1 (3 日連続未摂取) と旧 Scenario A は強制サイクル（火曜に食べる）と整合しない → 廃止し Tシャツ罰 (FR-1.2) と同タイミングに統合
+- 旧 FR-6.4 のエスカレーションカウンタは「いつリセットされるか」がユーザー視点で不明確 → 24h ウィンドウ内に集計範囲を限定し、ユーザーが時間スパンを把握できる体験に整合
+**Changes Applied — Requirements v1.6**:
+- ヘッダーに v1.6 履歴
+- FR-1.1 を「24h カウントダウン超過時、Tシャツ罰と同時にサルサ通知ループ発火」に書き換え（旧 3 日ルール明示廃止）
+- FR-1.2 に「FR-1.1 と同時発火」明記
+- FR-1.3 に「火曜 21:00 までに記録があれば FR-1.1/1.2/6.4 ともリセット」明記
+- FR-6.2 を「24h カウントダウンウィンドウ内が主要トリガー」と再定義
+- FR-6.4 を「24h ウィンドウ内 Push エスカレーション仕様」として全面書き換え（カウンタ更新ルール、トーン対応、リセット条件を明記）
+- FR-6.5 を新設（Bedrock + フォールバック静的テンプレート）
+- Scenario A & B を「24h カウントダウン超過 → Tシャツ罰 + サルサ通知 同時発火」として統合
+- Scenario E を「24h ウィンドウ内 Push エスカレーション」として書き換え
+**Changes Applied — Stories v1.2**:
+- Story Index で US-T07 / US-T09 を v1.2 表現に更新、US-T09 を P2 → P1 に昇格
+- US-T07 を「24h ウィンドウ超過時、Tシャツ罰と同時発火」に全面書き換え（旧 72 時間ルール廃止）
+- US-T09 を「24h ウィンドウ内 Push 無視カウンタ」に再定義（カウンタ初期化／+1 ルール／レベル境界をユーザーが追える形に）
+- ヘッダー Document Version 1.2 / Updated 履歴追記
+**Changes Applied — Story-Board v1.2**:
+- ヘッダー Document Version 1.2 / Updated 履歴追記
+- Mermaid Gantt の "エスカレーション" セクションを「24h 内カウンタ昇格 + 火曜 21:00 サルサ通知ループ開始」に修正
+- v1.2 追加ポイント説明を追加
+- 5.1〜5.3 のトーン Level 説明を「24h ウィンドウ内 Push 無視 0〜1 / 2〜3 / 4 回以上」に統一
+- "刺さる瞬間 #2" を 24h 超過シミュレーションのデモ手順に書き換え
+**Status**: ⛔ GATE - ユーザー承認待ち（v1.6 / Stories v1.2 / Story-Board v1.2 全体）
+**Context**: INCEPTION - Trigger 統合と 24h ウィンドウ整合化完了
+
+---
+
+## User Stories Approval (Final)
+**Timestamp**: 2026-04-29T00:00:00Z
+**User Input**: "承認するので承認処理の後にコミットして"
+**Approval Scope**:
+- aidlc-docs/inception/requirements/requirements.md (v1.6)
+- aidlc-docs/inception/user-stories/personas.md (v1.1)
+- aidlc-docs/inception/user-stories/stories.md (v1.2)
+- aidlc-docs/inception/user-stories/story-board.md (v1.2)
+- aidlc-docs/inception/plans/user-stories-assessment.md
+- aidlc-docs/inception/plans/story-generation-plan.md
+- aidlc-docs/inception/plans/story-generation-clarification-questions.md
+**Status**: ✅ User Stories ステージ完了
+**Next Stage**: INCEPTION - Workflow Planning
+**AI Action**: aidlc-state.md の User Stories ステージを完了マーク、次に Workflow Planning に進む準備、git commit を実行
+**Context**: INCEPTION - User Stories 全成果物承認済み
+
+---
