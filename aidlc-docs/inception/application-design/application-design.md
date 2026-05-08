@@ -27,7 +27,7 @@ Application Design ステージの全成果物（components.md / component-metho
 
 | # | 質問 | 決定 |
 |---|------|------|
-| Q1 | コンポーネント粒度 | **9 コンポーネント（C1〜C9）／うち 8 Unit + Documentation 1**（v1.1 で C8 GPT を削除し 8 Unit に確定。Units Generation Q3=C で C8 は Unit 外） |
+| Q1 | コンポーネント粒度 | **8 コンポーネント（C1〜C7, C9）= 8 Unit に 1:1 対応**（v1.0 当時は 9 コンポーネント C1〜C9 / 8 Unit + Documentation 1 構成だったが、v1.1 で C8 ChatGPTGptAsset を FR-6.3 廃止に伴い削除。C8 ID は再利用しない） |
 | Q2 | 横断的責務 | **AWS Lambda Powertools** 標準利用（Logger / Tracer / Metrics） |
 | Q3 | API インターフェース定義 | **OpenAPI 3.x YAML** をリポジトリ同梱（`assets/openapi/api.yaml`） |
 | Q4 | Bedrock 抽象化 | **`StimulusGenerator` Protocol** + `BedrockStimulusGenerator` / `StaticFallbackStimulusGenerator` の 2 実装 |
@@ -42,7 +42,7 @@ Application Design ステージの全成果物（components.md / component-metho
 
 ---
 
-## 2. 9 コンポーネント早見表
+## 2. コンポーネント早見表（8 稼働コンポーネント / C8 は v1.1 で削除）
 
 | ID | 名前 | 責務 | Lambda 関数 | Iteration 0 |
 |----|------|------|-----------|-------------|
@@ -246,7 +246,7 @@ execution-plan v1.3 では 9 Unit が暫定マッピング済み（v1.4 で 8 Un
 
 ## 11. 参照
 
-- [components.md](./components.md) - 9 コンポーネントの責務
+- [components.md](./components.md) - 8 コンポーネントの責務（v1.1 で C8 削除）
 - [component-methods.md](./component-methods.md) - メソッドシグネチャ
 - [services.md](./services.md) - Lambda 関数 + サービス層
 - [component-dependency.md](./component-dependency.md) - 依存関係 + データフロー
