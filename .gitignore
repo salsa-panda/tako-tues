@@ -2,7 +2,8 @@
 .DS_Store
 
 # IDE / Tooling
-.claude/
+.claude/*
+!.claude/skills/
 .idea/
 .vscode/
 
