@@ -1,8 +1,11 @@
 # Story Generation Plan: タコ中
 
 **Project**: タコ中（たこちゅう）
+**Document Version**: 1.0
 **Created**: 2026-04-29
-**Phase**: INCEPTION - User Stories (Part 1: Planning)
+**Status**: ✅ Approved (2026-04-29)
+**Updated**: 2026-04-29 v1.0 — 18 問 + 3 clarification 全解決、3 User Stories 成果物生成、ユーザー承認済み（その後、要件 v1.5/v1.6/v1.7/v1.8 と stories v1.1〜v1.4 に進化）
+**Phase**: INCEPTION - User Stories (Part 1: Planning, Closed)
 **AI Role**: Product Owner
 
 > **2026-05-08 追記**: 本ファイルは User Stories Planning 段階の **意思決定の記録（履歴）**。要件 v1.8 で **FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、本ファイル内の以下の言及は最新仕様には適用されない:
@@ -317,3 +320,16 @@ X) Other
 ---
 
 回答が終わったら「**done**」または「**完了**」とお知らせください。AI が ambiguity（曖昧性）を確認し、必要に応じて追質問します。問題なければ計画を承認していただき、Part 2 (Generation) に進みます。
+
+---
+
+## ※ 本プラン承認後の進化（追記）
+
+本プラン (v1.0) はステージ承認時点 (2026-04-29) のスナップショット。承認後、要件・成果物は以下のように進化した:
+
+- **要件 v1.5** (2026-04-29): 「タコスが生活の一部になる」コンセプトに刷新。Stories は 15 → 17 に拡張（US-T13 / US-T14 / US-M04 / US-M05 を追加）
+- **要件 v1.6** (2026-04-29): サルサ通知の発火条件を「3 日連続未摂取」から「24h ウィンドウ超過 + Tシャツ罰と同時発火」に変更。`stories.md` v1.2 で US-T07 / US-T09 を 24h ウィンドウ仕様に書き換え
+- **要件 v1.7** (2026-04-29): レシピを Bedrock 動的生成からリポジトリ同梱の静的レシピに変更（食中毒リスク回避）。`stories.md` v1.3 / `story-board.md` v1.3 で関連記述を反映
+- **要件 v1.8** (2026-05-08): FR-6.3 ChatGPT カスタム GPT スコープを完全削除。`stories.md` v1.4 で US-T11 / US-M03 を削除（17 → 15 stories）、`personas.md` v1.2 / `story-board.md` v1.4 / `unit-of-work*.md` v1.1 / `application-design*.md` v1.1 などに連鎖反映
+
+> 本プラン本文に出てくる「ChatGPT カスタム GPT」「3 チャネル」「3 日連続未摂取」「Bedrock レシピ生成」等の記述は計画立案当時のもので、**最新の確定スコープではない**。最新は `stories.md` v1.4 / `story-board.md` v1.4 / `requirements.md` v1.8 を参照。

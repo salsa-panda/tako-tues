@@ -5,7 +5,8 @@
 **Created**: 2026-04-29
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 / components v1.1 反映。**FR-6.3 廃止に伴い C8 GPT 列・行を Dependency Matrix から削除**、Mermaid データフロー図から GPT ノード・PWA → GPT エッジ・style 行を削除、§「ChatGPT GPT 完全外部」「C8 テスト不要」「ChatGPT GPT 連携」記述を削除
-**Phase**: INCEPTION - Application Design
+**Status**: ✅ Approved (v1.0 2026-04-29) / Updated v1.1 2026-05-08 (C8 GPT Dependency Matrix 行・データフロー削除)
+**Phase**: INCEPTION - Completed (Application Design Approved 2026-04-29 / v1.1 反映 2026-05-08)
 
 ---
 

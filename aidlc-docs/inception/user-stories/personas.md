@@ -7,7 +7,8 @@
 - 2026-04-29 v1.0 初版（コア体験者 + バイラル拡散役）
 - 2026-04-29 v1.1: 要件 v1.5 を反映 — 「タコスが生活の一部になる」コンセプトに合わせて、タロウは「料理から逃げたい像」、ミナミは「料理動画投稿の SNS 軸」に強化（Q-4 = A,D）
 - 2026-05-08 v1.2: 要件 v1.8 / stories v1.4 を反映 — **FR-6.3 廃止に伴い ChatGPT カスタム GPT 関連の言及を全削除**。タロウの「How タコ中 Affects」から ChatGPT GPT 起動を削除、ミナミの「Behaviors」「Motivations」「How タコ中 Affects」から ChatGPT GPT 共有関連を削除、Persona Mapping の FR-6.3 行を削除、Story 上の役割を 4 ストーリー → 3 ストーリーに更新
-**Phase**: INCEPTION - User Stories (Part 2: Generation)
+**Status**: ✅ Approved (v1.0 2026-04-29) / Updated v1.1 2026-04-29 (タコスが生活の一部になる反映) / v1.2 2026-05-08 (FR-6.3 関連削除)
+**Phase**: INCEPTION - Completed (User Stories Approved 2026-04-29 / v1.2 反映 2026-05-08)
 
 ---
 

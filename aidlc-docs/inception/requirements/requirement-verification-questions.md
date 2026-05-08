@@ -1,5 +1,11 @@
 # 要件確認質問: タコ中（たこちゅう）
 
+**Project**: タコ中 (Tako-chū / Tako-tues)
+**Document Version**: 1.0
+**Created**: 2026-04-29
+**Status**: ✅ Closed (2026-04-29) — 全 17 問解決（Q15 のみ AI-DLC 推奨で仮置き、OI-1 として Construction NFR Requirements に引き継ぎ）
+**Phase**: INCEPTION - Requirements Analysis (Q&A, Closed)
+
 このドキュメントは、タコ中プロジェクトの要件を明確化するための質問集です。
 各質問の `[Answer]:` タグの後に **A〜X の選択肢の文字** を記入してください。
 「Other」を選んだ場合は、その後に詳細を記述してください。
@@ -201,7 +207,7 @@ B) Partial — 純粋関数とシリアライゼーション往復のみ PBT 適
 C) No — PBT ルールをスキップ（シンプルな CRUD、UI のみ、薄い統合層など、ビジネスロジックがほぼないプロジェクトに適切）
 X) Other (please describe after [Answer]: tag below)
 
-[Answer]: よくわからないので後で教えてください。
+[Answer]: B（Partial）※ AI-DLC 推奨で仮置き、Construction NFR Requirements で確定予定（OI-1）
 
 ---
 
