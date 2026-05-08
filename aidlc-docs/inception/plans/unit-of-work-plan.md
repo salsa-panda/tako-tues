@@ -6,6 +6,12 @@
 **Phase**: INCEPTION - Units Generation (Part 1: Planning)
 **Inputs**: requirements.md v1.7 / stories.md v1.3 / story-board.md v1.3 / execution-plan.md v1.3 / application-design v1.0（5 成果物）
 
+> **2026-05-08 追記**: 本ファイルは Units Generation Planning 段階の **意思決定の記録（履歴）**。要件 v1.8 で **FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、本ファイル内の以下の言及は最新仕様には適用されない:
+> - Q3=C「ChatGPT GPT を Documentation セクションに分離」
+> - Q3-α=A「Documentation セクションは Iteration 4+ で作業」
+> - Q4 / Q5 内の `assets/prompts/` 構造への参照
+> 最新の確定 Unit 構成は [unit-of-work.md v1.1](../application-design/unit-of-work.md)（8 Unit、Documentation セクション削除済み）を参照。
+
 ---
 
 ## 0. このドキュメントの目的

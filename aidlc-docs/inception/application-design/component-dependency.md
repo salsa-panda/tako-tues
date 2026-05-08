@@ -1,8 +1,10 @@
 # Component Dependency: タコ中
 
 **Project**: タコ中 (Tako-chū / Tako-tues)
-**Document Version**: 1.0
+**Document Version**: 1.1
 **Created**: 2026-04-29
+**Updated**:
+- 2026-05-08 v1.1: 要件 v1.8 / components v1.1 反映。**FR-6.3 廃止に伴い C8 GPT 列・行を Dependency Matrix から削除**、Mermaid データフロー図から GPT ノード・PWA → GPT エッジ・style 行を削除、§「ChatGPT GPT 完全外部」「C8 テスト不要」「ChatGPT GPT 連携」記述を削除
 **Phase**: INCEPTION - Application Design
 
 ---
@@ -23,17 +25,18 @@
 
 行 = 呼ぶ側、列 = 呼ばれる側、セル = 依存方法（同期 sync / 非同期 async / 共有 shared / 静的 static / なし — ）
 
-|      | C1 Auth | C2 Intake | C3 Order | C4 Recipe | C5 Stimulus | C6 Punish | C7 PWA | C8 GPT | C9 Infra |
-|------|---------|-----------|----------|-----------|-------------|-----------|--------|--------|----------|
-| **C1 Auth**     | —       | —         | —        | —         | —           | —         | —      | —      | shared(Cognito) |
-| **C2 Intake**   | shared(JWT) | — | —        | —         | async(IntakeRecorded) | async(IntakeRecorded) | — | — | shared(DDB) |
-| **C3 Order**    | shared(JWT) | shared(DDB read) | —        | async(Delivered) | async(Delivered) | shared(DDB read) | async(OrderDecided) | — | shared(DDB, EventBus) |
-| **C4 Recipe**   | shared(JWT) | — | static(KitType) | — | — | — | async(via Delivered) | — | shared(Lambda bundle) |
-| **C5 Stimulus** | shared(JWT) | async(IntakeRecorded → reset) | shared(DDB read) | — | —           | —         | sync(GET /dashboard/stimulus) | — | shared(EventBus) |
-| **C6 Punish**   | shared(JWT) | shared(DDB read) / async(IntakeRecorded → stop salsa) | shared(DDB read) | — | —           | —         | sync(GET /punishments/history) / async(PunishmentTriggered) | — | shared(EventBus) |
-| **C7 PWA**      | sync(GET /me, /signup-trial) | sync(POST /intakes, GET /intakes/weekly) | sync(GET /orders/current, POST /cancel-attempt) | sync(GET /recipes/{kit_type}) | sync(GET /dashboard/stimulus) | sync(GET /punishments/history) | — | static(URL) | shared(CloudFront) |
-| **C8 GPT**      | —       | —         | —        | —         | —           | —         | static(README link) | — | — |
-| **C9 Infra**    | —       | —         | —        | —         | —           | —         | —      | —      | —        |
+|      | C1 Auth | C2 Intake | C3 Order | C4 Recipe | C5 Stimulus | C6 Punish | C7 PWA | C9 Infra |
+|------|---------|-----------|----------|-----------|-------------|-----------|--------|----------|
+| **C1 Auth**     | —       | —         | —        | —         | —           | —         | —      | shared(Cognito) |
+| **C2 Intake**   | shared(JWT) | — | —        | —         | async(IntakeRecorded) | async(IntakeRecorded) | — | shared(DDB) |
+| **C3 Order**    | shared(JWT) | shared(DDB read) | —        | async(Delivered) | async(Delivered) | shared(DDB read) | async(OrderDecided) | shared(DDB, EventBus) |
+| **C4 Recipe**   | shared(JWT) | — | static(KitType) | — | — | — | async(via Delivered) | shared(Lambda bundle) |
+| **C5 Stimulus** | shared(JWT) | async(IntakeRecorded → reset) | shared(DDB read) | — | —           | —         | sync(GET /dashboard/stimulus) | shared(EventBus) |
+| **C6 Punish**   | shared(JWT) | shared(DDB read) / async(IntakeRecorded → stop salsa) | shared(DDB read) | — | —           | —         | sync(GET /punishments/history) / async(PunishmentTriggered) | shared(EventBus) |
+| **C7 PWA**      | sync(GET /me, /signup-trial) | sync(POST /intakes, GET /intakes/weekly) | sync(GET /orders/current, POST /cancel-attempt) | sync(GET /recipes/{kit_type}) | sync(GET /dashboard/stimulus) | sync(GET /punishments/history) | — | shared(CloudFront) |
+| **C9 Infra**    | —       | —         | —        | —         | —           | —         | —      | —        |
+
+> **v1.1 注**: 旧「C8 GPT」列・行は FR-6.3 廃止に伴い削除（OpenAI ChatGPT GPTs 依存をスコープから外したため）。
 
 ### 1.1 凡例
 
@@ -81,13 +84,10 @@ flowchart TB
     S3R[(S3<br/>PWA static)]
     CDN[CloudFront]
 
-    GPT[/ChatGPT GPTs<br/>OpenAI/]
-
     User -->|HTTPS| CDN --> S3R
     User -->|Use PWA| PWA
     PWA -->|HTTPS API| Authorizer --> ApiMono
     PWA -->|Web Push subscribe| ApiMono
-    PWA -->|External link| GPT
 
     Cognito -.->|JWT issue| PWA
     Authorizer -.->|verify| Cognito
@@ -124,7 +124,6 @@ flowchart TB
     style EBBus fill:#BBDEFB,stroke:#0D47A1,color:#000
     style EBSched fill:#BBDEFB,stroke:#0D47A1,color:#000
     style DDB fill:#C8E6C9,stroke:#1B5E20,color:#000
-    style GPT fill:#FFEBEE,stroke:#B71C1C,color:#000
     style Bedrock fill:#FFEBEE,stroke:#B71C1C,color:#000
 ```
 
@@ -225,7 +224,6 @@ sequenceDiagram
 |------|------|
 | Bedrock 呼び出し | boto3 `bedrock-runtime`（Iteration 1+） |
 | Web Push 送信 | pywebpush ライブラリ + VAPID |
-| ChatGPT GPT | 完全外部（OpenAI 側で動作）。リポジトリは System Prompt のみ |
 
 ---
 
@@ -375,7 +373,6 @@ CDK Stack を以下に分割（Iteration 0 では単一 Stack、Iteration 1+ で
 | C5 Stimulus | DynamoDB（moto）、EventBridge（stub）、`StimulusGenerator` Protocol（in-memory FakeGenerator）、Web Push（stub） |
 | C6 Punishment | DynamoDB（moto）、EventBridge（stub）、現在時刻（freezegun）、Web Push（stub） |
 | C7 PWA | 各 Component を Storybook 風に独立確認、API クライアントは MSW で mock |
-| C8 GPT | テスト不要（OpenAI 側の挙動確認はマニュアル） |
 | C9 Infra | CDK Snapshot Test（CDK assertions） |
 
 ---
@@ -394,5 +391,4 @@ Walking Skeleton 立ち上げ時に**実装すべき最小の依存関係**:
 
 - DynamoDB Streams（Iteration 1+）
 - Bedrock 呼び出し（Iteration 1+）
-- ChatGPT GPT 連携（Iteration 4+）
 - WebSocket / リアルタイム通知（PWA 側はポーリングで OK、Iteration 後半で検討）

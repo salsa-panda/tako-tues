@@ -1,14 +1,16 @@
 # Application Design (Consolidated): タコ中
 
 **Project**: タコ中 (Tako-chū / Tako-tues)
-**Document Version**: 1.0
+**Document Version**: 1.1
 **Created**: 2026-04-29
+**Updated**:
+- 2026-05-08 v1.1: 要件 v1.8 反映。**FR-6.3 廃止に伴い C8 ChatGPTGptAsset コンポーネント削除**（9 → 8 コンポーネント）。アーキテクチャ図から OpenAI ChatGPT GPTs ノード削除、Iteration 0 範囲一覧から「ChatGPT GPT (C8)」行削除、FR Coverage Matrix から FR-6.3 行削除
 **Phase**: INCEPTION - Application Design
 **Inputs**:
-- requirements.md v1.7
-- stories.md v1.3
-- story-board.md v1.3
-- execution-plan.md v1.3
+- requirements.md v1.8
+- stories.md v1.4
+- story-board.md v1.4
+- execution-plan.md v1.4
 - application-design-plan.md v1.0（12 問 + 2 follow-up 全て解決済み）
 
 ---
@@ -50,7 +52,7 @@ Application Design ステージの全成果物（components.md / component-metho
 | C5 | StimulusEngine | 煽り文 / 誘惑 Push / エスカレーション | api-monolith + scheduler-lunch + scheduler-evening | ⚠️ 1 日 1 回 + Static のみ |
 | C6 | Punishment | 罰チェックポイント / Tシャツ / サルサ | api-monolith + scheduler-tuesday | ✅ 罰 1 回まで |
 | C7 | PwaFrontend | Vite + React SPA + Service Worker + Web Push | （Lambda 外）S3 + CloudFront | ⚠️ 3 画面 |
-| C8 | ChatGPTGptAsset | ChatGPT GPT System Prompt 配布 | （Lambda 外）リポジトリ同梱 | ❌ Iteration 4+ |
+| ~~C8~~ | ~~ChatGPTGptAsset~~ | ~~ChatGPT GPT System Prompt 配布~~ | — | **v1.1 で削除**（FR-6.3 廃止） |
 | C9 | Infrastructure | CDK Stack 群 / IAM / Monitoring / CI/CD | （Lambda 外）IaC | ✅ 単一 Stack |
 
 詳細は [components.md](./components.md) を参照。
@@ -98,14 +100,9 @@ flowchart LR
         CW[CloudWatch /<br/>Budgets]
     end
 
-    subgraph External["外部"]
-        GPT[OpenAI<br/>ChatGPT GPTs]
-    end
-
     U --> PWA
     PWA -->|HTTPS| APIGW --> ApiMono
     PWA --> Cognito
-    PWA -.->|External link| GPT
 
     EBSched --> Scheds
     Scheds --> DDB
@@ -127,7 +124,6 @@ flowchart LR
     style EBBus fill:#BBDEFB,stroke:#0D47A1,color:#000
     style EBSched fill:#BBDEFB,stroke:#0D47A1,color:#000
     style DDB fill:#C8E6C9,stroke:#1B5E20,color:#000
-    style GPT fill:#FFEBEE,stroke:#B71C1C,color:#000
     style Bedrock fill:#FFEBEE,stroke:#B71C1C,color:#000
 ```
 
@@ -189,7 +185,6 @@ execution-plan v1.3 §5.2 で要求された契約。すべて確定済み:
 
 ### 含めないもの
 
-❌ ChatGPT GPT（C8、Iteration 4+）
 ❌ Bedrock 動的生成（Iteration 1+）
 ❌ Push エスカレーション Level A→B→C（Iteration 1+）
 ❌ 強制バリエーションウィーク Type B（Iteration 2+）
@@ -215,7 +210,7 @@ execution-plan v1.3 §5.2 で要求された契約。すべて確定済み:
 | FR-5 認証・トライアル | C1 | US-T01 |
 | FR-6.1 煽り文 | C5 | US-T10 |
 | FR-6.2 誘惑 Push | C5 | US-T08 |
-| FR-6.3 ChatGPT GPT | C8 | US-T11, US-M03 |
+| ~~FR-6.3 ChatGPT GPT~~ | ~~C8~~ | **v1.1 で削除**（要件 v1.8 で FR-6.3 廃止） |
 | FR-6.4 エスカレーション | C5 | US-T09 |
 | FR-6.5 生成テキスト | C5 | （横断） |
 | NFR 全般 | C9 | — |
