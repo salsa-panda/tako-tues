@@ -5,6 +5,8 @@
 **Created**: 2026-04-29
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 / unit-of-work v1.1 反映。**FR-6.3 廃止に伴い Doc(C8) 列・行を Unit Dependency Matrix から削除**、§§ Documentation (C8) / Doc(C8) に関する全記述を削除（テスト戦略・並行実装スコア・依存テーブル）
+**Status**: ✅ Approved (v1.0 2026-04-29) / Updated v1.1 2026-05-08 (Doc(C8) 列・行削除)
+**Phase**: INCEPTION - Completed (Units Generation Approved 2026-04-29 / v1.1 反映 2026-05-08)
 
 ---
 

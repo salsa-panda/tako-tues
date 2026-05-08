@@ -5,7 +5,8 @@
 **Created**: 2026-04-29
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 反映。**FR-6.3 廃止に伴い C8 ChatGPTGptAsset コンポーネントを削除**（9 → 8 コンポーネント）。静的アセット表から `assets/prompts/tako-gpt-*.md` を削除、FR Coverage Matrix から FR-6.3 行削除
-**Phase**: INCEPTION - Application Design
+**Status**: ✅ Approved (v1.0 2026-04-29) / Updated v1.1 2026-05-08 (C8 ChatGPTGptAsset 削除)
+**Phase**: INCEPTION - Completed (Application Design Approved 2026-04-29 / v1.1 反映 2026-05-08)
 
 ---
 

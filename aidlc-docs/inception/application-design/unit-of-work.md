@@ -5,7 +5,8 @@
 **Created**: 2026-04-29
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 / components v1.1 反映。**FR-6.3 廃止に伴い §2 Documentation セクション（C8 ChatGPT GPT）を削除**。Total Units を「8 + Documentation 1」→「8（純）」に変更。ディレクトリ構造から `assets/prompts/` を削除、Hackathon Theme Alignment 表から Documentation 行削除、Story-Map 集計表から Documentation 行削除
-**Phase**: INCEPTION - Units Generation (Part 2: Generation)
+**Status**: ✅ Approved (v1.0 2026-04-29) / Updated v1.1 2026-05-08 (Documentation/C8 セクション削除・8 Unit に確定)
+**Phase**: INCEPTION - Completed (Units Generation Approved 2026-04-29 / v1.1 反映 2026-05-08)
 **Total Units**: 8（U1〜U7, U9）— v1.1 で旧 Documentation セクションを削除
 **Decisions**: Q1=D / Q2=A / Q3=C / Q3-α=A / Q4=D / Q5=D（v1.1 注: Q3=C は当時の判断記録。FR-6.3 自体が v1.8 で廃止されたため Documentation セクションは現存しない）
 
@@ -353,7 +354,7 @@ Iteration 0 で立ち上げる必須 Unit:
 
 ## 6. 参照
 
-- [components.md](./components.md) - 9 コンポーネント責務
+- [components.md](./components.md) - 8 コンポーネント責務（v1.1 で C8 削除）
 - [component-methods.md](./component-methods.md) - メソッドシグネチャ
 - [services.md](./services.md) - Lambda 構成 + サービス層
 - [component-dependency.md](./component-dependency.md) - 依存マトリクス

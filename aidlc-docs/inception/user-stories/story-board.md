@@ -59,7 +59,7 @@ gantt
 
 ```mermaid
 gantt
-    title タロウ Week 1 - 強制ループ本番 (v1.1)
+    title タロウ Week 1 - 強制ループ本番 (v1.4)
     dateFormat YYYY-MM-DD HH:mm
     axisFormat %a %H:%M
 
@@ -463,4 +463,4 @@ sequenceDiagram
 - [x] Step L: 通知トーン・キャラクター性の例文集（5 章 / Level A→B→C）
 - [x] Step M: 強制発注通告／シュール演出のサンプル UI コピー（6 章。v1.4 で「説教モード」言及削除）
 
-これで User Stories Part 2 の全 Step が完了。次は本ステージのユーザー承認を経て Workflow Planning へ。
+これで User Stories Part 2 の全 Step が完了（v1.4、2026-04-29 ユーザー承認済み）。後続ステージ（Workflow Planning v1.4 / Application Design v1.1 / Units Generation v1.1）も全て完了済み。次フェーズは CONSTRUCTION（Per-Unit Loop）。

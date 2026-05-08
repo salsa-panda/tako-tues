@@ -12,7 +12,8 @@
 - 2026-04-29 v1.6: サルサ通知を 24h カウントダウン超過と統合（Tシャツ罰と同タイミング・火曜 21:00 発火）。Push エスカレーションカウンタを「24h ウィンドウ内の Push 無視回数」に再定義（US-T09 連動）
 - 2026-04-29 v1.7: **FR-2.3 レシピ配信を Bedrock 動的生成から「リポジトリ同梱の静的レシピライブラリ（手書き・アミーゴ口調・キット種別 1:1 マッピング）」に変更**。理由: ユーザー安全性（食中毒リスク回避）と決定論的な体験品質確保。Bedrock は FR-6.1 煽り文 / FR-6.2 誘惑 Push のみで継続使用。OI-12 / OI-13 はレシピ生成については解消、煽り文側の懸念として再定義
 - 2026-05-08 v1.8: **FR-6.3 ChatGPT カスタム GPT による会話誘導（過激レイヤー）をスコープから完全削除**。理由: AWS ハッカソン作品として AWS 外サービス（OpenAI ChatGPT）依存を排除し、AWS サーバーレス内で完結させる。Scenario D / OI-5 / Tech Stack の AI 会話行 / Key Requirements の "ChatGPT 会話縛り" / バイラル要素の "ChatGPT 配布" を併せて削除。FR-6 は控えめ（FR-6.1）+ 中程度（FR-6.2）の 2 レイヤー構成に再定義。FR-3（タコス会話縛り）も完全廃止
-**Phase**: INCEPTION - Requirements Analysis
+**Phase**: INCEPTION - Completed (Requirements Analysis Approved 2026-04-29 / v1.6 → 2026-05-08 v1.8 反映)
+**Status**: ✅ Approved 2026-04-29 (v1.6) / Updated 2026-05-08 (v1.7 レシピ静的化 / v1.8 FR-6.3 削除)
 **Depth**: Standard
 
 ---

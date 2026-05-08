@@ -399,10 +399,10 @@ Apple HealthKit と連携し、
 **Timestamp**: 2026-04-29T00:00:00Z
 **User Input**: "承認するので承認処理の後にコミットして"
 **Approval Scope**:
-- aidlc-docs/inception/requirements/requirements.md (v1.6)
-- aidlc-docs/inception/user-stories/personas.md (v1.1)
-- aidlc-docs/inception/user-stories/stories.md (v1.2)
-- aidlc-docs/inception/user-stories/story-board.md (v1.2)
+- aidlc-docs/inception/requirements/requirements.md (v1.6) ※ その後 2026-04-29 中に Workflow Planning で v1.7 (レシピ静的化)、2026-05-08 に v1.8 (FR-6.3 削除) へ進化
+- aidlc-docs/inception/user-stories/personas.md (v1.1) ※ 2026-05-08 に v1.2 (FR-6.3 関連削除) へ進化
+- aidlc-docs/inception/user-stories/stories.md (v1.2) ※ Workflow Planning で v1.3、2026-05-08 に v1.4 (US-T11/US-M03 削除・15 stories) へ進化
+- aidlc-docs/inception/user-stories/story-board.md (v1.2) ※ Workflow Planning で v1.3、2026-05-08 に v1.4 (ChatGPT GPT 関連削除) へ進化
 - aidlc-docs/inception/plans/user-stories-assessment.md
 - aidlc-docs/inception/plans/story-generation-plan.md
 - aidlc-docs/inception/plans/story-generation-clarification-questions.md
@@ -688,5 +688,13 @@ v1.3 で抜本変更されたセクション:
 **Branch**: doc-review-fixes（PR #4 に追加コミット）
 **Rationale**: AWS ハッカソン作品として AWS 外サービス（OpenAI ChatGPT）依存を排除し、AWS サーバーレス内で完結させる方針に転換。FR-6 は控えめ（FR-6.1）+ 中程度（FR-6.2）の 2 レイヤー構成に縮退、FR-3（タコス会話縛り）も完全廃止。Documentation セクション（C8）も Unit 構成から削除。
 **Context**: INCEPTION 完了後の仕様変更。書類審査（2026-05-10 23:59 JST）に向けて整合性を確保。
+
+---
+
+## ※ タイムスタンプ・順序に関する免責
+
+- 2026-04-29 のエントリは全て `2026-04-29T00:00:00Z` で記録されており、時刻記録粒度は **日次（HH:MM:SS は付与なし）**。同日内の論理的な発生順は INCEPTION ステージの並び（Workspace Detection → Requirements → User Stories → Workflow Planning → Application Design → Units Generation）と各エントリの `Context` / `Status` から復元可能だが、エントリの**物理的な並び順は厳密な時系列を保証しない**。
+- 同様に 2026-05-08 のドキュメント整備関連エントリも秒単位粒度は無く、PR #4（doc-review-fixes）への追加コミット順で論理時系列を再構成すること。
+- 監査・トラブルシュート目的で時系列が必要になった場合は、`git log` のコミットタイムスタンプを参照する方が正確。
 
 ---
