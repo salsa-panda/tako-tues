@@ -77,6 +77,36 @@ Application Design ステージの全成果物（components.md / component-metho
 
 ## 4. アーキテクチャ図
 
+### 4.0 Concept Diagram — 逆比例発注ロジック & 3 層 AI 生活侵食
+
+タコ中の核心設計を視覚化した概念図。**AI を予測器でなく刺激生成器として使う**という逆張り設計の全体像。
+
+```mermaid
+flowchart TD
+    subgraph Logic["逆比例発注ロジック"]
+        A["タコスを食べる\n消費量 N UP"] -->|発注量 DOWN| R1[来週は少なめ]
+        B["タコスを食べない\n消費量 N DOWN"] -->|発注量 UP| R2["来週は地獄\n食べないほど増える"]
+        FORMULA["発注量 = BASE + max(0, THRESHOLD - N) × MULTIPLIER"]
+    end
+
+    subgraph Invasion["3 層 AI 生活侵食"]
+        L1["Layer 1: Bedrock 煽り文 FR-6.1\nダッシュボード"]
+        L2["Layer 2: Web Push サルサ通知\n30 分ループ FR-6.2 逃げ場なし"]
+        L3["Layer 3: ChatGPT GPT\n日常会話のタコス汚染 FR-6.3"]
+        L1 --> L2 --> L3
+    end
+
+    R2 -->|外圧強化| L1
+    R2 -->|外圧強化| L2
+    R2 -->|外圧強化| L3
+```
+
+> 設計原則「強制 > 提案」「AI は欲を生成する側」「逃げ場をなくす」（requirements.md §1.4）
+
+---
+
+### 4.1 AWS アーキテクチャ図
+
 ```mermaid
 flowchart LR
     subgraph User["End User"]

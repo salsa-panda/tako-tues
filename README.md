@@ -116,7 +116,7 @@ flowchart LR
 | U7 | PwaFrontend | Vite + React + Service Worker + Web Push |
 | U9 | Infrastructure | CDK Stack / IAM / Monitoring / CI/CD |
 
-Unit 間通信はすべて **EventBridge カスタムバス経由**。Lambda 直接 invoke はゼロ。AWS サーバーレスで完結（外部 ChatGPT GPT 等への依存なし）。
+Unit 間通信はすべて **EventBridge カスタムバス経由**。Lambda 直接 invoke はゼロ。AWS サーバーレスで完結（外部サービスへの依存なし）。
 
 ---
 

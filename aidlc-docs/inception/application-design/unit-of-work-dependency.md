@@ -259,7 +259,37 @@ tako-core-stack（前提・全 Stack の基盤）
 
 ---
 
-## 8. 参照
+## 8. 循環依存検証
+
+Unit Dependency Matrix（§1）の 9 ノード（U1〜U7, U9, Doc(C8)）が有向非巡回グラフ（DAG）を形成することを確認する。
+
+### 検証方法: トポロジカル順序の存在チェック
+
+下記の処理順 `U9 → U1 → U2 → U3 → U4 → U5 → U6 → U7 → Doc(C8)` を仮定したとき、各 Unit の依存先がすべて先行する Unit であれば循環依存なし（上三角行列のみに依存が存在する）。
+
+| Unit | 依存先 | 処理順上の位置 | 判定 |
+|------|--------|--------------|------|
+| U9 | なし | 0 番目 | ✅ |
+| U1 Auth | U9 | U9 は 0 番目（先行） | ✅ |
+| U2 Intake | U1, U9 | 両方先行 | ✅ |
+| U3 Order | U1, U2, U9 | すべて先行 | ✅ |
+| U4 Recipe | U1, U3, U9 | すべて先行 | ✅ |
+| U5 Stimulus | U1, U2, U3, U9 | すべて先行 | ✅ |
+| U6 Punish | U1, U2, U3, U9 | すべて先行 | ✅ |
+| U7 PWA | U1〜U6, U9 | すべて先行 | ✅ |
+| Doc(C8) | U7（static URL） | U7 は先行 | ✅ |
+
+### 注記: U7 ↔ Doc(C8) の双方向参照について
+
+マトリクス上 U7 と Doc(C8) が互いを参照しているように見えるが、どちらも `static(URL)` 参照（実行時の呼び出しではなくドキュメント内リンク）であり、実行時依存は生じない。
+
+### 結論
+
+**9 ノード DAG。循環依存ゼロ。** Walking Skeleton 戦略「U9 先行 → 全 Unit 並行実装」はトポロジカル順序として成立している。
+
+---
+
+## 9. 参照
 
 - [unit-of-work.md](./unit-of-work.md) - 8 Unit の責務（v1.1 で Documentation セクション削除）
 - [unit-of-work-story-map.md](./unit-of-work-story-map.md) - ストーリー → Unit マップ

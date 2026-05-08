@@ -17,7 +17,7 @@
 - **Build System**: N/A
 - **Project Structure**: Empty
 - **Reverse Engineering Needed**: No
-- **Workspace Root**: /Users/tsubasa/git/github.com/tsubasaxZZZ/tako-tues
+- **Workspace Root**: github.com/salsa-panda/tako-tues（各開発者のローカルパスに依存しない）
 
 ## Code Location Rules
 - **Application Code**: Workspace root (NEVER in aidlc-docs/)

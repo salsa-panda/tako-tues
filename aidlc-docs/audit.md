@@ -691,6 +691,50 @@ v1.3 で抜本変更されたセクション:
 
 ---
 
+## Document Screening Remediation - Change Request
+**Timestamp**: 2026-05-08T00:00:00Z
+**User Input**: "reviewで review/配下にフィードバックがある。原点要因をそれぞれどう直したらいいか。AIーDLCのフローで矛盾がないように。"
+**Current State**: INCEPTION 完了（7 ステージ全承認済み）/ CONSTRUCTION 未着手 / 書類審査スコア 80.5 点（DS-1:83 / DS-2:92 / DS-3:79 / DS-4:68）
+**Impact Assessment**: 書類審査スコア 80.5 → 87.0 見込み（DS-1:83→86 / DS-2:92→95 / DS-3:79→84 / DS-4:68→83）
+**User Confirmation**: ユーザーによる補修計画承認済み（2026-05-08、workflow-changes.md Type #4 Modify 適用）
+**Action Taken**: 書類審査向け品質ゲート対応補修。INCEPTION Stage Progress の [x] は維持、CONSTRUCTION フェーズ未着手のまま
+**Artifacts Affected**:
+- aidlc-docs/aidlc-state.md（Workspace Root 誤記修正: /Users/tsubasa/... → /Users/tatsuruhigurashi/...）
+- aidlc-docs/inception/application-design/unit-of-work-dependency.md（循環依存検証セクション追加 → v1.1）
+- aidlc-docs/inception/application-design/unit-of-work.md（C8 Unit 外配置の根拠補強 → v1.1）
+- aidlc-docs/inception/application-design/application-design.md（コンセプト図追加 → v1.1）
+- README.md（プロジェクト概要・コンセプト・技術スタック・AI-DLC 成果物導線を全執筆）
+- CLAUDE.md（Project-Specific Rules セクション追記）
+- .gitignore（Python/CDK/React/AWS 用エントリ整備）
+
+---
+
+## Document Screening Remediation - Changes Applied
+**Timestamp**: 2026-05-08T00:00:00Z
+**Changes Applied — unit-of-work-dependency.md v1.1**:
+- Document Version 1.0 → 1.1
+- ## 8. 循環依存検証セクションを新規追加（9 ノード DAG 検証・U7 ↔ Doc(C8) 双方向参照の注記・結論「循環依存ゼロ」）
+- 旧 ## 8. 参照 → ## 9. 参照 にリナンバー
+**Changes Applied — unit-of-work.md v1.1**:
+- Document Version 1.0 → 1.1
+- C8 セクションに「Unit 外配置の根拠」ミニ段落を追加（技術的独立性 / 進行管理の合理性 / コア機能の保証）
+**Changes Applied — application-design.md v1.1**:
+- Document Version 1.0 → 1.1
+- ## 4. アーキテクチャ図 内に ### 4.0 Concept Diagram を追加（逆比例発注ロジック & 3 層 AI 生活侵食 Mermaid）
+- 既存 Mermaid を ### 4.1 AWS アーキテクチャ図 にリナンバー
+**Changes Applied — aidlc-state.md**:
+- Workspace Root: /Users/tsubasa/git/github.com/tsubasaxZZZ/tako-tues → /Users/tatsuruhigurashi/Projects/github.com/salsa-panda/tako-tues
+**Changes Applied — README.md**:
+- 1 行（# tako-tues）から全執筆: コンセプト・Concept Diagram・Unit 分解表・技術スタック・AI-DLC 成果物導線・ハッカソン情報
+**Changes Applied — CLAUDE.md**:
+- 末尾に ## Project-Specific Rules（タコ中）セクションを追加（Bedrock 用途限定 / 静的アセット管理 / C8 規約 / コミット規約 / ディレクトリ配置）
+**Changes Applied — .gitignore**:
+- Python / CDK / Node / React / OS / Editor 用エントリを追加
+**Status**: ⛔ GATE - ユーザー承認待ち（書類審査向け補修 v1.1 全成果物）
+**Context**: INCEPTION 完了状態を維持。Stage Progress の [x] は変更なし。CONSTRUCTION 未着手のまま。
+
+---
+
 ## ※ タイムスタンプ・順序に関する免責
 
 - 2026-04-29 のエントリは全て `2026-04-29T00:00:00Z` で記録されており、時刻記録粒度は **日次（HH:MM:SS は付与なし）**。同日内の論理的な発生順は INCEPTION ステージの並び（Workspace Detection → Requirements → User Stories → Workflow Planning → Application Design → Units Generation）と各エントリの `Context` / `Status` から復元可能だが、エントリの**物理的な並び順は厳密な時系列を保証しない**。
