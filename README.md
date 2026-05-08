@@ -135,7 +135,7 @@ Unit 間通信はすべて **EventBridge カスタムバス経由**。Lambda 直
 | Workflow Planning | Walking Skeleton + 反復モデル v1.4 | [execution-plan.md](./aidlc-docs/inception/plans/execution-plan.md) |
 | Application Design | 8 コンポーネント / レイヤード 4 層 / 5 イベント | [application-design.md](./aidlc-docs/inception/application-design/application-design.md) |
 | Units Generation | 8 Unit | [unit-of-work.md](./aidlc-docs/inception/application-design/unit-of-work.md) / [unit-of-work-dependency.md](./aidlc-docs/inception/application-design/unit-of-work-dependency.md) / [unit-of-work-story-map.md](./aidlc-docs/inception/application-design/unit-of-work-story-map.md) |
-| Audit Trail | 全インタラクションの ISO 8601 タイムスタンプ付きログ | [audit.md](./aidlc-docs/audit.md) |
+| Audit Trail | INCEPTION 全インタラクションのログ（日次粒度 / 詳細は audit.md 末尾の免責参照） | [audit.md](./aidlc-docs/audit.md) |
 
 ### 開発スタイル: Walking Skeleton + 反復モデル
 
