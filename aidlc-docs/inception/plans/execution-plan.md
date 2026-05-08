@@ -8,7 +8,8 @@
 - 2026-04-29 v1.2: **タイムライン全面再設計**。書類審査トラック / PoC トラックの 2 軸化、並行トラック A〜D の導入、3 種類のバッファ（手戻り／統合／凍結）の明示、**Unit Coupling Principles**（疎結合設計原則）の新設。Q1=B（書類審査時点で U1+U2 のスケルトン動作）、Q2=B（チーム並行前提）、Q3=A（PoC 完成基準 = E2E シナリオ全通り）の決定を反映
 - 2026-04-29 v1.3: **Walking Skeleton ファースト**へ抜本変更。「フェーズ末尾にバッファ枠を確保」を撤回し、**最速で E2E が動く骨組みを作って、動かしながら短サイクルで反復改善**するモデルに転換。Q-α=C（GPT は後回し、AWS 側 E2E に集中）、Q-β=C（連続反復スタイル）、実装は全て AI が行う前提を反映。Iteration 0（Walking Skeleton）→ N サイクルの反復改善 → 凍結のみ時間枠で残す構造
 - 2026-05-08 v1.4: 要件 v1.8 反映。**FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、U8 ChatGPT GPT Asset を Unit リストから削除（Unit 数: 9 → 8）。Iteration 4「ChatGPT GPT 公開」マイルストーン削除、PoC 完成基準から GPT シナリオ確認を除外、Tech Stack 配布物から ChatGPT GPT を削除、Iteration 4 のスコープを「予選デモ磨き込み + バイラル素材作成」に再定義
-**Phase**: INCEPTION - Workflow Planning
+**Phase**: INCEPTION - Completed (Workflow Planning Approved 2026-04-29 / v1.3 → v1.4 / 次フェーズ: CONSTRUCTION)
+**Status**: ✅ Approved 2026-04-29 (v1.3) / Updated 2026-05-08 (v1.4 — FR-6.3 削除反映)
 **Hackathon**: AWS Summit Japan 2026 AI-DLC ハッカソン応募作品
 
 ---
@@ -104,9 +105,9 @@ flowchart TD
         RE["Reverse Engineering<br/><b>SKIPPED</b><br/>(Greenfield)"]
         RA["Requirements Analysis<br/><b>COMPLETED</b><br/>v1.7（レシピ静的化）"]
         US["User Stories<br/><b>COMPLETED</b><br/>v1.3 17 stories"]
-        WP["Workflow Planning<br/><b>IN PROGRESS</b>"]
-        AD["Application Design<br/><b>EXECUTE</b>"]
-        UG["Units Generation<br/>(Planning + Generation)<br/><b>EXECUTE</b><br/>(審査基準上必須)"]
+        WP["Workflow Planning<br/><b>COMPLETED</b><br/>v1.4"]
+        AD["Application Design<br/><b>COMPLETED</b><br/>v1.1"]
+        UG["Units Generation<br/>(Planning + Generation)<br/><b>COMPLETED</b><br/>v1.1 (8 Unit)"]
     end
 
     subgraph CONSTRUCTION["🟢 CONSTRUCTION PHASE"]
@@ -143,11 +144,11 @@ flowchart TD
     style WD fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style RA fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style US fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
-    style WP fill:#FFA726,stroke:#E65100,stroke-width:3px,color:#000
+    style WP fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
     style RE fill:#BDBDBD,stroke:#424242,stroke-width:2px,stroke-dasharray: 5 5,color:#000
 
-    style AD fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
-    style UG fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
+    style AD fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
+    style UG fill:#4CAF50,stroke:#1B5E20,stroke-width:3px,color:#fff
 
     style FD fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
     style NFRA fill:#FFA726,stroke:#E65100,stroke-width:3px,stroke-dasharray: 5 5,color:#000
@@ -174,13 +175,13 @@ flowchart TD
 - [x] **Workspace Detection** — COMPLETED（Greenfield 判定）
 - [x] **Reverse Engineering** — SKIPPED
   - **Rationale**: Greenfield のため対象外。
-- [x] **Requirements Analysis** — COMPLETED（v1.6 ユーザー承認済み）
-- [x] **User Stories** — COMPLETED（v1.2 ユーザー承認済み・17 stories）
-- [ ] **Workflow Planning** — IN PROGRESS（本ドキュメント）
-- [ ] **Application Design** — **EXECUTE**
+- [x] **Requirements Analysis** — COMPLETED（v1.8 ユーザー承認済み・2026-04-29 承認 / 2026-05-08 v1.8 で FR-6.3 削除）
+- [x] **User Stories** — COMPLETED（v1.4 ユーザー承認済み・15 stories / 2026-04-29 承認 / 2026-05-08 v1.4 で US-T11/US-M03 削除）
+- [x] **Workflow Planning** — COMPLETED（v1.3 ユーザー承認済み 2026-04-29 / 2026-05-08 v1.4 反映）
+- [x] **Application Design** — **COMPLETED**（v1.1 ユーザー承認済み 2026-04-29 / 2026-05-08 v1.1 で C8 削除）
   - **Rationale**: 新規コンポーネント／サービス境界（強制発注エンジン、刺激エージェント、配送モック、レシピライブラリ参照、Push エスカレーションカウンタ等）を 0 から定義する必要がある。コンポーネント間の責務分離、ビジネスルール、依存関係、外部統合点（Bedrock 煽り文、Web Push、リポジトリ同梱レシピアセット）を明文化しないと Construction で迷走するリスクが高い。ハッカソン審査基準（ドキュメント品質・Unit 分解の適切さ）にも直結する（v1.4 で ChatGPT GPT 配布を削除）。
-- [ ] **Units Generation** — **EXECUTE（審査基準上の必須化）**
-  - **Rationale**: OI-11 で記録の通り、ハッカソン審査では「**Unit 分解の適切さ**」が評価対象。書類審査（5/10）に向け、PoC を MVP として段階的に実装するため Unit に切り分ける必要がある。想定 Unit 例（v1.4 で 9 → 8 に縮減、U8 ChatGPT GPT Asset 削除）: (1) Auth & Trial、(2) Intake Logging、(3) Order Engine + Delivery Mock、(4) **Recipe Library (Pre-curated)**、(5) Stimulus Engine（Push + Escalation + Dashboard 煽り）、(6) Salsa & T-shirt Punishment、(7) PWA Frontend、(9) Infrastructure (CDK)。
+- [x] **Units Generation** — **COMPLETED（審査基準上の必須化）**（v1.1 ユーザー承認済み 2026-04-29 / 2026-05-08 v1.1 で Documentation セクション削除・8 Unit に確定）
+  - **Rationale**: OI-11 で記録の通り、ハッカソン審査では「**Unit 分解の適切さ**」が評価対象。書類審査（5/10）に向け、PoC を MVP として段階的に実装するため Unit に切り分ける必要がある。確定 Unit（v1.4 で 9 → 8 に縮減、U8 ChatGPT GPT Asset 削除）: (1) Auth & Trial、(2) Intake Logging、(3) Order Engine + Delivery Mock、(4) **Recipe Library (Pre-curated)**、(5) Stimulus Engine（Push + Escalation + Dashboard 煽り）、(6) Salsa & T-shirt Punishment、(7) PWA Frontend、(9) Infrastructure (CDK)。
 
 ### 🟢 CONSTRUCTION PHASE（Per-Unit Loop）
 
@@ -392,10 +393,10 @@ flowchart LR
 
 ## 7. Success Criteria
 
-### 6.1 Primary Goal
+### 7.1 Primary Goal
 **AWS Summit Japan 2026 AI-DLC ハッカソン「人をダメにするサービス」テーマで、書類審査 → 予選 → 決勝を勝ち上がるプロダクトを完成させる**。
 
-### 6.2 Key Deliverables
+### 7.2 Key Deliverables
 
 #### 書類審査時点（5/10）で揃っているべきもの
 - aidlc-docs/inception/ 配下の全成果物（requirements / personas / stories / story-board / execution-plan + Application Design + Units Generation 出力）
@@ -409,11 +410,11 @@ flowchart LR
 - 24h ウィンドウ内 Push エスカレーション Level A → B → C を起動して観察
 
 #### 決勝（6/26）
-- 決勝品質の動作デモ（U1〜U9 全実装、UI ブラッシュアップ済）
+- 決勝品質の動作デモ（U1〜U7, U9 = 8 Unit 全実装、UI ブラッシュアップ済 / v1.4 で U8 ChatGPT GPT Asset 削除）
 - プレゼン構成 15 分（story-board.md に下書きあり）
 - バイラル素材（ミナミ視点の SNS 投稿モック動画）
 
-### 6.3 Quality Gates
+### 7.3 Quality Gates
 
 | Gate | チェック項目 |
 |------|-------------|

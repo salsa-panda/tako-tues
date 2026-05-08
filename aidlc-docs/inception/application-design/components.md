@@ -11,15 +11,16 @@
 
 ## 0. 設計方針サマリー
 
-- **コンポーネント粒度**: execution-plan v1.3 の 9 Unit を 1:1 でコンポーネント化（Q1=A）
+- **コンポーネント粒度**: execution-plan v1.4 の **8 Unit** に対応する **8 コンポーネント**（C1〜C7, C9。v1.1 で C8 ChatGPT GPT を FR-6.3 廃止に伴い削除）+ Q1=A の 1:1 マッピング方針は維持
 - **レイヤード構造**: 各コンポーネント内で Handler / UseCase / Repository / External の 4 層（Q9=A）
 - **横断責務**: AWS Lambda Powertools（Logger / Tracer / Metrics）を全コンポーネントで標準利用（Q2=B）
 
 ---
 
-## 1. Component Catalog（9 コンポーネント）
+## 1. Component Catalog（8 稼働コンポーネント / C8 は v1.1 で削除）
 
 各コンポーネントは「責務 / 主要 FR / 主要 Story / Iteration 0 範囲 / 公開インターフェース」を持つ。
+v1.1 で **C8 ChatGPTGptAsset を削除**（FR-6.3 廃止）し、稼働するコンポーネントは **C1〜C7, C9 の 8 個**。C8 ID は再利用しない。
 
 ### C1. AuthAndTrial（認証・トライアル）
 

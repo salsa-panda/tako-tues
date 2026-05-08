@@ -26,7 +26,7 @@ Application Design ステージの全成果物（components.md / component-metho
 
 | # | 質問 | 決定 |
 |---|------|------|
-| Q1 | コンポーネント粒度 | **9 Unit = 9 コンポーネント 1:1**（C1〜C9） |
+| Q1 | コンポーネント粒度 | **9 コンポーネント（C1〜C9）／うち 8 Unit + Documentation 1**（v1.1 で C8 GPT を削除し 8 Unit に確定。Units Generation Q3=C で C8 は Unit 外） |
 | Q2 | 横断的責務 | **AWS Lambda Powertools** 標準利用（Logger / Tracer / Metrics） |
 | Q3 | API インターフェース定義 | **OpenAPI 3.x YAML** をリポジトリ同梱（`assets/openapi/api.yaml`） |
 | Q4 | Bedrock 抽象化 | **`StimulusGenerator` Protocol** + `BedrockStimulusGenerator` / `StaticFallbackStimulusGenerator` の 2 実装 |
@@ -233,13 +233,13 @@ execution-plan v1.3 §5.2 で要求された契約。すべて確定済み:
 
 ## 10. 次ステージへの申し送り（Units Generation）
 
-execution-plan v1.3 では既に 9 Unit が暫定マッピング済み。Application Design ステージで:
+execution-plan v1.3 では 9 Unit が暫定マッピング済み（v1.4 で 8 Unit に縮減: U8 ChatGPT GPT Asset を FR-6.3 廃止に伴い削除）。Application Design ステージで:
 
-- Unit と Component を **1:1 で対応**することが確定（Q1=A）
+- Unit と Component を **1:1 で対応**することが確定（Q1=A、ただし C8 は Documentation 化により Unit 外）
 - Lambda 関数の粒度を **6 関数に集約**することが確定（Q5=C-1）
 - **共有契約 5 件すべてが確定**したため、Walking Skeleton 立ち上げのブロッカーは無し
 
-→ Units Generation ステージでは、9 Unit を**正式な Construction フェーズの per-unit 単位**として確定し、各 Unit に紐付く成果物（Functional Design / NFR Requirements / NFR Design / Infrastructure Design / Code Generation）の入力資料を準備する。
+→ Units Generation ステージでは、**8 Unit（U1〜U7, U9）**を**正式な Construction フェーズの per-unit 単位**として確定し（v1.1 で旧 Documentation セクション/C8 GPT 廃止）、各 Unit に紐付く成果物（Functional Design / NFR Requirements / NFR Design / Infrastructure Design / Code Generation）の入力資料を準備する。
 
 ---
 
