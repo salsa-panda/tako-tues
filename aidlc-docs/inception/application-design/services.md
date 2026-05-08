@@ -200,7 +200,7 @@ Rules:
       - Lambda: api-monolith  # C7 通知用
 ```
 
-> **設計意図**: スケジューラ Lambda 5 個 + ApiMonolith 1 個の構造を維持するため、EventBridge イベントの受信先も `api-monolith` に集約する。Iteration 1+ で trafffic が増えたら専用 Lambda に分離する。
+> **設計意図**: スケジューラ Lambda 5 個 + ApiMonolith 1 個の構造を維持するため、EventBridge イベントの受信先も `api-monolith` に集約する。Iteration 1+ で traffic が増えたら専用 Lambda に分離する。
 
 ---
 

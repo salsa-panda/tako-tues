@@ -10,6 +10,14 @@
 **Total Units**: 8（U1〜U7, U9）— v1.1 で旧 Documentation セクションを削除
 **Decisions**: Q1=D / Q2=A / Q3=C / Q3-α=A / Q4=D / Q5=D（v1.1 注: Q3=C は当時の判断記録。FR-6.3 自体が v1.8 で廃止されたため Documentation セクションは現存しない）
 
+> **Decision 凡例**（unit-of-work-plan v1.0 §2 より）:
+> - **Q1=D**: ストーリー → Unit マッピング方針 = AI-DLC 推奨（A+C ハイブリッド: 状態保持 Unit を主担当 + FR で確認）
+> - **Q2=A**: Walking Skeleton 立ち上げ順 = C9 Infrastructure 完成 → 全 Unit 並行
+> - **Q3=C**: ChatGPT GPT (C8) の Unit としての扱い = Unit から外し、Documentation 扱い（v1.1 で FR-6.3 廃止に伴いセクション自体も削除）
+> - **Q3-α=A**: Q3=C により Unit 外となった C8 を「Documentation セクションとして追加するか?」 = A（追加する）（v1.1 で FR-6.3 廃止に伴いセクション削除）
+> - **Q4=D**: リポジトリ構造 = AI-DLC 推奨（B/C ハイブリッド: backend/src/ 配下に Component サブディレクトリ + frontend/ + infra/ + assets/）
+> - **Q5=D**: 共有コード配置 = AI-DLC 推奨（C: 言語依存型は backend/src/shared/、宣言的契約は assets/contracts/）
+
 ---
 
 ## 0. 設計方針サマリー
@@ -274,7 +282,7 @@ Phase 3: Walking Skeleton 結合確認（E2E シナリオ #1, #2 が貧弱に通
 - 単一 CDK Stack（`tako-iteration-0-stack`）
 - DynamoDB Single-table（PK/SK + GSI1/GSI2）
 - EventBridge カスタムバス `tako-bus`
-- EventBridge Scheduler（5 個の cron ルール、ターゲットは未定義でも可）
+- EventBridge Scheduler（5 個の cron ルール、ターゲット Lambda ARN は Phase 2 の各 Unit デプロイ後に紐付け可。Phase 1 ではダミーターゲット可）
 - API Gateway HTTP API + JWT Authorizer
 - Cognito User Pool + User Pool Client
 - S3 + CloudFront（PWA 静的配信、空バケットでも可）

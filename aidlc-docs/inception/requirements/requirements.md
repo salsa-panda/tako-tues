@@ -280,7 +280,7 @@
 | Extension | Enabled | Mode | Decided At | 備考 |
 |---|---|---|---|---|
 | Security Baseline | **No** | — | Requirements Analysis | Q14=B、PoC のためスキップ |
-| Property-Based Testing | **Yes (Partial)** | Partial（PBT-02, PBT-03, PBT-07, PBT-08, PBT-09 のみ強制） | Requirements Analysis | Q15=不明 → AI-DLC 推奨 (Partial) で仮置き |
+| Property-Based Testing | **Yes (Partial)** | Partial（PBT-02, PBT-03, PBT-07, PBT-08, PBT-09 のみ強制） | Requirements Analysis | Q15=不明 → AI-DLC 推奨 (Partial) で仮置き → **OI-1 として Construction NFR Requirements で確定予定**（対象関数の特定もそのステージで実施） |
 
 > **Q15 についての補足**:
 > - **PBT (Property-Based Testing)** は「ランダム入力を大量生成して invariant をチェック」するテスト手法（Hypothesis 等のライブラリ使用）。
