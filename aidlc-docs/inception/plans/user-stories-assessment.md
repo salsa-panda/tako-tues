@@ -1,8 +1,10 @@
 # User Stories Assessment
 
 **Project**: タコ中（たこちゅう）
+**Document Version**: 1.0
 **Date**: 2026-04-29
-**Phase**: INCEPTION - User Stories (Step 1: アセスメント)
+**Status**: ✅ Approved (Stage closed 2026-04-29)
+**Phase**: INCEPTION - User Stories (Step 1: アセスメント, Closed)
 
 > **2026-05-08 追記**: 本ファイルは User Stories Assessment 段階の **意思決定の記録（履歴）**。要件 v1.8 で **FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、本ファイル内の「ChatGPT カスタム GPT」「3 チャネル」記述は最新仕様には適用されない（最新は Web ダッシュボード + Web Push の 2 チャネル）。最新は [stories.md v1.4](../user-stories/stories.md) を参照。
 
@@ -77,5 +79,5 @@
 ## Reference
 
 - AI-DLC rule: `.aidlc-rule-details/inception/user-stories.md`
-- 関連要件: `aidlc-docs/inception/requirements/requirements.md` (v1.4)
+- 関連要件: `aidlc-docs/inception/requirements/requirements.md`（本アセスメント実施時点 v1.4 → 最終承認版 v1.8 / FR-6.3 削除）
 - ハッカソン規約: `reference/AWS_Summit_Japan_2026_Hackathon_参加規約.pdf`

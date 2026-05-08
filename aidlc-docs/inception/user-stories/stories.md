@@ -138,7 +138,7 @@
 > **so I can** タコ中の世界観を肌で理解し、笑いながら諦める。
 
 **Priority**: P1
-**FR Mapping**: FR-2.3（キャンセル不可表現）
+**FR Mapping**: FR-2.4（配送モック・キャンセル不可）
 **INVEST Check**: I ✅ / N ✅ / V ✅ / E ✅ / S ✅ / T ✅
 
 **Acceptance Criteria**:
@@ -423,7 +423,7 @@
 > **so I can** 「押したら増えた」というオチを SNS で完璧に表現できる。
 
 **Priority**: P1
-**FR Mapping**: FR-2.3
+**FR Mapping**: FR-2.4（キャンセル不可・配送モック）
 **INVEST Check**: I ✅ / N ✅ / V ✅ / E ✅ / S ✅ / T ✅
 
 **Acceptance Criteria**:
@@ -528,7 +528,6 @@
 | US-T02 | 摂取記録 = 行動を可視化されることでダメさが定量化される | ⭕️ |
 | US-T03 | 食事を自分で決めなくなる = 意思決定の放棄 | ◎ |
 | US-T04 | キャンセル試行で逆に増える = 自分で抜け出せない | ◎ |
-| US-T05 | 受動的に材料が届く = 受け身が習慣化 | ⭕️ |
 | US-T06 | 罰として Tシャツが届く = ダメさが物理化 | ◎ |
 | US-T07 | サルサ通知が鳴り続ける = 平穏が許されない | ◎ |
 | US-T08 | 1 日複数回の誘惑 = 食生活の主導権を失う | ◎ |
@@ -559,7 +558,7 @@
 - [x] Step G: stories.md 生成（本ファイル、15 ストーリー）
 - [x] Step H: 全ストーリーに Acceptance Criteria 付与
 - [x] Step I: ペルソナ⇄ストーリー対応マップ作成
-- [ ] Step J〜M: story-board.md にて UX 深掘り（次に生成）
+- [x] Step J〜M: story-board.md にて UX 深掘り（生成完了 v1.4）
 - [x] Step N: 審査員ペルソナは含めず、コア体験で勝負（Q3=B 反映）
 - [x] Step O: テーマ適合性 全ストーリー確認済
 - [x] Step P: INVEST セルフチェック（各ストーリーに記載）
