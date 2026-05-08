@@ -1,9 +1,10 @@
 # Unit of Work Dependency: タコ中
 
 **Project**: タコ中 (Tako-chū / Tako-tues)
-**Document Version**: 1.0
+**Document Version**: 1.1
 **Created**: 2026-04-29
-**Phase**: INCEPTION - Units Generation (Part 2: Generation)
+**Updated**:
+- 2026-05-08 v1.1: 要件 v1.8 / unit-of-work v1.1 反映。**FR-6.3 廃止に伴い Doc(C8) 列・行を Unit Dependency Matrix から削除**、§§ Documentation (C8) / Doc(C8) に関する全記述を削除（テスト戦略・並行実装スコア・依存テーブル）
 
 ---
 
@@ -18,17 +19,18 @@
 行 = 呼ぶ側（依存元）、列 = 呼ばれる側（依存先）。
 凡例: **sync**（同期 API）/ **async**（EventBridge 非同期）/ **shared**（共有リソース）/ **static**（静的アセット）/ **—**（依存なし）
 
-|      | U1 Auth | U2 Intake | U3 Order | U4 Recipe | U5 Stimulus | U6 Punish | U7 PWA | U9 Infra | Doc(C8) |
-|------|---------|-----------|----------|-----------|-------------|-----------|--------|----------|---------|
-| **U1**     | —       | —         | —        | —         | —           | —         | —      | shared(Cognito 設定) | — |
-| **U2**     | shared(JWT) | — | —        | —         | async(IntakeRecorded) | async(IntakeRecorded) | — | shared(DDB) | — |
-| **U3**     | shared(JWT) | shared(DDB read) | — | async(Delivered) | async(Delivered) | shared(DDB read) | async(OrderDecided) | shared(DDB, EventBus) | — |
-| **U4**     | shared(JWT) | — | static(KitType) | — | — | — | async(via Delivered) | shared(Lambda bundle) | — |
-| **U5**     | shared(JWT) | async(IntakeRecorded → counter reset) | shared(DDB read) | — | — | — | sync(GET /dashboard/stimulus) | shared(EventBus) | — |
-| **U6**     | shared(JWT) | shared(DDB read) / async(IntakeRecorded → stop salsa) | shared(DDB read) | — | — | — | sync(GET /punishments/history) / async(PunishmentTriggered) | shared(EventBus) | — |
-| **U7**     | sync(GET /me, POST /signup-trial) | sync(POST /intakes) | sync(GET /orders/current) | sync(GET /recipes/{kit_type}) | sync(GET /dashboard/stimulus) | sync(GET /punishments/history) | — | shared(CloudFront) | static(README link) |
-| **U9**     | —       | —         | —        | —         | —           | —         | —      | —        | — |
-| **Doc**    | —       | —         | —        | —         | —           | —         | static(URL) | — | — |
+|      | U1 Auth | U2 Intake | U3 Order | U4 Recipe | U5 Stimulus | U6 Punish | U7 PWA | U9 Infra |
+|------|---------|-----------|----------|-----------|-------------|-----------|--------|----------|
+| **U1**     | —       | —         | —        | —         | —           | —         | —      | shared(Cognito 設定) |
+| **U2**     | shared(JWT) | — | —        | —         | async(IntakeRecorded) | async(IntakeRecorded) | — | shared(DDB) |
+| **U3**     | shared(JWT) | shared(DDB read) | — | async(Delivered) | async(Delivered) | shared(DDB read) | async(OrderDecided) | shared(DDB, EventBus) |
+| **U4**     | shared(JWT) | — | static(KitType) | — | — | — | async(via Delivered) | shared(Lambda bundle) |
+| **U5**     | shared(JWT) | async(IntakeRecorded → counter reset) | shared(DDB read) | — | — | — | sync(GET /dashboard/stimulus) | shared(EventBus) |
+| **U6**     | shared(JWT) | shared(DDB read) / async(IntakeRecorded → stop salsa) | shared(DDB read) | — | — | — | sync(GET /punishments/history) / async(PunishmentTriggered) | shared(EventBus) |
+| **U7**     | sync(GET /me, POST /signup-trial) | sync(POST /intakes) | sync(GET /orders/current) | sync(GET /recipes/{kit_type}) | sync(GET /dashboard/stimulus) | sync(GET /punishments/history) | — | shared(CloudFront) |
+| **U9**     | —       | —         | —        | —         | —           | —         | —      | —        |
+
+> **v1.1 注**: 旧「Doc(C8)」列・行は FR-6.3 廃止に伴い削除。
 
 ---
 
@@ -99,7 +101,6 @@ U7 ──┬─→ GET /me, POST /signup-trial      → U1
 |-------|-------|
 | U4 | `assets/recipes/*.json`（Lambda パッケージにバンドル） |
 | U7 | `assets/openapi/api.yaml`（クライアント自動生成） |
-| Doc(C8) | `assets/prompts/*.md` |
 
 ---
 
@@ -170,8 +171,8 @@ E2E #2（罰発火）: U7 でログイン → 何もしない → 火 21:00 cron
 
 ### 4.2 Iteration 4+ で追加
 
-- **Documentation (C8) の作業開始**: ChatGPT GPT 公開、System Prompt 確定、共有リンク README 反映
-- → Unit 依存には影響しない（Documentation は AWS 側の Unit と独立）
+> v1.1 で旧「Documentation (C8) の作業開始（ChatGPT GPT 公開）」記述を削除（FR-6.3 廃止）。
+> Iteration 4+ は Share 機能 / 動画字幕画像 / バイラル素材作成へ前倒し（execution-plan v1.4 参照）。
 
 ---
 
@@ -234,7 +235,6 @@ tako-core-stack（前提・全 Stack の基盤）
 | U6 | DynamoDB（moto）, EventBridge（stub）, freezegun, Web Push（stub） |
 | U7 | API クライアント（MSW で mock）, 各 React Component を Storybook 風に独立確認 |
 | U9 | CDK Snapshot Test（CDK assertions） |
-| Doc(C8) | テスト不要（マニュアル確認） |
 
 ---
 
@@ -252,7 +252,6 @@ tako-core-stack（前提・全 Stack の基盤）
 | U5 | ★★★☆☆ | U9 + U2/U3 の DDB 契約に依存（読み取り） |
 | U6 | ★★★☆☆ | U9 + U2/U3 の DDB 契約に依存（読み取り） |
 | U7 | ★★★★☆ | U9 + 各 API の OpenAPI 契約があれば並行可能（モック先行） |
-| Doc(C8) | ★★★★★ | OpenAI 側の作業、AWS リソース不要 |
 
 → **U9 が完成すれば即座に全 Unit を並行実装できる**ため、Walking Skeleton の所要日数は U9 立ち上げ + 全 Unit 並行実装の MAX で決まる。
 
@@ -260,7 +259,7 @@ tako-core-stack（前提・全 Stack の基盤）
 
 ## 8. 参照
 
-- [unit-of-work.md](./unit-of-work.md) - 8 Unit + Documentation の責務
+- [unit-of-work.md](./unit-of-work.md) - 8 Unit の責務（v1.1 で Documentation セクション削除）
 - [unit-of-work-story-map.md](./unit-of-work-story-map.md) - ストーリー → Unit マップ
 - [component-dependency.md](./component-dependency.md) - Component レベルの詳細依存
 - [services.md](./services.md) - Lambda 構成 + EventBridge ルーティング

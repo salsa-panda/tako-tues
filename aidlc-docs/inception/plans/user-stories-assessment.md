@@ -4,6 +4,8 @@
 **Date**: 2026-04-29
 **Phase**: INCEPTION - User Stories (Step 1: アセスメント)
 
+> **2026-05-08 追記**: 本ファイルは User Stories Assessment 段階の **意思決定の記録（履歴）**。要件 v1.8 で **FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、本ファイル内の「ChatGPT カスタム GPT」「3 チャネル」記述は最新仕様には適用されない（最新は Web ダッシュボード + Web Push の 2 チャネル）。最新は [stories.md v1.4](../user-stories/stories.md) を参照。
+
 ---
 
 ## Request Analysis

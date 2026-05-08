@@ -5,6 +5,12 @@
 **Phase**: INCEPTION - User Stories (Part 1: Planning)
 **AI Role**: Product Owner
 
+> **2026-05-08 追記**: 本ファイルは User Stories Planning 段階の **意思決定の記録（履歴）**。要件 v1.8 で **FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、本ファイル内の以下の言及は最新仕様には適用されない:
+> - Q-2 / 選択肢 C「ChatGPT カスタム GPT」（チャネル候補として議論）
+> - 選択肢 D「A + 直後に GPT のリンクを提示」
+> - Q-12-α / Q-T11 / Q-M03 関連の「ChatGPT GPT が説教モードに切り替わる瞬間」「タコ中 GPT」
+> 最新の確定スコープは [stories.md v1.4](../user-stories/stories.md) を参照。
+
 ---
 
 ## このドキュメントの位置付け

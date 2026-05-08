@@ -1,8 +1,10 @@
 # Components: タコ中
 
 **Project**: タコ中 (Tako-chū / Tako-tues)
-**Document Version**: 1.0
+**Document Version**: 1.1
 **Created**: 2026-04-29
+**Updated**:
+- 2026-05-08 v1.1: 要件 v1.8 反映。**FR-6.3 廃止に伴い C8 ChatGPTGptAsset コンポーネントを削除**（9 → 8 コンポーネント）。静的アセット表から `assets/prompts/tako-gpt-*.md` を削除、FR Coverage Matrix から FR-6.3 行削除
 **Phase**: INCEPTION - Application Design
 
 ---
@@ -96,16 +98,10 @@
 | **Iteration 0 範囲** | Vite + React で 3 画面（TACO ボタン / 24h カウントダウン / 配送ステータス）。Share 機能・履歴グラフは Iteration 1+ |
 | **公開インターフェース** | <ul><li>S3 + CloudFront で静的配信</li><li>API Gateway HTTP API クライアント</li><li>Web Push（VAPID）</li></ul> |
 
-### C8. ChatGPTGptAsset（ChatGPT カスタム GPT）
+### ~~C8. ChatGPTGptAsset（ChatGPT カスタム GPT）~~ → **v1.1 で削除**
 
-| 項目 | 内容 |
-|------|------|
-| **Unit 対応** | U8 |
-| **責務** | リポジトリ同梱の System Prompt（`assets/prompts/tako-gpt-system-prompt.md`）+ ChatGPT Store / 共有リンク配布 |
-| **主要 FR** | FR-6.3 |
-| **主要 Story** | US-T11, US-M03 |
-| **Iteration 0 範囲** | **未着手**（Q-α=C 反映、Iteration 4+ で着手予定） |
-| **公開インターフェース** | <ul><li>OpenAI ChatGPT GPTs（外部）</li><li>System Prompt をリポジトリで版管理</li></ul> |
+> **削除理由**: 要件 v1.8 で FR-6.3（ChatGPT カスタム GPT による会話誘導）をスコープから削除したため、対応コンポーネントも廃止。
+> ID は再利用しない（C9 Infrastructure はそのまま C9 のまま）。
 
 ### C9. Infrastructure（CDK 横断インフラ）
 
@@ -168,8 +164,6 @@ Q2=B に従い、**専用コンポーネントは設けず、全 Lambda で AWS 
 |---|---|---|
 | `assets/recipes/*.json` | C4 | レシピライブラリ（Lambda にバンドル） |
 | `assets/recipes/_default.json` | C4 | フォールバックレシピ |
-| `assets/prompts/tako-gpt-system-prompt.md` | C8 | ChatGPT GPT System Prompt |
-| `assets/prompts/tako-gpt-examples.md` | C8 | 会話例 |
 
 ---
 
@@ -188,7 +182,7 @@ Q2=B に従い、**専用コンポーネントは設けず、全 Lambda で AWS 
 | FR-5 認証・トライアル | C1 | ✅（認証のみ） |
 | FR-6.1 煽り文 | C5 | ⚠️ 静的のみ |
 | FR-6.2 誘惑 Push | C5 | ⚠️ 1 日 1 回 |
-| FR-6.3 ChatGPT GPT | C8 | ❌（Iteration 4+） |
+| ~~FR-6.3 ChatGPT GPT~~ | ~~C8~~ | **v1.1 で削除**（要件 v1.8 で廃止） |
 | FR-6.4 エスカレーション | C5 | ❌（Iteration 1+） |
 | FR-6.5 生成テキスト | C5 | ⚠️ 静的のみ |
 

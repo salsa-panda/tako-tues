@@ -17,9 +17,8 @@
 - 完成品は届かない。届くのは **材料**。台所に立たされるのはユーザー本人
 - 24h 以内に作らないと **Tシャツ送付 + サルサ通知ループ**（30 分間隔・鳴り続ける）
 - 平日昼夕に **誘惑 Push** がスマホを揺らし、無視するほどトーンがエスカレート
-- ChatGPT に「明日の天気は？」と聞いても、**全部タコス文脈で返す**
 
-食事だけでなく **台所・冷蔵庫・通知音・会話の入口・SNS の話題** まで、タコスが日常に侵食する。
+食事だけでなく **台所・冷蔵庫・通知音・SNS の話題** まで、タコスが日常に侵食する。
 
 > （免責: 医療機器ではない／パロディ的要素を含む）
 
@@ -64,14 +63,9 @@ flowchart LR
         CW[CloudWatch /<br/>Budgets]
     end
 
-    subgraph External["外部"]
-        GPT[OpenAI<br/>ChatGPT GPTs]
-    end
-
     U --> PWA
     PWA -->|HTTPS| APIGW --> ApiMono
     PWA --> Cognito
-    PWA -.->|External link| GPT
 
     EBSched --> Scheds
     Scheds --> DDB
@@ -93,7 +87,6 @@ flowchart LR
     style EBBus fill:#BBDEFB,stroke:#0D47A1,color:#000
     style EBSched fill:#BBDEFB,stroke:#0D47A1,color:#000
     style DDB fill:#C8E6C9,stroke:#1B5E20,color:#000
-    style GPT fill:#FFEBEE,stroke:#B71C1C,color:#000
     style Bedrock fill:#FFEBEE,stroke:#B71C1C,color:#000
 ```
 
@@ -110,7 +103,7 @@ flowchart LR
 - **AWS Lambda Powertools (Python)** — Logger / Tracer / Metrics 標準利用
 - **AWS CDK (Python)** — IaC
 
-### Unit 構成（疎結合 8 Unit + Documentation）
+### Unit 構成（疎結合 8 Unit）
 
 | ID | Unit | 責務 |
 |----|------|------|
@@ -122,9 +115,8 @@ flowchart LR
 | U6 | Punishment | 罰チェックポイント / Tシャツ発注モック / サルサ通知ループ |
 | U7 | PwaFrontend | Vite + React + Service Worker + Web Push |
 | U9 | Infrastructure | CDK Stack / IAM / Monitoring / CI/CD |
-| — | **Documentation (C8)** | ChatGPT GPT System Prompt 配布（Unit 外、System Prompt のみで状態管理） |
 
-Unit 間通信はすべて **EventBridge カスタムバス経由**。Lambda 直接 invoke はゼロ。
+Unit 間通信はすべて **EventBridge カスタムバス経由**。Lambda 直接 invoke はゼロ。AWS サーバーレスで完結（外部 ChatGPT GPT 等への依存なし）。
 
 ---
 
@@ -138,11 +130,11 @@ Unit 間通信はすべて **EventBridge カスタムバス経由**。Lambda 直
 | ステージ | 主な成果物 | リンク |
 |----------|-----------|-------|
 | Workspace Detection | Greenfield 判定 | [aidlc-state.md](./aidlc-docs/aidlc-state.md) |
-| Requirements Analysis | 要件 v1.7（FR / NFR / 設計原則） | [requirements.md](./aidlc-docs/inception/requirements/requirements.md) |
-| User Stories | 17 ストーリー + 2 ペルソナ（タロウ / ミナミ） | [stories.md](./aidlc-docs/inception/user-stories/stories.md) / [personas.md](./aidlc-docs/inception/user-stories/personas.md) / [story-board.md](./aidlc-docs/inception/user-stories/story-board.md) |
-| Workflow Planning | Walking Skeleton + 反復モデル v1.3 | [execution-plan.md](./aidlc-docs/inception/plans/execution-plan.md) |
-| Application Design | 9 コンポーネント / レイヤード 4 層 / 5 イベント | [application-design.md](./aidlc-docs/inception/application-design/application-design.md) |
-| Units Generation | 8 Unit + Documentation セクション | [unit-of-work.md](./aidlc-docs/inception/application-design/unit-of-work.md) / [unit-of-work-dependency.md](./aidlc-docs/inception/application-design/unit-of-work-dependency.md) / [unit-of-work-story-map.md](./aidlc-docs/inception/application-design/unit-of-work-story-map.md) |
+| Requirements Analysis | 要件 v1.8（FR / NFR / 設計原則） | [requirements.md](./aidlc-docs/inception/requirements/requirements.md) |
+| User Stories | 15 ストーリー + 2 ペルソナ（タロウ / ミナミ） | [stories.md](./aidlc-docs/inception/user-stories/stories.md) / [personas.md](./aidlc-docs/inception/user-stories/personas.md) / [story-board.md](./aidlc-docs/inception/user-stories/story-board.md) |
+| Workflow Planning | Walking Skeleton + 反復モデル v1.4 | [execution-plan.md](./aidlc-docs/inception/plans/execution-plan.md) |
+| Application Design | 8 コンポーネント / レイヤード 4 層 / 5 イベント | [application-design.md](./aidlc-docs/inception/application-design/application-design.md) |
+| Units Generation | 8 Unit | [unit-of-work.md](./aidlc-docs/inception/application-design/unit-of-work.md) / [unit-of-work-dependency.md](./aidlc-docs/inception/application-design/unit-of-work-dependency.md) / [unit-of-work-story-map.md](./aidlc-docs/inception/application-design/unit-of-work-story-map.md) |
 | Audit Trail | 全インタラクションの ISO 8601 タイムスタンプ付きログ | [audit.md](./aidlc-docs/audit.md) |
 
 ### 開発スタイル: Walking Skeleton + 反復モデル
@@ -178,8 +170,6 @@ tako-tues/
 │       ├── user-stories/
 │       ├── plans/
 │       └── application-design/
-├── assets/
-│   └── prompts/                 # ChatGPT GPT System Prompt
 └── reference/                   # ハッカソン規約・参考資料
 ```
 

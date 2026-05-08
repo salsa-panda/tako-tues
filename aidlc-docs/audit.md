@@ -661,3 +661,32 @@ v1.3 で抜本変更されたセクション:
 **Context**: INCEPTION 完了後、書類審査（2026-05-10 23:59 JST）に向けたドキュメント整備
 
 ---
+
+## Scope Change - FR-6.3 ChatGPT GPT 削除
+**Timestamp**: 2026-05-08T00:00:00Z
+**User Input**: "FR-6.3 ChatGPT カスタム GPT による会話誘導（過激レイヤー）: は削除したいです。その前提で各ドキュメントをレビュー、修正して。今あるPRに関しても同様にチェックして"
+**AI Response**: doc-review-fixes ブランチ（PR #4 進行中）に追加コミットで対応。FR-6.3 / 関連 ChatGPT GPT 言及を全ドキュメントから削除し、各ファイルをバージョン bump:
+- `requirements.md` v1.7 → **v1.8**: FR-6.3 ブロック・FR-3 リダイレクト・Tech Stack「AI 会話」行・Scenario D・OI-5 を廃止記述化、Concept Statement と User Request から ChatGPT 言及削除、FR-6.5 を「FR-6.1 / FR-6.2」に縮減、FR-6.4 のカウンタ説明から「GPT 説教モード」削除、Key Requirements / バイラル要素から ChatGPT 関連項目削除
+- `stories.md` v1.3 → **v1.4**: US-T11 / US-M03 を廃止スタブに置換、Story Index を 17 → 15、US-T01 AC から ChatGPT 共有リンク言及削除、Persona × Story Coverage Matrix と Theme Alignment 表から該当行削除、FR Coverage Map から FR-6.3 削除
+- `personas.md` v1.1 → **v1.2**: タロウの Pain Points / How タコ中 Affects から ChatGPT 言及削除、ミナミの Behaviors / Motivations / How タコ中 Affects から GPT 共有関連削除、Persona Mapping の FR-6.3 行を廃止記述化、Story 上の役割を「12/4 件 → 11/3 件」に更新、テック親和性表現修正
+- `story-board.md` v1.3 → **v1.4**: ガントチャート「AI会話」セクション・火曜 22:00 タコ中 GPT 起動シーン削除、ミナミ Sequence diagram の ChatGPT 共有リンク投稿削除、SNS シリーズ #3 を廃止スタブに、タッチポイントマップから ChatGPT GPT 列削除、§5.4 GPT 説教モード セクション削除、決勝プレゼンの「デモ #4 ChatGPT 説教モード」を「24h Push エスカレーション」に置換、Step M の「説教モード」削除
+- `execution-plan.md` v1.3 → **v1.4**: U8 ChatGPT Custom GPT Asset を Unit リストから削除（9 → 8）、Iteration 4 の「ChatGPT GPT 公開」を「Share + バイラル素材」に再定義、PoC やりきり判定から GPT シナリオ削除、M2 / 書類審査時点の必要成果物から ChatGPT 関連削除、複数の Rationale 文中の GPT 言及削除
+- `application-design.md` v1.0 → **v1.1**: C8 ChatGPTGptAsset を廃止記述化、アーキテクチャ図から OpenAI ChatGPT GPTs ノードと PWA → GPT エッジ削除、Iteration 0 範囲の「含めないもの」から ChatGPT GPT 削除、FR Coverage Matrix の FR-6.3 行を廃止記述化
+- `components.md` v1.0 → **v1.1**: §C8 セクション全体を廃止記述化、静的アセット表から `assets/prompts/tako-gpt-*.md` 削除、FR Coverage Matrix の FR-6.3 行を廃止記述化
+- `component-methods.md` v1.0 → **v1.1**: §9 C8. ChatGPTGptAsset セクション全体を廃止記述化、Iteration 0 未着手リストの C8 行を「なし」に更新
+- `services.md` v1.0 → **v1.1**: 「Iteration 0 では未実装」リストから ChatGPT GPT アセット削除
+- `component-dependency.md` v1.0 → **v1.1**: Dependency Matrix から「C8 GPT」列・行削除、Mermaid データフロー図から GPT ノード・PWA → GPT エッジ・style 行削除、外部通信表から「ChatGPT GPT 完全外部」削除、テスト戦略表から「C8 GPT」行削除、Iteration 0 で使わない依存リストから「ChatGPT GPT 連携」削除
+- `unit-of-work.md` v1.0 → **v1.1**: Total Units を「8 + Documentation 1」→「8（純）」に変更、§2 Documentation セクション全体を廃止記述化、ディレクトリ構造から `assets/prompts/` 削除、Unit ↔ ディレクトリ表から Documentation 行削除、ストーリー集計を 18 → 15、Walking Skeleton 必須セットから Documentation 行削除、全 Component 表の C8 行を廃止記述化
+- `unit-of-work-dependency.md` v1.0 → **v1.1**: Unit Dependency Matrix から Doc(C8) 列・行削除、静的アセット依存表から Doc(C8) 行削除、Iteration 4+ 追加項目から Documentation セクション記述削除、テスト戦略表から Doc(C8) 行削除、並行実装可能性スコア表から Doc(C8) 行削除
+- `unit-of-work-story-map.md` v1.0 → **v1.1**: ストーリー → Unit マッピング表で US-T11 / US-M03 を廃止スタブ化、Unit 別ストーリー集計から Documentation セクション削除、合計 17 → 15、Iteration 4+ 配置から US-T11 / US-M03 削除、Theme Alignment 表から Documentation 行削除、§6.1 / §6.2 / §6.3 から該当記述廃止
+- `aidlc-state.md`: Current Stage 行に「Documentation セクション廃止」を追記、Architectural Decisions の ChatGPT GPT 行を廃止記述化、Stage Progress の Units Generation 行を「8 Unit」に更新、見出しを v1.7 → v1.8 に
+- `README.md`: Concept 箇条書きから ChatGPT 関連削除、アーキテクチャ図から GPT ノード削除、Unit 構成表から Documentation (C8) 行削除（8 Unit のみ）、ディレクトリ構造から `assets/prompts/` 削除、INCEPTION 成果物表のバージョン番号 / ストーリー数を v1.8 / 15 ストーリー / 8 コンポーネントに更新
+- `assets/prompts/tako-gpt-system-prompt.md`: **ファイル削除**（git rm）
+- 計画書類（履歴扱い、本文改変せず冒頭に注記追加）: `story-generation-plan.md` / `unit-of-work-plan.md` / `user-stories-assessment.md`
+- audit.md: 本エントリを末尾追記
+**Status**: ✅ 全ドキュメント整合確認完了
+**Branch**: doc-review-fixes（PR #4 に追加コミット）
+**Rationale**: AWS ハッカソン作品として AWS 外サービス（OpenAI ChatGPT）依存を排除し、AWS サーバーレス内で完結させる方針に転換。FR-6 は控えめ（FR-6.1）+ 中程度（FR-6.2）の 2 レイヤー構成に縮退、FR-3（タコス会話縛り）も完全廃止。Documentation セクション（C8）も Unit 構成から削除。
+**Context**: INCEPTION 完了後の仕様変更。書類審査（2026-05-10 23:59 JST）に向けて整合性を確保。
+
+---

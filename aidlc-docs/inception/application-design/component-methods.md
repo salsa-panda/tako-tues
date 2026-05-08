@@ -1,8 +1,10 @@
 # Component Methods: タコ中
 
 **Project**: タコ中 (Tako-chū / Tako-tues)
-**Document Version**: 1.0
+**Document Version**: 1.1
 **Created**: 2026-04-29
+**Updated**:
+- 2026-05-08 v1.1: 要件 v1.8 / components v1.1 反映。**FR-6.3 廃止に伴い §9 C8. ChatGPTGptAsset セクションを削除**。Iteration 0 未着手リストから C8 ChatGPT GPT アセット行を削除
 **Phase**: INCEPTION - Application Design
 
 ---
@@ -413,23 +415,9 @@ async function sendSubscriptionToBackend(sub: PushSubscription): Promise<void>;
 
 ---
 
-## 9. C8. ChatGPTGptAsset
+## ~~9. C8. ChatGPTGptAsset~~ → **v1.1 で削除**
 
-コンポーネントとしての実行コードは無し。**リポジトリ同梱の System Prompt + 公開 GPT URL**。
-
-### 9.1 アセット
-
-```
-assets/prompts/
-├── tako-gpt-system-prompt.md   # GPT に貼り付ける System Prompt
-├── tako-gpt-examples.md         # 会話例（典型 / 回避時 / 説教モード）
-└── tako-gpt-publishing.md       # 公開手順（ChatGPT Store 登録手順）
-```
-
-### 9.2 README に記載する情報
-
-- 公開 GPT URL（ChatGPT Store または共有リンク）
-- 再構築手順（System Prompt をコピペするだけ）
+> 要件 v1.8 / components v1.1 で FR-6.3 廃止に伴いコンポーネントごと削除。後続セクション番号は維持（§10 = C9 Infrastructure はそのまま）。
 
 ---
 
@@ -497,4 +485,4 @@ class TakoCoreStack(Stack):
 
 ❌ Iteration 0 で未着手:
 
-- C8 の全 ChatGPT GPT アセット
+- なし（v1.1 で C8 ChatGPT GPT アセットを削除済み）
