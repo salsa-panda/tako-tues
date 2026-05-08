@@ -1,1 +1,58 @@
-reference
+# macOS
+.DS_Store
+
+# IDE / Tooling
+.claude/
+.idea/
+.vscode/
+
+# Reference materials (not committed)
+reference/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# uv
+.uv/
+uv.lock
+
+# Node / React (frontend)
+node_modules/
+frontend/dist/
+frontend/.vite/
+.npm/
+.yarn/
+
+# AWS CDK
+cdk.out/
+.cdk.staging/
+cdk.context.json
+
+# AWS SAM
+.aws-sam/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs
+*.log
+logs/

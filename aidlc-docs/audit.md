@@ -643,3 +643,21 @@ v1.3 で抜本変更されたセクション:
 **Context**: INCEPTION - Workflow Planning v1.3 + Requirements v1.7 + Stories v1.3 + Story-Board v1.3 全て承認済み
 
 ---
+
+## Document Review Feedback - Doc Fixes
+**Timestamp**: 2026-05-08T00:00:00Z
+**User Input**: 「このフィードバックを参考に修正をしてみてください」（書類審査レビュー結果一式・80.5/100、Big Rocks: README 空 / .gitignore 不足 / ChatGPT GPT System Prompt 未配置）「別ブランチを切ってください」
+**AI Response**: `doc-review-fixes` ブランチを main から作成し、書類審査向けに以下 3 件を実装:
+1. `README.md` を「# tako-tues」1 行から、コンセプト・設計原則・Mermaid アーキテクチャ図・Unit 構成・AI-DLC 成果物導線・リリース目標・ディレクトリ構造を含む構成に書き換え（DS-4: 68→83 を狙う）
+2. `.gitignore` を Python (uv/.venv/__pycache__) + AWS CDK (cdk.out) + React (node_modules/dist) + macOS (.DS_Store) + IDE/Tooling (.claude/) + 機密 (.env/*.pem) を網羅した形に拡張
+3. `assets/prompts/tako-gpt-system-prompt.md` を新規作成（FR-6.3 過激レイヤー、Section 0〜8 + 付録 / 検証チェックリスト 7 項目を含む。Iteration 4 デプロイ向けドラフト v0.1）
+**Status**: ✅ ドキュメント修正完了、PR 準備完了
+**Modified/Created Files**:
+- README.md（1 行 → 約 200 行に拡充）
+- .gitignore（1 行 → 約 60 行に拡充）
+- assets/prompts/tako-gpt-system-prompt.md（新規）
+**Branch**: doc-review-fixes（main から派生）
+**Note**: OI-6（チーム編成）／OI-7（AWS Builder ID）／OI-8（対面参加）／OI-9（AWS アカウント）／OI-10（GitHub public 設定）はユーザー側で確認が必要なため本コミットには含めず
+**Context**: INCEPTION 完了後、書類審査（2026-05-10 23:59 JST）に向けたドキュメント整備
+
+---
