@@ -698,3 +698,33 @@ v1.3 で抜本変更されたセクション:
 - 監査・トラブルシュート目的で時系列が必要になった場合は、`git log` のコミットタイムスタンプを参照する方が正確。
 
 ---
+
+## Change Request - Requirements Analysis（rework）
+**Timestamp**: 2026-05-08T10:56:58Z
+**Request**: "ビジネス意図のreview feedback指摘を解決したい。タコスである理由と人はダメになると言う意味をふかぼってINCEPTIONを直したい。"
+**Current State**: INCEPTION - Units Generation v1.0 完了（次フェーズ: CONSTRUCTION）
+**Impact Assessment**: Requirements Analysis から Units Generation までの 5 stage（完了済み `[x]` のみ）を rework 対象とする。Per-Unit Loop / Build and Test は未着手のため対象外。Workspace Detection / Reverse Engineering は Greenfield ベース判定に関わるため保持。
+**User Confirmation**: go（plan-mode 承認 = rework 実行プランへの同意）
+**Action Taken**: 19 ファイルのバックアップ作成（`*.backup.20260508T105658Z` 命名）、aidlc-state.md の Stage Progress（5 stage を `[x]` → `[ ]`）と Current Stage 行を rework target に書き戻し、本エントリで audit.md 追記
+**Artifacts Affected**:
+- aidlc-docs/inception/requirements/requirements.md (v1.8) → requirements.md.backup.20260508T105658Z
+- aidlc-docs/inception/requirements/requirement-verification-questions.md → requirement-verification-questions.md.backup.20260508T105658Z
+- aidlc-docs/inception/user-stories/personas.md (v1.2) → personas.md.backup.20260508T105658Z
+- aidlc-docs/inception/user-stories/stories.md (v1.4) → stories.md.backup.20260508T105658Z
+- aidlc-docs/inception/user-stories/story-board.md (v1.4) → story-board.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/execution-plan.md (v1.4) → execution-plan.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/story-generation-plan.md → story-generation-plan.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/story-generation-clarification-questions.md → story-generation-clarification-questions.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/user-stories-assessment.md → user-stories-assessment.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/application-design-plan.md → application-design-plan.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/unit-of-work-plan.md → unit-of-work-plan.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/application-design.md (v1.1) → application-design.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/components.md (v1.1) → components.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/component-methods.md (v1.1) → component-methods.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/component-dependency.md (v1.1) → component-dependency.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/services.md (v1.1) → services.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/unit-of-work.md (v1.1) → unit-of-work.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/unit-of-work-dependency.md (v1.1) → unit-of-work-dependency.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/unit-of-work-story-map.md (v1.1) → unit-of-work-story-map.md.backup.20260508T105658Z
+
+---

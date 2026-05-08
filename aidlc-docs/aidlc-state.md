@@ -4,7 +4,7 @@
 - **Project Name**: タコ中 (たこちゅう)
 - **Project Type**: Greenfield
 - **Start Date**: 2026-04-29T00:00:00Z
-- **Current Stage**: INCEPTION - Units Generation v1.0 ✅ **2026-04-29 ユーザー承認済み**（3 成果物 + 8 Unit）。**2026-05-08 v1.8 反映**: FR-6.3 ChatGPT GPT スコープ削除に伴い、Documentation (C8) セクションを廃止。INCEPTION フェーズ完了状態は維持／次フェーズ: **CONSTRUCTION**
+- **Current Stage**: INCEPTION - Requirements Analysis に戻り再実行（rework 理由: ビジネス意図の review feedback — タコスの必然性 / "人をダメにする" の意味深掘り）
 - **Hackathon**: AWS Summit Japan 2026 AI-DLC ハッカソン応募作品
 - **Critical Deadlines**:
   - 書類審査エントリー: 2026-05-10 23:59 JST
@@ -40,11 +40,11 @@
 ### INCEPTION Phase
 - [x] Workspace Detection (完了 - Greenfield と判定)
 - [x] Reverse Engineering (スキップ - Greenfield のため)
-- [x] Requirements Analysis (完了 - **2026-04-29 ユーザー承認済み**)
-- [x] User Stories (Part 1 + Part 2 完了 - **2026-04-29 ユーザー承認済み**)
-- [x] Workflow Planning (execution-plan.md v1.3 完了 - **2026-04-29 ユーザー承認済み**)
-- [x] Application Design (5 成果物 v1.0 完了 - **2026-04-29 ユーザー承認済み**: components / component-methods / services / component-dependency / application-design)
-- [x] Units Generation (3 成果物 v1.0 完了 - **2026-04-29 ユーザー承認済み**: unit-of-work / unit-of-work-dependency / unit-of-work-story-map / **8 Unit**。2026-05-08 v1.1 で Documentation セクション廃止)
+- [ ] Requirements Analysis
+- [ ] User Stories
+- [ ] Workflow Planning
+- [ ] Application Design
+- [ ] Units Generation
 
 ### CONSTRUCTION Phase
 - [ ] Per-Unit Loop
