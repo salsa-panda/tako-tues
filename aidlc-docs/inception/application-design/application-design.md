@@ -1,14 +1,15 @@
 # Application Design (Consolidated): タコ中
 
 **Project**: タコ中 (Tako-chū / Tako-tues)
-**Document Version**: 1.1
+**Document Version**: 1.2
 **Created**: 2026-04-29
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 反映。**FR-6.3 廃止に伴い C8 ChatGPTGptAsset コンポーネント削除**（9 → 8 コンポーネント）。アーキテクチャ図から OpenAI ChatGPT GPTs ノード削除、Iteration 0 範囲一覧から「ChatGPT GPT (C8)」行削除、FR Coverage Matrix から FR-6.3 行削除
+- 2026-05-08 v1.2: 要件 v1.9 / stories v1.5 反映。**FR-2.2.1 調理深度仕様**（肉=調理済み / トルティーヤ=未加熱 / サルサ=別容器 / 完成形禁止）を C3 OrderEngineAndDeliveryMock の責務に追加し、FR Coverage Matrix に新規行を追加
 **Phase**: INCEPTION - Application Design
 **Inputs**:
-- requirements.md v1.8
-- stories.md v1.4
+- requirements.md v1.9
+- stories.md v1.5
 - story-board.md v1.4
 - execution-plan.md v1.4
 - application-design-plan.md v1.0（12 問 + 2 follow-up 全て解決済み）
@@ -204,6 +205,7 @@ execution-plan v1.3 §5.2 で要求された契約。すべて確定済み:
 | FR-1.3 摂取記録 | C2 | US-T02 |
 | FR-2.1 強制発注ロジック | C3 | US-T03, US-M01 |
 | FR-2.2 メニュー / Type A/B | C3 | US-T03, US-T12 |
+| FR-2.2.1 調理深度仕様（v1.2 追加） | C3 | US-T13 |
 | FR-2.3 レシピ配信 | C4 | US-T13, US-M04 |
 | FR-2.4 配送モック / キャンセル | C3 | US-T04, US-M02 |
 | FR-4 ダッシュボード | C7 | US-T14, US-T10 |

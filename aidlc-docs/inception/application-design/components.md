@@ -1,10 +1,11 @@
 # Components: タコ中
 
 **Project**: タコ中 (Tako-chū / Tako-tues)
-**Document Version**: 1.1
+**Document Version**: 1.2
 **Created**: 2026-04-29
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 反映。**FR-6.3 廃止に伴い C8 ChatGPTGptAsset コンポーネントを削除**（9 → 8 コンポーネント）。静的アセット表から `assets/prompts/tako-gpt-*.md` を削除、FR Coverage Matrix から FR-6.3 行削除
+- 2026-05-08 v1.2: 要件 v1.9 反映。**C3 OrderEngineAndDeliveryMock の責務に「FR-2.2.1 調理深度仕様（肉=調理済み / トルティーヤ=未加熱 / サルサ=別容器 / 完成形禁止）」を追加**。主要 FR に FR-2.2.1 を追加、FR Coverage Matrix に FR-2.2.1 行を追加
 **Phase**: INCEPTION - Application Design
 
 ---
@@ -48,9 +49,9 @@
 | 項目 | 内容 |
 |------|------|
 | **Unit 対応** | U3 |
-| **責務** | 金曜 21:00 発注決定（逆比例ロジック + メニュープール選定 + Type A/B 切替）、月曜 21:00 配送遷移、キャンセル試行 → 発注増ロジック |
-| **主要 FR** | FR-2.1, FR-2.2, FR-2.4 |
-| **主要 Story** | US-T03, US-T04, US-T12, US-M01, US-M02 |
+| **責務** | 金曜 21:00 発注決定（逆比例ロジック + メニュープール選定 + Type A/B 切替）、月曜 21:00 配送遷移、キャンセル試行 → 発注増ロジック、**配送内容の調理深度仕様（FR-2.2.1: 肉=調理済み / トルティーヤ=未加熱 / サルサ=別容器 / 完成形禁止）の保証**（v1.2 追加） |
+| **主要 FR** | FR-2.1, FR-2.2, FR-2.2.1, FR-2.4 |
+| **主要 Story** | US-T03, US-T04, US-T12, US-T13, US-M01, US-M02 |
 | **Iteration 0 範囲** | 逆比例ロジック最小実装 + メニュー 2〜3 種固定 + キャンセル UI なし。Type B バリエーションウィークは Iteration 後半 |
 | **公開インターフェース** | <ul><li>EventBridge 受信: スケジューラトリガー（金 21:00 / 月 21:00）</li><li>EventBridge 発行: `OrderDecided`, `Delivered`</li><li>REST: `GET /orders/current`, `POST /orders/cancel-attempt`</li></ul> |
 
@@ -176,6 +177,7 @@ Q2=B に従い、**専用コンポーネントは設けず、全 Lambda で AWS 
 | FR-1.3 摂取記録 | C2 | ✅ |
 | FR-2.1 逆比例ロジック | C3 | ✅（最小） |
 | FR-2.2 メニュー / Type A/B | C3 | ⚠️ Type A のみ |
+| FR-2.2.1 調理深度仕様（v1.2 追加） | C3 | ✅（Type A の構成データに肉=調理済み・トルティーヤ=未加熱・サルサ=別容器を明記） |
 | FR-2.3 レシピ配信 | C4 | ✅（2〜3 種） |
 | FR-2.4 配送モック | C3 | ✅ |
 | FR-4 ダッシュボード | C7 | ⚠️ 3 画面のみ |
