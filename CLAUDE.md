@@ -550,12 +550,6 @@ The Operations stage will eventually include:
 ### 静的アセット管理
 - レシピは `assets/recipes/*.json`（静的 JSON、キット種別 1:1 固定）
 - OpenAPI 仕様は `assets/openapi/api.yaml`（リポジトリ同梱）
-- ChatGPT GPT System Prompt は `assets/prompts/tako-gpt-system-prompt.md`（Iteration 4+ で着手）
-
-### ChatGPT カスタム GPT（C8）
-- OpenAI Platform 上の作業であり AWS リソース不要
-- per-unit ループには乗せない（進行管理を分離）
-- `execution-plan.md v1.3 §5.3` の Iteration 4+ で正式着手
 
 ### コミット規約（CLAUDE.md 全体ルールと整合）
 - 構造変更（リネーム・抽出・移動）と振る舞い変更（機能追加・修正）を同一コミットに混ぜない
@@ -564,4 +558,4 @@ The Operations stage will eventually include:
 ### ディレクトリ配置（CLAUDE.md 全体ルールと整合）
 - アプリケーションコード: ワークスペースルート直下
 - AI-DLC ドキュメント: `aidlc-docs/` 配下のみ
-- 静的アセット: `assets/` 配下（`recipes/`, `openapi/`, `prompts/`）
+- 静的アセット: `assets/` 配下（`recipes/`, `openapi/`）
