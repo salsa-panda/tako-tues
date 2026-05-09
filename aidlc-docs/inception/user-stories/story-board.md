@@ -40,7 +40,7 @@ gantt
     dateFormat YYYY-MM-DD
     axisFormat %a
     section オンボーディング
-    GPT 共有リンク経由でサインアップ        :done, t0a, 2026-05-04, 1d
+    ダッシュボード URL 経由でサインアップ   :done, t0a, 2026-05-04, 1d
     タコ中契約書モーダル同意                 :done, t0b, 2026-05-04, 1d
     section 自由記録期間
     摂取記録（自由）                         :active, t0c, 2026-05-04, 7d

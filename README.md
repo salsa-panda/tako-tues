@@ -131,7 +131,7 @@ Unit 間通信はすべて **EventBridge カスタムバス経由**。Lambda 直
 |----------|-----------|-------|
 | Workspace Detection | Greenfield 判定 | [aidlc-state.md](./aidlc-docs/aidlc-state.md) |
 | Requirements Analysis | 要件 v1.8（FR / NFR / 設計原則） | [requirements.md](./aidlc-docs/inception/requirements/requirements.md) |
-| User Stories | 15 ストーリー + 2 ペルソナ（タロウ / ミナミ） | [stories.md](./aidlc-docs/inception/user-stories/stories.md) / [personas.md](./aidlc-docs/inception/user-stories/personas.md) / [story-board.md](./aidlc-docs/inception/user-stories/story-board.md) |
+| User Stories | 16 ストーリー + 2 ペルソナ（タロウ / ミナミ） | [stories.md](./aidlc-docs/inception/user-stories/stories.md) / [personas.md](./aidlc-docs/inception/user-stories/personas.md) / [story-board.md](./aidlc-docs/inception/user-stories/story-board.md) |
 | Workflow Planning | Walking Skeleton + 反復モデル v1.4 | [execution-plan.md](./aidlc-docs/inception/plans/execution-plan.md) |
 | Application Design | 8 コンポーネント / レイヤード 4 層 / 5 イベント | [application-design.md](./aidlc-docs/inception/application-design/application-design.md) |
 | Units Generation | 8 Unit | [unit-of-work.md](./aidlc-docs/inception/application-design/unit-of-work.md) / [unit-of-work-dependency.md](./aidlc-docs/inception/application-design/unit-of-work-dependency.md) / [unit-of-work-story-map.md](./aidlc-docs/inception/application-design/unit-of-work-story-map.md) |
