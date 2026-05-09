@@ -354,7 +354,7 @@ Iteration 0 で立ち上げる必須 Unit:
 
 ## 6. 参照
 
-- [components.md](./components.md) - 9 コンポーネント責務
+- [components.md](./components.md) - 8 コンポーネント責務（v1.1 で C8 削除済み）
 - [component-methods.md](./component-methods.md) - メソッドシグネチャ
 - [services.md](./services.md) - Lambda 構成 + サービス層
 - [component-dependency.md](./component-dependency.md) - 依存マトリクス
