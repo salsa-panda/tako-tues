@@ -877,3 +877,48 @@ v1.3 で抜本変更されたセクション:
 **Next Phase**: CONSTRUCTION（書類審査（2026-05-10）後から開始）
 
 ---
+
+## ドキュメント品質レビュー — QW-1〜5 修正実施（doc-fix ブランチ）
+**Timestamp**: 2026-05-09T09:00:00Z
+**User Input**: （ハッカソン審査レビュー v1 スコア 79/100 の指摘に基づき修正）
+**AI Action**: aidlc-doc-review スキルおよび aidlc-hackathon-review スキルによる採点結果を受け、以下の Quick Win 5 件を修正した:
+- QW-1: story-board.md §4 に残存していた「FR-6.3 廃止済み」参照を削除
+- QW-2: unit-of-work-dependency.md §8 循環依存検証の「9 ノード」→「8 ノード」に修正（Doc(C8) 削除を反映）
+- QW-3: unit-of-work.md §5.1 集計表のタロウ件数不整合を修正（US-T14 / US-T15 追加を反映）
+- QW-4: README.md 開発スタイル欄の「v1.4」→「v2.0」に修正（execution-plan バージョン整合）
+- QW-5: README.md 設計原則に「幸せな降伏」（7 項目目）を追加（requirements.md と項目数を統一）
+**Score after fix**: 83/100（Strong — v2 レビューで確認）
+**Artifacts Updated**: story-board.md / unit-of-work-dependency.md / unit-of-work.md / README.md（4 ファイル）
+**Context**: INCEPTION ドキュメント整備 / 書類審査準備
+
+---
+
+## ドキュメント品質レビュー v3 — 残存減点要因の全修正
+**Timestamp**: 2026-05-09T14:00:00Z
+**User Input**: "減点要因を対応して" — 具体的には以下 6 点:
+1. README 設計原則 #1「生活侵食」/ #5「シュール」が requirements.md と名称不整合
+2. ビジネスモデル・課金設計への言及ゼロ（DS-1 Excellent 圏への壁）
+3. U8 欠番の明示ラベルなし（unit-of-work.md §0 が暗黙的すぎる）
+4. ビジュアルアセットがゼロ（story-board §8 では意図するも実体なし）
+5. 脱出ループが「Push + 罰の 2 系統のみ」と読み取られる記述
+6. audit.md が日次粒度（詳細な意思決定ログが非公開）
+**AI Action**:
+- README.md 設計原則テーブルを requirements.md v2.0 の 7 原則（文化移植 / 頭に住み着く / 強制 / 作らせる / 幸せな降伏 / 逃げ場なし / AI は生成側）に完全統一
+- README.md に「6 つの脱出不可ループ」一覧テーブル（L1〜L6）を追加。逆比例発注・Push エスカレーション・24h カウントダウン・Tシャツ罰・サルサ通知ループ・キャンセル逆増量を明示し「2 系統のみ」という誤解を解消
+- README.md に 24h カウントダウン画面の ASCII モックアップ（ビジュアルアセット代替）を追加。ダッシュボードの「02:47:33 / Tシャツが来るぞ / TACO! ボタン」を図示
+- README.md にビジネスモデルの芽セクション（月額依存プラン / 抜け出せないプレミアム / 市場仮説）を追加。DS-1 Excellent 圏（90+）の要件「ビジネス/社会的文脈が独自性を持つ」に対応
+- unit-of-work.md §0 の「Unit 数」記述を「U8 は欠番（FR-6.3 廃止）」を明示した記述に修正
+- audit.md に 2026-05-09 の詳細ログ 2 件（本エントリ含む）を追記
+**Scores after fix**（推定）:
+- DS-1: 88 → 91（Excellent 圏）
+- DS-2: 84 → 85
+- DS-3: 88 → 91（Excellent 圏）
+- DS-4: 82 → 85
+- 平均: 85.5 → 88
+**Artifacts Updated**:
+- README.md（設計原則統一・6 ループ追加・ASCII モックアップ・ビジネスモデル）
+- aidlc-docs/inception/application-design/unit-of-work.md（U8 欠番明示）
+- aidlc-docs/audit.md（本エントリ含む 2 件追加）
+**Context**: INCEPTION ドキュメント整備 / 書類審査最終準備（提出期限 2026-05-10 23:59 JST）
+
+---

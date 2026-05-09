@@ -14,7 +14,7 @@
 
 ## 0. 設計方針サマリー
 
-- **Unit 数**: 8 個（C1〜C7, C9 と 1:1）。**v1.1 で旧 Documentation セクション（C8 ChatGPT GPT）を削除**（FR-6.3 廃止）
+- **Unit 数**: 8 個（U1〜U7, U9）— **U8 は欠番**（C8 ChatGPT GPT アセットが FR-6.3 廃止により削除）。各 Unit は C1〜C7, C9 に 1:1 対応。詳細は v1.1 更新履歴参照
 - **マッピング方針**: 状態を保持する Unit を主担当 + FR Coverage Matrix で確認（Q1=D）
 - **Walking Skeleton 並行戦略**: C9 Infrastructure を最初に固める → 全 Unit 並行で薄く実装（Q2=A）
 - **コード組織**: `backend/src/` 配下に Component サブディレクトリ + `frontend/` + `infra/` + `assets/`（Q4=D）

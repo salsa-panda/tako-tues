@@ -1,0 +1,115 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="dashboard-mockup" name="24h カウントダウン UI モックアップ">
+    <mxGraphModel dx="1422" dy="762" grid="0" gridSize="10" guides="1"
+                  tooltips="1" connect="0" arrows="0" fold="0" page="0"
+                  pageScale="1" pageWidth="600" pageHeight="700"
+                  math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- スマートフォン外枠 -->
+        <mxCell id="v_phone" value="" style="rounded=3;whiteSpace=wrap;html=1;fillColor=#2C2C2C;strokeColor=#111111;strokeWidth=4;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="150" y="30" width="300" height="600" as="geometry"/>
+        </mxCell>
+
+        <!-- スクリーン領域 -->
+        <mxCell id="v_screen" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#AAAAAA;strokeWidth=1;arcSize=2;" vertex="1" parent="1">
+          <mxGeometry x="162" y="60" width="276" height="540" as="geometry"/>
+        </mxCell>
+
+        <!-- ステータスバー -->
+        <mxCell id="v_statusbar" value="9:41 AM" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="172" y="65" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_battery" value="🔋" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=10;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="380" y="65" width="50" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ヘッダーバー -->
+        <mxCell id="v_header" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C0392B;strokeColor=#922B21;" vertex="1" parent="1">
+          <mxGeometry x="162" y="85" width="276" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_logo" value="🌮  タコ中" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="172" y="88" width="130" height="38" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_menu" value="≡" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=20;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="390" y="88" width="40" height="38" as="geometry"/>
+        </mxCell>
+
+        <!-- 警告バナー -->
+        <mxCell id="v_warning" value="⚠️  配達済み — 台所に立て" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F39C12;strokeColor=#D68910;fontSize=12;fontStyle=1;fontColor=#FFFFFF;align=center;" vertex="1" parent="1">
+          <mxGeometry x="162" y="129" width="276" height="36" as="geometry"/>
+        </mxCell>
+
+        <!-- カウントダウンカード背景 -->
+        <mxCell id="v_card" value="" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E74C3C;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="172" y="175" width="256" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- カウントダウン数字 -->
+        <mxCell id="v_timer" value="02 : 47 : 33" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=32;fontStyle=1;fontColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="172" y="185" width="256" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- 時間ラベル -->
+        <mxCell id="v_timer_label" value="h                  m                  s" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="172" y="232" width="256" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- 罰警告テキスト -->
+        <mxCell id="v_punish_warn" value="Tシャツが来るぞ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontStyle=2;fontColor=#E74C3C;" vertex="1" parent="1">
+          <mxGeometry x="172" y="255" width="256" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- カード下線 -->
+        <mxCell id="v_card_sub" value="火曜 21:00 まで" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#AAAAAA;" vertex="1" parent="1">
+          <mxGeometry x="172" y="283" width="256" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- TACOボタン -->
+        <mxCell id="v_taco_btn" value="✅  TACO!  食べた" style="rounded=3;whiteSpace=wrap;html=1;fillColor=#27AE60;strokeColor=#1E8449;fontSize=16;fontStyle=1;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="182" y="330" width="236" height="52" as="geometry"/>
+        </mxCell>
+
+        <!-- ボタン説明 -->
+        <mxCell id="v_btn_note" value="← このボタンで全てが止まる" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#27AE60;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="172" y="388" width="256" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- 区切り線 -->
+        <mxCell id="v_divider" value="" style="endArrow=none;html=1;strokeColor=#DDDDDD;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="172" y="416" as="sourcePoint"/>
+            <mxPoint x="438" y="416" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 発注情報 -->
+        <mxCell id="v_order_label" value="今週の発注" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="172" y="422" width="80" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_order_val" value="パストール 8 人前" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="172" y="440" width="180" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_order_reason" value="先週 0 回 → 逆比例で地獄" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#E74C3C;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="172" y="458" width="220" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- レシピリンク -->
+        <mxCell id="v_recipe_btn" value="今週の調理ガイドを開く →" style="rounded=2;whiteSpace=wrap;html=1;fillColor=#EBF5FB;strokeColor=#6C8EBF;fontSize=11;fontColor=#2980B9;" vertex="1" parent="1">
+          <mxGeometry x="172" y="484" width="256" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_recipe_note" value="アミーゴ口調レシピ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#AAAAAA;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="172" y="519" width="256" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- Push エスカレーションラベル（画面外注釈） -->
+        <mxCell id="v_note_escalation" value="Push 無視 → Level A → B → C" style="text;html=1;strokeColor=#E67E22;fillColor=#FFF3E0;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#E67E22;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="645" width="300" height="26" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
