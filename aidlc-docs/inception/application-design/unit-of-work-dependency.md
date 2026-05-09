@@ -31,7 +31,7 @@
 | **U7**     | sync(GET /me, POST /signup-trial) | sync(POST /intakes) | sync(GET /orders/current) | sync(GET /recipes/{kit_type}) | sync(GET /dashboard/stimulus) | sync(GET /punishments/history) | — | shared(CloudFront) |
 | **U9**     | —       | —         | —        | —         | —           | —         | —      | —        |
 
-> **v1.1 注**: 旧「Doc(C8)」列・行は FR-6.3 廃止に伴い削除。
+> **v1.1 注**: 旧「Doc(C8)」列・行は FR-6.3 廃止に伴い削除済み。
 
 ---
 

@@ -8,7 +8,7 @@
 - 2026-04-29 v1.2: **タイムライン全面再設計**。書類審査トラック / PoC トラックの 2 軸化、並行トラック A〜D の導入、3 種類のバッファ（手戻り／統合／凍結）の明示、**Unit Coupling Principles**（疎結合設計原則）の新設。Q1=B（書類審査時点で U1+U2 のスケルトン動作）、Q2=B（チーム並行前提）、Q3=A（PoC 完成基準 = E2E シナリオ全通り）の決定を反映
 - 2026-04-29 v1.3: **Walking Skeleton ファースト**へ抜本変更。「フェーズ末尾にバッファ枠を確保」を撤回し、**最速で E2E が動く骨組みを作って、動かしながら短サイクルで反復改善**するモデルに転換。Q-α=C（GPT は後回し、AWS 側 E2E に集中）、Q-β=C（連続反復スタイル）、実装は全て AI が行う前提を反映。Iteration 0（Walking Skeleton）→ N サイクルの反復改善 → 凍結のみ時間枠で残す構造
 - 2026-05-08 v1.4: 要件 v1.8 反映。**FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、U8 ChatGPT GPT Asset を Unit リストから削除（Unit 数: 9 → 8）。Iteration 4「ChatGPT GPT 公開」マイルストーン削除、PoC 完成基準から GPT シナリオ確認を除外、Tech Stack 配布物から ChatGPT GPT を削除、Iteration 4 のスコープを「予選デモ磨き込み + バイラル素材作成」に再定義
-- 2026-05-09 v2.0: **ビジネス意図深掘り rework 反映**。requirements v2.0（Taco Tuesday 日本化・認知占有・幸せなダメ）/ User Stories v2.0（16 stories・US-T15 追加・personas v2.0）/ story-board v2.0（§11 認知占有体験弧）を反映。CONSTRUCTION 計画（Walking Skeleton・Iteration・Unit Coupling Principles・§4〜§9）は v1.4 を継承。Workflow Visualization と INCEPTION Phase チェックボックスのみ v2.0 更新。
+- 2026-05-09 v2.0: **ビジネス意図深掘り rework 反映**。requirements v2.0（Taco Tuesday 日本化・認知占有・幸せなダメ）/ User Stories v2.0（17 stories・US-T15 追加・personas v2.0）/ story-board v2.0（§11 認知占有体験弧）を反映。Application Design / Units Generation はバックアップ v1.1 から復元（機能要件・8 Unit 構成に変化なし）。CONSTRUCTION 計画（Walking Skeleton・Iteration・Unit Coupling Principles・§4〜§9）は v1.4 を継承。Workflow Visualization と INCEPTION Phase チェックボックスのみ v2.0 更新。
 **Phase**: INCEPTION - Completed (Workflow Planning Approved 2026-04-29 / v2.0 rework 2026-05-09 / 次フェーズ: CONSTRUCTION)
 **Status**: ✅ Approved 2026-04-29 (v1.3) / Updated 2026-05-08 (v1.4) / Updated 2026-05-09 (v2.0 — rework 反映)
 **Hackathon**: AWS Summit Japan 2026 AI-DLC ハッカソン応募作品

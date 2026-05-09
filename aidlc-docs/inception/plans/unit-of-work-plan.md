@@ -6,7 +6,7 @@
 **Status**: ✅ Approved (2026-04-29 / 2026-05-08 v1.1 で Documentation セクション削除を反映)
 **Updated**: 2026-04-29 v1.0 — 5 問 + 1 follow-up 全解決、3 Unit 成果物生成、ユーザー承認済み
 **Phase**: INCEPTION - Units Generation (Part 1: Planning, Closed)
-**Inputs**: requirements.md v1.7 / stories.md v1.3 / story-board.md v1.3 / execution-plan.md v1.3 / application-design v1.0（5 成果物）（後続更新で requirements v1.8 / stories v1.4 / story-board v1.4 / execution-plan v1.4 / application-design v1.1 に進化）
+**Inputs**: requirements.md v1.7 / stories.md v1.3 / story-board.md v1.3 / execution-plan.md v1.3 / application-design v1.0（5 成果物）（後続更新で requirements v2.0 / stories v2.0 / story-board v2.0 / execution-plan v2.0 / application-design v1.1 に進化）
 
 > **2026-05-08 追記**: 本ファイルは Units Generation Planning 段階の **意思決定の記録（履歴）**。要件 v1.8 で **FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、本ファイル内の以下の言及は最新仕様には適用されない:
 > - Q3=C「ChatGPT GPT を Documentation セクションに分離」

@@ -6,7 +6,7 @@
 **Status**: ✅ Approved (2026-04-29)
 **Updated**: 2026-04-29 v1.0 — 12 問 + 2 follow-up 全解決、5 設計成果物生成、ユーザー承認済み
 **Phase**: INCEPTION - Application Design (Plan, Closed)
-**Inputs**: requirements.md v1.7 / stories.md v1.3 / story-board.md v1.3 / execution-plan.md v1.3（後続更新で requirements v1.8 / stories v1.4 / story-board v1.4 / execution-plan v1.4 に進化）
+**Inputs**: requirements.md v1.7 / stories.md v1.3 / story-board.md v1.3 / execution-plan.md v1.3（後続更新で requirements v2.0 / stories v2.0 / story-board v2.0 / execution-plan v2.0 に進化）
 
 ---
 

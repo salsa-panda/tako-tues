@@ -861,6 +861,7 @@ v1.3 で抜本変更されたセクション:
 **Timestamp**: 2026-05-08T11:30:00Z
 **User Input**: "承認して Application Design / Units Generation のバックアップ復元へ進む"
 **AI Response**: Workflow Planning v2.0 承認を記録。Application Design / Units Generation を `.backup.20260508T105658Z` から復元（10 ファイル）。各ファイルのフロントマターに rework v2.0 復元注記を追加。aidlc-state.md の全 INCEPTION stage を `[x]` に更新。INCEPTION フェーズ rework 完了。
+**復元ファイル数の補足**: バックアップは 19 ファイル全体に対して実施したが、復元したのは AppDesign / Units Generation 関連の 10 ファイルのみ。requirements / stories / story-board / execution-plan / personas は rework v2.0 版（意図的に更新された成果物）を維持したため復元対象外。
 **Status**: ✅ INCEPTION フェーズ rework v2.0 完了
 **Restored Files (10)**:
 - aidlc-docs/inception/application-design/application-design.md (v1.1、復元注記追加)

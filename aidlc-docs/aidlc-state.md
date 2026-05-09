@@ -41,7 +41,7 @@
 - [x] Workspace Detection (完了 - Greenfield と判定)
 - [x] Reverse Engineering (スキップ - Greenfield のため)
 - [x] Requirements Analysis (完了 - **2026-05-08 v2.0 rework 承認済み** — Taco Tuesday 日本化 / 認知占有 / 強制主役 / 幸せなダメ を Concept Statement に明文化)
-- [x] User Stories (Part 1+2 完了 - **2026-05-08 v2.0 rework 完了** — personas v2.0 / stories v2.0（US-T15 追加・16 ストーリー）/ story-board v2.0（§11 認知占有の体験弧追加）)
+- [x] User Stories (Part 1+2 完了 - **2026-05-08 v2.0 rework 完了** — personas v2.0 / stories v2.0（US-T15 追加・17 ストーリー）/ story-board v2.0（§11 認知占有の体験弧追加）)
 - [x] Workflow Planning (execution-plan.md v2.0 完了 - **2026-05-08 ユーザー承認済み**: AppDesign・UnitsGen はバックアップ復元、CONSTRUCTION へ直行)
 - [x] Application Design (バックアップ v1.1 復元 - **2026-05-08**: 機能変化なし、rework v2.0 復元注記追加)
 - [x] Units Generation (バックアップ v1.1 復元 - **2026-05-08**: 8 Unit 構成変化なし、rework v2.0 復元注記追加)
