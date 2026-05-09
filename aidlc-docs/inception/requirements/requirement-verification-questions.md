@@ -3,7 +3,8 @@
 **Project**: タコ中 (Tako-chū / Tako-tues)
 **Document Version**: 1.0
 **Created**: 2026-04-29
-**Status**: ✅ Closed (2026-04-29) — 全 17 問解決（Q15 のみ AI-DLC 推奨で仮置き、OI-1 として Construction NFR Requirements に引き継ぎ）
+**Status**: ✅ Closed (2026-04-29) — 全 17 問解決
+**Updated**: 2026-05-09 — rework v2.0 の深掘り質問（Q1〜Q5、ビジネス意図確認）を末尾に追記（Q15 のみ AI-DLC 推奨で仮置き、OI-1 として Construction NFR Requirements に引き継ぎ）
 **Phase**: INCEPTION - Requirements Analysis (Q&A, Closed)
 
 このドキュメントは、タコ中プロジェクトの要件を明確化するための質問集です。

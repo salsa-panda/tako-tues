@@ -12,7 +12,7 @@
 > - Q-2 / 選択肢 C「ChatGPT カスタム GPT」（チャネル候補として議論）
 > - 選択肢 D「A + 直後に GPT のリンクを提示」
 > - Q-12-α / Q-T11 / Q-M03 関連の「ChatGPT GPT が説教モードに切り替わる瞬間」「タコ中 GPT」
-> 最新の確定スコープは [stories.md v1.4](../user-stories/stories.md) を参照。
+> 最新の確定スコープは [stories.md v2.0](../user-stories/stories.md) を参照。
 
 ---
 
@@ -453,7 +453,7 @@ X) Other (please describe after [Answer]: tag below)
 | ファイル | 場所 | 内容 |
 |---------|------|------|
 | `personas.md` (v2.0) | `aidlc-docs/inception/user-stories/` | タロウ + ミナミ ペルソナ（v2.0 深掘り版） |
-| `stories.md` (v2.0) | `aidlc-docs/inception/user-stories/` | 15〜17 ストーリー（v2.0 整合版） |
+| `stories.md` (v2.0) | `aidlc-docs/inception/user-stories/` | 16 ストーリー（v2.0 整合版、US-T15 追加済み） |
 | `story-board.md` (v2.0) | `aidlc-docs/inception/user-stories/` | 体験ストーリーボード（Q3 の範囲で更新） |
 
 ---

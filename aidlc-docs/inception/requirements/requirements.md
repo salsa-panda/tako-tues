@@ -13,7 +13,7 @@
 - 2026-04-29 v1.7: **FR-2.3 レシピ配信を Bedrock 動的生成から「リポジトリ同梱の静的レシピライブラリ（手書き・アミーゴ口調・キット種別 1:1 マッピング）」に変更**。理由: ユーザー安全性（食中毒リスク回避）と決定論的な体験品質確保。Bedrock は FR-6.1 煽り文 / FR-6.2 誘惑 Push のみで継続使用。OI-12 / OI-13 はレシピ生成については解消、煽り文側の懸念として再定義
 - 2026-05-08 v1.8: **FR-6.3 ChatGPT カスタム GPT による会話誘導（過激レイヤー）をスコープから完全削除**。理由: AWS ハッカソン作品として AWS 外サービス（OpenAI ChatGPT）依存を排除し、AWS サーバーレス内で完結させる。Scenario D / OI-5 / Tech Stack の AI 会話行 / Key Requirements の "ChatGPT 会話縛り" / バイラル要素の "ChatGPT 配布" を併せて削除。FR-6 は控えめ（FR-6.1）+ 中程度（FR-6.2）の 2 レイヤー構成に再定義。FR-3（タコス会話縛り）も完全廃止
 - 2026-05-08 v2.0: **ビジネス意図の深掘り（rework）** — §1.1 / §1.3 Concept Statement / §1.4 設計原則 / §9 Key Requirements Summary を全面改訂。「なぜタコスか（Taco Tuesday の日本化）」「人をダメにするとは何か（認知の占有）」「強制が主役」「幸せなダメになり方」を明文化。機能要件・技術要件は v1.8 を継承
-**Phase**: INCEPTION - Requirements Analysis
+**Phase**: INCEPTION - Completed (2026-04-29 承認 / 2026-05-09 v2.0 rework 済み)
 **Depth**: Standard
 
 ---

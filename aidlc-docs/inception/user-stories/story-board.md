@@ -9,7 +9,7 @@
 - 2026-04-29 v1.3 — 要件 v1.7 反映。**レシピ配信を Bedrock 動的生成からリポジトリ同梱の静的レシピ（手書き・キット種別 1:1）に変更**（食中毒リスク回避）。Bonus #4 の文言を訂正（「Bedrock 活用」は審査基準に含まれないため "AWS 活用 + AI-DLC プロセス成果 + テーマ適合性" に修正）。煽り文・誘惑 Push の Bedrock 動的生成は維持
 - 2026-05-08 v1.4 — 要件 v1.8 / stories v1.4 / personas v1.2 を反映。**FR-6.3 廃止に伴い ChatGPT GPT 関連を全削除**: タロウ Week 1 ガントチャートの「AI会話」セクション削除、火曜 22:00 のタコ中 GPT 起動シーン削除、ミナミ Sequence diagram の ChatGPT 共有リンク投稿を削除、SNS シリーズ #3（GPT 説教モード共有）削除、タッチポイントマップから ChatGPT GPT 列を削除、§5.4 ChatGPT GPT 説教モード セクション削除、デモタイムライン #4 を削除
 - 2026-05-08 v2.0 — **ビジネス意図深掘り（rework）** — §11「認知占有の体験弧（Week 0→4→12 長期依存アーク）」を新セクションとして追加。§1 目的に Taco Tuesday 文化移植ミッションを追記。既存セクション（§2〜§10）の構造は維持。
-**Phase**: INCEPTION - User Stories (Part 2: Generation, Step J-M)
+**Phase**: INCEPTION - Completed (2026-04-29 承認 / 2026-05-09 v2.0 rework 済み)
 **Format**: テキスト + Mermaid ハイブリッド (Q18=D)
 **Visual Language**: SVG イラスト + 大胆タイポ、絵文字なし、ポップ・カラフル (Clarification 3=D)
 **Tone**: メキシコ風キャラクター（Q11=C）
@@ -19,7 +19,7 @@
 
 ## 1. ストーリーボードの目的
 
-このドキュメントは User Stories ステージで定義した 15 ストーリー（`stories.md`）を、
+このドキュメントは User Stories ステージで定義した 16 ストーリー（`stories.md`）を、
 **実際のユーザー体験のタイムラインとして俯瞰**し、UX 設計判断（タッチポイント／通知トーン／演出）の
 判断軸を 1 ヶ所にまとめるためのものです。
 

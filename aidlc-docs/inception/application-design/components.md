@@ -6,19 +6,19 @@
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 反映。**FR-6.3 廃止に伴い C8 ChatGPTGptAsset コンポーネントを削除**（9 → 8 コンポーネント）。静的アセット表から `assets/prompts/tako-gpt-*.md` を削除、FR Coverage Matrix から FR-6.3 行削除
 - 2026-05-08 v1.1（rework v2.0 復元）: ビジネス意図の深掘り rework に伴いバックアップから復元。コンポーネント構成は変化なし。
-**Phase**: INCEPTION - Application Design
+**Phase**: INCEPTION - Completed (2026-04-29 承認 / 2026-05-08 v1.1 / 2026-05-09 rework 復元)
 
 ---
 
 ## 0. 設計方針サマリー
 
-- **コンポーネント粒度**: execution-plan v1.3 の 9 Unit を 1:1 でコンポーネント化（Q1=A）
+- **コンポーネント粒度**: execution-plan v1.3 の 9 Unit を 1:1 でコンポーネント化（Q1=A）（v1.4 で C8 削除、現 **8 コンポーネント**）
 - **レイヤード構造**: 各コンポーネント内で Handler / UseCase / Repository / External の 4 層（Q9=A）
 - **横断責務**: AWS Lambda Powertools（Logger / Tracer / Metrics）を全コンポーネントで標準利用（Q2=B）
 
 ---
 
-## 1. Component Catalog（9 コンポーネント）
+## 1. Component Catalog（8 コンポーネント）
 
 各コンポーネントは「責務 / 主要 FR / 主要 Story / Iteration 0 範囲 / 公開インターフェース」を持つ。
 

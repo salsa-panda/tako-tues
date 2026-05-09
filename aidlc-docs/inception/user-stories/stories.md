@@ -9,7 +9,7 @@
 - 2026-04-29 v1.3 — 要件 v1.7 反映。US-T13 / US-M04 のレシピを静的レシピライブラリに変更
 - 2026-05-08 v1.4 — 要件 v1.8 反映。FR-6.3 廃止に伴い US-T11 / US-M03 削除。Story Index 17 → 15
 - 2026-05-08 v2.0: **ビジネス意図深掘り（rework）** — US-T01, T13, T14, T07, M01, M04 の Story テキストを v2.0 Concept Statement（Taco Tuesday 日本化 / 認知占有 / 幸せなダメ）に整合させて framing 更新。**US-T15（文化的受容ストーリー）を新規追加**（Story Index 15 → 16）。Coverage Matrix / Theme Alignment 更新。
-**Phase**: INCEPTION - User Stories (Part 2: Generation)
+**Phase**: INCEPTION - Completed (2026-04-29 承認 / 2026-05-09 v2.0 rework 済み)
 **Format**: Connextra "As a / I want / So that" を基本、UX 重視は Job Story
 **Acceptance Criteria**: Given / When / Then (BDD)
 **Breakdown**: Persona × Journey ハイブリッド（ペルソナ別 → 1 週間ジャーニー順）

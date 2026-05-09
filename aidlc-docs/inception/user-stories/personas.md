@@ -8,7 +8,7 @@
 - 2026-04-29 v1.1: 要件 v1.5 を反映 — 「タコスが生活の一部になる」コンセプトに合わせて強化
 - 2026-05-08 v1.2: 要件 v1.8 反映 — FR-6.3 廃止に伴い ChatGPT 関連の言及を全削除
 - 2026-05-08 v2.0: **ビジネス意図深掘り（rework）** — タロウ: キャッチコピー・Goals・Pain Points・Motivations・How タコ中 Affects を v2.0 Concept Statement（認知占有 / 幸せな降伏 / 文化移植）に整合させて更新。ミナミ: キャッチコピー・Goals・Motivations・How タコ中 Affects に「Taco Tuesday 文化伝道師」framing を追加。なぜこの 2 名なのかを v2.0 で書き直し。
-**Phase**: INCEPTION - User Stories (Part 2: Generation)
+**Phase**: INCEPTION - Completed (2026-04-29 承認 / 2026-05-09 v2.0 rework 済み)
 
 ---
 
