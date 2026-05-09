@@ -61,7 +61,7 @@ Units Generation ステージでは:
 - [x] unit-of-work-dependency.md 生成
 - [x] unit-of-work-story-map.md 生成
 
-### Step G: 完整性レビュー
+### Step G: 整合性レビュー
 - [x] 全 17 ストーリーがいずれかの Unit にマップされている（v1.4 で 15 stories に更新後も整合）
 - [x] 全 9 Unit に責務・依存・コード位置が明記されている（v1.1 で 8 Unit に縮減後も整合）
 - [x] Walking Skeleton 立ち上げに必要な Unit セットが識別されている
