@@ -20,7 +20,38 @@
 
 食事だけでなく **台所・冷蔵庫・通知音・SNS の話題** まで、タコスが日常に侵食する。
 
+### AI が実際に送ってくるメッセージ
+
+Push 無視を重ねるほどトーンが激化する（Level A → B → C）:
+
+> "冷蔵庫のトルティーヤが泣いている。お前のサルサは固まり、ライムは萎れた。"
+> *(火曜 21:00 直前・Push 無視 4 回目 — Level C)*
+
+キャンセルしようとすると:
+
+> "キャンセル要求を承りました。お詫びとしてサービスで **2人前 を追加** しました。来週月曜、無事配送いたします。"
+> *(逃げるほど増える)*
+
 > （免責: 医療機器ではない／パロディ的要素を含む）
+
+### 3 ヶ月で「頭の中にタコスが住み着く」依存プログレッション
+
+```
+認知占有レベル（タコスが頭に住み着いている度）
+
+100% ─────────────────────────── "最高じゃないですか"（Week 12）
+      ↑                                    ↑
+      |                      ┌─────────────┤ 自発的 Taco Tuesday
+      |            ┌─────────┤ Week 8+: Push 待たずにダッシュボードを開く
+      |   ┌────────┤ Week 4: 火曜 21:00 が近づくと不安を感じ始める
+  10% |   | Week 0-1: 「面白いサービス試してみた」外圧のみで動く
+   0% └───┴────────────────────────────────────────────→ 週数
+       0    1-2    3-4    5-8    9-12
+```
+
+Before: タコスを知らない日本人 → After: 毎週火曜にタコスを作らずにいられない
+
+詳細な体験弧（フェーズ別内的状態・タッチポイント × 認知占有イベント）: [story-board.md §11](./aidlc-docs/inception/user-stories/story-board.md#11-認知占有の体験弧week-0--week-4--week-12新規v20)
 
 ---
 
@@ -34,6 +65,7 @@
 | 4 | 逃げ場をなくす | 食べない／作らない選択肢を取りづらい状況をデザインする |
 | 5 | シュール ＞ 真面目 | テーマ「人をダメにする」に沿った "おかしみ" を優先 |
 | 6 | AI は欲を生成する側 | AI は予測器ではなく **刺激生成器・調理サポーター** として使う |
+| 7 | 幸せな降伏 | 「ダメになる」は苦痛ではなく快感。3 ヶ月後に「最高じゃないですか」と感じる状態がゴール |
 
 ---
 
@@ -131,8 +163,8 @@ Unit 間通信はすべて **EventBridge カスタムバス経由**。Lambda 直
 |----------|-----------|-------|
 | Workspace Detection | Greenfield 判定 | [aidlc-state.md](./aidlc-docs/aidlc-state.md) |
 | Requirements Analysis | 要件 v1.8（FR / NFR / 設計原則） | [requirements.md](./aidlc-docs/inception/requirements/requirements.md) |
-| User Stories | 15 ストーリー + 2 ペルソナ（タロウ / ミナミ） | [stories.md](./aidlc-docs/inception/user-stories/stories.md) / [personas.md](./aidlc-docs/inception/user-stories/personas.md) / [story-board.md](./aidlc-docs/inception/user-stories/story-board.md) |
-| Workflow Planning | Walking Skeleton + 反復モデル v1.4 | [execution-plan.md](./aidlc-docs/inception/plans/execution-plan.md) |
+| User Stories | 17 ストーリー + 2 ペルソナ（タロウ / ミナミ） | [stories.md](./aidlc-docs/inception/user-stories/stories.md) / [personas.md](./aidlc-docs/inception/user-stories/personas.md) / [story-board.md](./aidlc-docs/inception/user-stories/story-board.md) |
+| Workflow Planning | Walking Skeleton + 反復モデル v2.0 | [execution-plan.md](./aidlc-docs/inception/plans/execution-plan.md) |
 | Application Design | 8 コンポーネント / レイヤード 4 層 / 5 イベント | [application-design.md](./aidlc-docs/inception/application-design/application-design.md) |
 | Units Generation | 8 Unit | [unit-of-work.md](./aidlc-docs/inception/application-design/unit-of-work.md) / [unit-of-work-dependency.md](./aidlc-docs/inception/application-design/unit-of-work-dependency.md) / [unit-of-work-story-map.md](./aidlc-docs/inception/application-design/unit-of-work-story-map.md) |
 | Audit Trail | INCEPTION 全インタラクションのログ（日次粒度 / 詳細は audit.md 末尾の免責参照） | [audit.md](./aidlc-docs/audit.md) |

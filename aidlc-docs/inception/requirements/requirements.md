@@ -290,6 +290,8 @@
 
 > **方針メモ**: 「予算目安は守るが、無料枠縛りはしない」スタンス。例えば刺激生成 (FR-6.1, FR-6.2) で Bedrock の Claude を呼ぶ際の少額従量課金は許容する。常時稼働 EC2 や NAT Gateway は避ける（必要性なし）。
 
+> **Bedrock 利用範囲**: Bedrock による動的生成は **FR-6.1（煽り文）/ FR-6.2（誘惑 Push）のみ**。レシピ配信（FR-2.3）は静的 JSON のため Bedrock は不使用。
+
 ---
 
 ## 6. Extension Configuration
