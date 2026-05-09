@@ -1,0 +1,217 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="cognitive-progression" name="認知占有レベル推移">
+    <mxGraphModel dx="1422" dy="762" grid="0" gridSize="10" guides="1"
+                  tooltips="1" connect="0" arrows="0" fold="0" page="0"
+                  pageScale="1" pageWidth="900" pageHeight="520"
+                  math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- タイトル -->
+        <mxCell id="v_title" value="認知占有レベル（タコスが頭に住み着いている度）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="100" y="20" width="680" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- グラフエリア背景 -->
+        <mxCell id="v_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="60" width="680" height="380" as="geometry"/>
+        </mxCell>
+
+        <!-- Y軸ライン -->
+        <mxCell id="v_yaxis" value="" style="endArrow=classic;endFill=1;html=1;strokeColor=#666666;strokeWidth=2;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry x="140" y="420" width="10" height="10" relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+          <mxPoint x="140" y="420" as="sourcePoint"/>
+          <mxPoint x="140" y="68" as="targetPoint"/>
+        </mxCell>
+
+        <!-- X軸ライン -->
+        <mxCell id="v_xaxis" value="" style="endArrow=classic;endFill=1;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="420" as="sourcePoint"/>
+            <mxPoint x="785" y="420" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Y軸ラベル: 100% -->
+        <mxCell id="v_y100" value="100%" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="82" width="72" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Y軸ラベル: 50% -->
+        <mxCell id="v_y50" value="50%" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="248" width="72" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Y軸ラベル: 10% -->
+        <mxCell id="v_y10" value="10%" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="381" width="72" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Y軸ラベル: 0% -->
+        <mxCell id="v_y0" value="0%" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="411" width="72" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- グリッドライン 100% -->
+        <mxCell id="v_grid100" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#DDDDDD;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="92" as="sourcePoint"/>
+            <mxPoint x="775" y="92" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- グリッドライン 50% -->
+        <mxCell id="v_grid50" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#DDDDDD;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="258" as="sourcePoint"/>
+            <mxPoint x="775" y="258" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- グリッドライン 10% -->
+        <mxCell id="v_grid10" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#DDDDDD;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="388" as="sourcePoint"/>
+            <mxPoint x="775" y="388" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- X軸目盛りラベル -->
+        <mxCell id="v_x0" value="0" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="133" y="425" width="20" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_x12" value="1-2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="228" y="425" width="36" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_x34" value="3-4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="363" y="425" width="36" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_x58" value="5-8" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="508" y="425" width="36" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_x12b" value="9-12" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="643" y="425" width="40" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- X軸タイトル -->
+        <mxCell id="v_xlabel" value="週数" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="750" y="425" width="40" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- 折れ線: 段階的依存グラフ（ステップ状）
+             座標マッピング:
+             x: Week0=140, Week1-2=246, Week3-4=381, Week5-8=526, Week9-12=663, Week12+=750
+             y: 0%=420, 10%=388, 30%=322, 60%=222, 85%=124, 100%=92
+        -->
+
+        <!-- セグメント1: Week0→1-2 (10%でほぼ横ばい) -->
+        <mxCell id="v_line1" value="" style="endArrow=none;html=1;strokeColor=#E67E22;strokeWidth=3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="388" as="sourcePoint"/>
+            <mxPoint x="246" y="388" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- セグメント2: Week1-2→3-4 (10%→30%) -->
+        <mxCell id="v_line2" value="" style="endArrow=none;html=1;strokeColor=#E67E22;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="246" y="388" as="sourcePoint"/>
+            <mxPoint x="381" y="322" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- セグメント3: Week3-4→5-8 (30%→60%) -->
+        <mxCell id="v_line3" value="" style="endArrow=none;html=1;strokeColor=#E67E22;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="381" y="322" as="sourcePoint"/>
+            <mxPoint x="526" y="222" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- セグメント4: Week5-8→9-12 (60%→85%) -->
+        <mxCell id="v_line4" value="" style="endArrow=none;html=1;strokeColor=#E67E22;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="526" y="222" as="sourcePoint"/>
+            <mxPoint x="663" y="124" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- セグメント5: Week9-12→12+ (85%→100%) -->
+        <mxCell id="v_line5" value="" style="endArrow=none;html=1;strokeColor=#E67E22;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="663" y="124" as="sourcePoint"/>
+            <mxPoint x="750" y="92" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- データポイント: Week0 (10%) -->
+        <mxCell id="v_dot0" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E67E22;strokeColor=#C0392B;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="132" y="380" width="16" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- データポイント: Week1-2 (10%) -->
+        <mxCell id="v_dot12" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E67E22;strokeColor=#C0392B;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="238" y="380" width="16" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- データポイント: Week3-4 (30%) -->
+        <mxCell id="v_dot34" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E67E22;strokeColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="373" y="314" width="16" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- データポイント: Week5-8 (60%) -->
+        <mxCell id="v_dot58" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E67E22;strokeColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="518" y="214" width="16" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- データポイント: Week9-12 (85%) -->
+        <mxCell id="v_dot912" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E67E22;strokeColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="655" y="116" width="16" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- データポイント: Week12 (100%) -->
+        <mxCell id="v_dot12e" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#C0392B;strokeColor=#922B21;" vertex="1" parent="1">
+          <mxGeometry x="742" y="84" width="16" height="16" as="geometry"/>
+        </mxCell>
+
+        <!-- ラベル: Week0-1「外圧のみで動く」 -->
+        <mxCell id="v_lbl0" value="Week 0-1:&#xa;「面白いサービス試してみた」&#xa;外圧のみで動く" style="text;html=1;strokeColor=#CCCCCC;fillColor=#FFFDE7;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="148" y="346" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ラベル: Week4「不安を感じ始める」 -->
+        <mxCell id="v_lbl4" value="Week 4: 火曜 21:00 が近づくと&#xa;不安を感じ始める" style="text;html=1;strokeColor=#CCCCCC;fillColor=#FFFDE7;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="295" y="265" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ラベル: Week8+「Push 待たずに開く」 -->
+        <mxCell id="v_lbl8" value="Week 8+: Push 待たずに&#xa;ダッシュボードを開く" style="text;html=1;strokeColor=#CCCCCC;fillColor=#FFFDE7;align=left;verticalAlign=middle;fontSize=10;fontColor=#555555;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="165" width="185" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ラベル: Week12「最高じゃないですか」 -->
+        <mxCell id="v_lbl12" value="Week 12:&#xa;「最高じゃないですか」&#xa;自発的 Taco Tuesday" style="text;html=1;strokeColor=#E67E22;fillColor=#FFF3E0;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#E67E22;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="575" y="64" width="195" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Before → After ラベル -->
+        <mxCell id="v_before" value="Before: タコスを知らない日本人" style="text;html=1;strokeColor=#82B366;fillColor=#D5E8D4;align=center;verticalAlign=middle;fontSize=11;fontColor=#333333;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="460" width="270" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_arrow_ba" value="" style="endArrow=classic;endFill=1;html=1;strokeColor=#E67E22;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="374" y="475" as="sourcePoint"/>
+            <mxPoint x="412" y="475" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v_after" value="After: 毎週火曜にタコスを作らずにいられない" style="text;html=1;strokeColor=#E67E22;fillColor=#FFF3E0;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#C0392B;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="416" y="460" width="360" height="30" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
