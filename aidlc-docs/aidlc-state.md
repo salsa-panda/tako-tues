@@ -30,7 +30,7 @@
 | security-baseline | No | — | Requirements Analysis (Q14=B) |
 | property-based-testing | Yes (Tentative) | Partial | Requirements Analysis (Q15 unanswered, AI-DLC 推奨で仮置き) |
 
-## Architectural Decisions (v1.8)
+## Architectural Decisions (v1.8)（詳細は audit.md / requirements.md の更新ログを参照）
 - **レシピ配信**: 生成 AI（Bedrock）動的生成を**廃止**し、リポジトリ同梱の静的 JSON（`assets/recipes/*.json`、手書き・キット種別 1:1）に変更（食中毒リスク回避）
 - **Bedrock 用途**: FR-6.1 ダッシュボード煽り文 / FR-6.2 誘惑 Push のみ動的生成。フォールバック静的テンプレートあり
 - ~~**ChatGPT カスタム GPT (FR-6.3)**~~ → **v1.8 で削除**: AWS 外サービス（OpenAI ChatGPT）依存を排除し、AWS サーバーレス内で完結させる方針に転換
