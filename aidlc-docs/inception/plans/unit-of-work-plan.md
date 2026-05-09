@@ -18,10 +18,10 @@
 
 ## 0. このドキュメントの目的
 
-execution-plan v1.3 と Application Design v1.0 で「9 Unit = 9 Component 1:1」が確定済み。
+execution-plan v1.3 と Application Design v1.0 で「9 Unit = 9 Component 1:1」が確定済み（**v1.4 で C8 削除により 8 Unit に縮減**。本行は立案当時の記録）。
 Units Generation ステージでは:
 
-1. 9 Unit を Construction フェーズの **per-unit ループの正式単位**として確定
+1. 8 Unit を Construction フェーズの **per-unit ループの正式単位**として確定（v1.4 確定値）
 2. 各 Unit の責務 / 含まれるストーリー / 依存関係 / 並行立ち上げ可否を明記
 3. Greenfield プロジェクトのコード組織戦略を確定（リポジトリディレクトリ構造）
 
@@ -61,7 +61,7 @@ Units Generation ステージでは:
 - [x] unit-of-work-dependency.md 生成
 - [x] unit-of-work-story-map.md 生成
 
-### Step G: 完整性レビュー
+### Step G: 整合性レビュー
 - [x] 全 17 ストーリーがいずれかの Unit にマップされている（v1.4 で 15 stories に更新後も整合）
 - [x] 全 9 Unit に責務・依存・コード位置が明記されている（v1.1 で 8 Unit に縮減後も整合）
 - [x] Walking Skeleton 立ち上げに必要な Unit セットが識別されている

@@ -4,6 +4,7 @@
 **Document Version**: 1.0
 **Date**: 2026-04-29
 **Status**: ✅ Approved (Stage closed 2026-04-29)
+**Updated**: 2026-05-09 — rework v2.0 アセスメントを末尾に追記
 **Phase**: INCEPTION - User Stories (Step 1: アセスメント, Closed)
 
 > **2026-05-08 追記**: 本ファイルは User Stories Assessment 段階の **意思決定の記録（履歴）**。要件 v1.8 で **FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、本ファイル内の「ChatGPT カスタム GPT」「3 チャネル」記述は最新仕様には適用されない（最新は Web ダッシュボード + Web Push の 2 チャネル）。最新は [stories.md v1.4](../user-stories/stories.md) を参照。
@@ -81,3 +82,36 @@
 - AI-DLC rule: `.aidlc-rule-details/inception/user-stories.md`
 - 関連要件: `aidlc-docs/inception/requirements/requirements.md`（本アセスメント実施時点 v1.4 → 最終承認版 v1.8 / FR-6.3 削除）
 - ハッカソン規約: `reference/AWS_Summit_Japan_2026_Hackathon_参加規約.pdf`
+
+---
+
+## ↓ rework v2.0 追加（2026-05-09）— ビジネス意図深掘り後の User Stories 実施判定
+
+> **元のアセスメント（v1.x）は上記。以下は rework v2.0 での再アセスメント。**
+
+# User Stories Assessment — タコ中 rework（v2.0）
+
+## Request Analysis
+- **Original Request**: requirements.md v2.0 に基づき、ビジネス意図の深掘り（Taco Tuesday 日本化 / 認知占有 / 幸せなダメになり方）を User Stories に反映する
+- **User Impact**: Direct（タロウ・ミナミの両ペルソナが直接利用するユーザー向け機能）
+- **Complexity Level**: Complex（多ペルソナ・複数 FR カバー・Story Board も含む）
+- **Stakeholders**: プロダクトオーナー（作者本人）、AWS AI-DLC ハッカソン審査員
+
+## Assessment Criteria Met
+- [x] **High Priority — New User Features**: ペルソナ / ストーリーの framing 変更はユーザー体験の核心に影響
+- [x] **High Priority — Multi-Persona Systems**: タロウ（コア体験者）+ ミナミ（バイラル拡散役）の 2 ペルソナ構成
+- [x] **High Priority — Complex Business Logic**: 認知占有・強制・文化移植という多層の依存ループを AC に落とす必要がある
+
+## Decision
+**Execute User Stories**: Yes
+**Reasoning**: 
+- requirements.md v2.0 で Concept Statement と設計原則が大幅に深化した
+- 「Taco Tuesday の日本化」「タコスが頭に住み着く」「幸せなダメになり方」はペルソナの Goal / Pain Points / Motivation に反映されることで、ストーリーとビジネス意図の一貫性が担保される
+- ハッカソン審査員は User Stories を通じてビジネス意図の深さを評価するため、stories.md / personas.md の conceptual alignment は審査差別化に直結する
+
+## Expected Outcomes
+- タロウの Goal に「Taco Tuesday が自分の火曜日のデフォルトになる」という文化的受容が加わる
+- タロウの Motivations に「認知占有体験（頭の中に住み着く）をメタ視点で楽しむ」が加わる
+- ミナミの役割に「Taco Tuesday 文化の日本伝道師」という framing が加わる
+- stories.md が「日本で火曜日にタコスを作ることが当たり前になる」という依存ループの最終目標を表現する
+- Story Board が「認知占有の体験弧」を可視化する

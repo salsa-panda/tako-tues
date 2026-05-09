@@ -4,6 +4,7 @@
 **Document Version**: 1.0
 **Created**: 2026-04-29
 **Status**: ✅ Closed (2026-04-29) — 3 clarification 全解決
+**Updated**: 2026-05-09 — rework v2.0 に伴い、元のプランに追加連結（バックアップから復元）
 **Phase**: INCEPTION - User Stories (Part 1: Clarification, Closed)
 
 回答ありがとうございました。3 点だけ ambiguity（曖昧性）を検出したので確認させてください。

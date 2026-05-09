@@ -1,15 +1,16 @@
 # Execution Plan: タコ中（たこちゅう）
 
 **Project**: タコ中 (Tako-chū / Tako-tues)
-**Document Version**: 1.4
+**Document Version**: 2.0
 **Created**: 2026-04-29
 **Updated**:
 - 2026-04-29 v1.1: 要件 v1.7（レシピ静的化）反映。U4 名称を「Recipe Generation (Bedrock)」→「**Recipe Library (Pre-curated)**」に変更。Bedrock 関連箇所を煽り文 / 誘惑 Push のみに縮減。OI-12 / OI-13（レシピ生成リスク）は解消、新規に OI-12'/OI-13' を追記
 - 2026-04-29 v1.2: **タイムライン全面再設計**。書類審査トラック / PoC トラックの 2 軸化、並行トラック A〜D の導入、3 種類のバッファ（手戻り／統合／凍結）の明示、**Unit Coupling Principles**（疎結合設計原則）の新設。Q1=B（書類審査時点で U1+U2 のスケルトン動作）、Q2=B（チーム並行前提）、Q3=A（PoC 完成基準 = E2E シナリオ全通り）の決定を反映
 - 2026-04-29 v1.3: **Walking Skeleton ファースト**へ抜本変更。「フェーズ末尾にバッファ枠を確保」を撤回し、**最速で E2E が動く骨組みを作って、動かしながら短サイクルで反復改善**するモデルに転換。Q-α=C（GPT は後回し、AWS 側 E2E に集中）、Q-β=C（連続反復スタイル）、実装は全て AI が行う前提を反映。Iteration 0（Walking Skeleton）→ N サイクルの反復改善 → 凍結のみ時間枠で残す構造
 - 2026-05-08 v1.4: 要件 v1.8 反映。**FR-6.3 ChatGPT カスタム GPT スコープ削除**に伴い、U8 ChatGPT GPT Asset を Unit リストから削除（Unit 数: 9 → 8）。Iteration 4「ChatGPT GPT 公開」マイルストーン削除、PoC 完成基準から GPT シナリオ確認を除外、Tech Stack 配布物から ChatGPT GPT を削除、Iteration 4 のスコープを「予選デモ磨き込み + バイラル素材作成」に再定義
-**Phase**: INCEPTION - Completed (Workflow Planning Approved 2026-04-29 / v1.3 → v1.4 / 次フェーズ: CONSTRUCTION)
-**Status**: ✅ Approved 2026-04-29 (v1.3) / Updated 2026-05-08 (v1.4 — FR-6.3 削除反映)
+- 2026-05-09 v2.0: **ビジネス意図深掘り rework 反映**。requirements v2.0（Taco Tuesday 日本化・認知占有・幸せなダメ）/ User Stories v2.0（16 stories・US-T15 追加・personas v2.0）/ story-board v2.0（§11 認知占有体験弧）を反映。CONSTRUCTION 計画（Walking Skeleton・Iteration・Unit Coupling Principles・§4〜§9）は v1.4 を継承。Workflow Visualization と INCEPTION Phase チェックボックスのみ v2.0 更新。
+**Phase**: INCEPTION - Completed (Workflow Planning Approved 2026-04-29 / v2.0 rework 2026-05-09 / 次フェーズ: CONSTRUCTION)
+**Status**: ✅ Approved 2026-04-29 (v1.3) / Updated 2026-05-08 (v1.4) / Updated 2026-05-09 (v2.0 — rework 反映)
 **Hackathon**: AWS Summit Japan 2026 AI-DLC ハッカソン応募作品
 
 ---
@@ -59,7 +60,7 @@
 
 | 項目 | レベル | 補足 |
 |------|--------|------|
-| **Risk Level** | **Medium** | 技術スタックは枯れているが、ハッカソン期日が固定（5/10, 5/30, 6/26）で巻き返しが効かない。複数統合点（PWA + Push + Bedrock 煽り文 + GPT）あり。**レシピ静的化（v1.7）により食中毒リスクは排除済み** |
+| **Risk Level** | **Medium** | 技術スタックは枯れているが、ハッカソン期日が固定（5/10, 5/30, 6/26）で巻き返しが効かない。複数統合点（PWA + Push + Bedrock 煽り文）あり（v1.8 で GPT スコープ削除済み）。**レシピ静的化（v1.7）により食中毒リスクは排除済み** |
 | **Rollback Complexity** | Easy | サーバーレス + IaC、複数アカウント分離想定で容易 |
 | **Testing Complexity** | Moderate | PBT Partial、Push の手動 E2E、Bedrock 煽り文のフォールバック検証、レシピライブラリのスキーマ検証など多面 |
 
@@ -103,9 +104,9 @@ flowchart TD
     subgraph INCEPTION["🔵 INCEPTION PHASE"]
         WD["Workspace Detection<br/><b>COMPLETED</b>"]
         RE["Reverse Engineering<br/><b>SKIPPED</b><br/>(Greenfield)"]
-        RA["Requirements Analysis<br/><b>COMPLETED</b><br/>v1.8（FR-6.3 削除）"]
-        US["User Stories<br/><b>COMPLETED</b><br/>v1.4 15 stories"]
-        WP["Workflow Planning<br/><b>COMPLETED</b><br/>v1.4"]
+        RA["Requirements Analysis<br/><b>COMPLETED</b><br/>v2.0（Taco Tuesday 日本化・認知占有）"]
+        US["User Stories<br/><b>COMPLETED</b><br/>v2.0 16 stories (US-T15 追加)"]
+        WP["Workflow Planning<br/><b>COMPLETED</b><br/>v2.0"]
         AD["Application Design<br/><b>COMPLETED</b><br/>v1.1"]
         UG["Units Generation<br/>(Planning + Generation)<br/><b>COMPLETED</b><br/>v1.1 (8 Unit)"]
     end
@@ -175,12 +176,12 @@ flowchart TD
 - [x] **Workspace Detection** — COMPLETED（Greenfield 判定）
 - [x] **Reverse Engineering** — SKIPPED
   - **Rationale**: Greenfield のため対象外。
-- [x] **Requirements Analysis** — COMPLETED（v1.8 ユーザー承認済み・2026-04-29 承認 / 2026-05-08 v1.8 で FR-6.3 削除）
-- [x] **User Stories** — COMPLETED（v1.4 ユーザー承認済み・15 stories / 2026-04-29 承認 / 2026-05-08 v1.4 で US-T11/US-M03 削除）
-- [x] **Workflow Planning** — COMPLETED（v1.3 ユーザー承認済み 2026-04-29 / 2026-05-08 v1.4 反映）
-- [x] **Application Design** — **COMPLETED**（v1.1 ユーザー承認済み 2026-04-29 / 2026-05-08 v1.1 で C8 削除）
+- [x] **Requirements Analysis** — COMPLETED（v2.0 ユーザー承認済み・2026-05-09 rework 完了 / Taco Tuesday 日本化・認知占有・幸せなダメ を Concept Statement に明文化）
+- [x] **User Stories** — COMPLETED（v2.0 ユーザー承認済み・16 stories / 2026-05-09 rework 完了 / US-T15 新規追加・personas v2.0・story-board §11 認知占有体験弧追加）
+- [x] **Workflow Planning** — COMPLETED（v2.0 ユーザー承認済み 2026-05-09 / AppDesign・UnitsGen はバックアップから復元）
+- [x] **Application Design** — **COMPLETED**（v1.1 ユーザー承認済み 2026-04-29 / 2026-05-08 v1.1 で C8 削除 / 2026-05-09 rework v2.0 でバックアップから復元・機能変化なし）
   - **Rationale**: 新規コンポーネント／サービス境界（強制発注エンジン、刺激エージェント、配送モック、レシピライブラリ参照、Push エスカレーションカウンタ等）を 0 から定義する必要がある。コンポーネント間の責務分離、ビジネスルール、依存関係、外部統合点（Bedrock 煽り文、Web Push、リポジトリ同梱レシピアセット）を明文化しないと Construction で迷走するリスクが高い。ハッカソン審査基準（ドキュメント品質・Unit 分解の適切さ）にも直結する（v1.4 で ChatGPT GPT 配布を削除）。
-- [x] **Units Generation** — **COMPLETED（審査基準上の必須化）**（v1.1 ユーザー承認済み 2026-04-29 / 2026-05-08 v1.1 で Documentation セクション削除・8 Unit に確定）
+- [x] **Units Generation** — **COMPLETED（審査基準上の必須化）**（v1.1 ユーザー承認済み 2026-04-29 / 2026-05-08 v1.1 で Documentation セクション削除・8 Unit に確定 / 2026-05-09 rework v2.0 でバックアップから復元・8 Unit 構成変化なし）
   - **Rationale**: OI-11 で記録の通り、ハッカソン審査では「**Unit 分解の適切さ**」が評価対象。書類審査（5/10）に向け、PoC を MVP として段階的に実装するため Unit に切り分ける必要がある。確定 Unit（v1.4 で 9 → 8 に縮減、U8 ChatGPT GPT Asset 削除）: (1) Auth & Trial、(2) Intake Logging、(3) Order Engine + Delivery Mock、(4) **Recipe Library (Pre-curated)**、(5) Stimulus Engine（Push + Escalation + Dashboard 煽り）、(6) Salsa & T-shirt Punishment、(7) PWA Frontend、(9) Infrastructure (CDK)。
 
 ### 🟢 CONSTRUCTION PHASE（Per-Unit Loop）

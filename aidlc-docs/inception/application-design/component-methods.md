@@ -5,8 +5,8 @@
 **Created**: 2026-04-29
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 / components v1.1 反映。**FR-6.3 廃止に伴い §9 C8. ChatGPTGptAsset セクションを削除**。Iteration 0 未着手リストから C8 ChatGPT GPT アセット行を削除
-**Status**: ✅ Approved (v1.0 2026-04-29) / Updated v1.1 2026-05-08 (§9 C8 セクション削除)
-**Phase**: INCEPTION - Completed (Application Design Approved 2026-04-29 / v1.1 反映 2026-05-08)
+- 2026-05-08 v1.1（rework v2.0 復元）: ビジネス意図の深掘り rework に伴いバックアップから復元。メソッド定義は変化なし。
+**Phase**: INCEPTION - Completed (2026-04-29 承認 / 2026-05-08 v1.1 / 2026-05-09 rework 復元)
 
 ---
 

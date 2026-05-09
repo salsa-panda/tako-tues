@@ -5,13 +5,13 @@
 **Created**: 2026-04-29
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 反映。**FR-6.3 廃止に伴い C8 ChatGPTGptAsset コンポーネント削除**（9 → 8 コンポーネント）。アーキテクチャ図から OpenAI ChatGPT GPTs ノード削除、Iteration 0 範囲一覧から「ChatGPT GPT (C8)」行削除、FR Coverage Matrix から FR-6.3 行削除
-**Status**: ✅ Approved (v1.0 2026-04-29) / Updated v1.1 2026-05-08 (要件 v1.8 反映・C8 削除)
-**Phase**: INCEPTION - Completed (Application Design Approved 2026-04-29 / v1.1 反映 2026-05-08)
+- 2026-05-08 v1.1（rework v2.0 復元）: ビジネス意図の深掘り rework（requirements v2.0）に伴いバックアップから復元。機能要件・コンポーネント構成は変化なし。本ドキュメントの内容は引き続き正しい設計を示している。
+**Phase**: INCEPTION - Completed (2026-04-29 承認 / 2026-05-08 v1.1 / 2026-05-09 rework 復元)
 **Inputs**:
-- requirements.md v1.8
-- stories.md v1.4
-- story-board.md v1.4
-- execution-plan.md v1.4
+- requirements.md v2.0（rework 後）
+- stories.md v2.0（rework 後）
+- story-board.md v2.0（rework 後）
+- execution-plan.md v2.0（rework 後）
 - application-design-plan.md v1.0（12 問 + 2 follow-up 全て解決済み）
 
 ---
@@ -27,7 +27,7 @@ Application Design ステージの全成果物（components.md / component-metho
 
 | # | 質問 | 決定 |
 |---|------|------|
-| Q1 | コンポーネント粒度 | **8 コンポーネント（C1〜C7, C9）= 8 Unit に 1:1 対応**（v1.0 当時は 9 コンポーネント C1〜C9 / 8 Unit + Documentation 1 構成だったが、v1.1 で C8 ChatGPTGptAsset を FR-6.3 廃止に伴い削除。C8 ID は再利用しない） |
+| Q1 | コンポーネント粒度 | **9 Unit = 9 コンポーネント 1:1**（C1〜C9）（v1.4 で C8 削除、現 **8 コンポーネント**） |
 | Q2 | 横断的責務 | **AWS Lambda Powertools** 標準利用（Logger / Tracer / Metrics） |
 | Q3 | API インターフェース定義 | **OpenAPI 3.x YAML** をリポジトリ同梱（`assets/openapi/api.yaml`） |
 | Q4 | Bedrock 抽象化 | **`StimulusGenerator` Protocol** + `BedrockStimulusGenerator` / `StaticFallbackStimulusGenerator` の 2 実装 |
@@ -42,7 +42,7 @@ Application Design ステージの全成果物（components.md / component-metho
 
 ---
 
-## 2. コンポーネント早見表（8 稼働コンポーネント / C8 は v1.1 で削除）
+## 2. コンポーネント早見表（8 コンポーネント）
 
 | ID | 名前 | 責務 | Lambda 関数 | Iteration 0 |
 |----|------|------|-----------|-------------|
@@ -264,19 +264,19 @@ execution-plan v1.3 §5.2 で要求された契約。すべて確定済み:
 
 ## 10. 次ステージへの申し送り（Units Generation）
 
-execution-plan v1.3 では 9 Unit が暫定マッピング済み（v1.4 で 8 Unit に縮減: U8 ChatGPT GPT Asset を FR-6.3 廃止に伴い削除）。Application Design ステージで:
+execution-plan v1.3 では既に 9 Unit が暫定マッピング済み（v1.4 で C8 削除により **8 Unit** に確定）。Application Design ステージで:
 
-- Unit と Component を **1:1 で対応**することが確定（Q1=A、ただし C8 は Documentation 化により Unit 外）
+- Unit と Component を **1:1 で対応**することが確定（Q1=A）
 - Lambda 関数の粒度を **6 関数に集約**することが確定（Q5=C-1）
 - **共有契約 5 件すべてが確定**したため、Walking Skeleton 立ち上げのブロッカーは無し
 
-→ Units Generation ステージでは、**8 Unit（U1〜U7, U9）**を**正式な Construction フェーズの per-unit 単位**として確定し（v1.1 で旧 Documentation セクション/C8 GPT 廃止）、各 Unit に紐付く成果物（Functional Design / NFR Requirements / NFR Design / Infrastructure Design / Code Generation）の入力資料を準備する。
+→ Units Generation ステージでは、8 Unit を**正式な Construction フェーズの per-unit 単位**として確定し、各 Unit に紐付く成果物（Functional Design / NFR Requirements / NFR Design / Infrastructure Design / Code Generation）の入力資料を準備する。
 
 ---
 
 ## 11. 参照
 
-- [components.md](./components.md) - 8 コンポーネントの責務（v1.1 で C8 削除）
+- [components.md](./components.md) - 9 コンポーネントの責務
 - [component-methods.md](./component-methods.md) - メソッドシグネチャ
 - [services.md](./services.md) - Lambda 関数 + サービス層
 - [component-dependency.md](./component-dependency.md) - 依存関係 + データフロー

@@ -4,7 +4,7 @@
 - **Project Name**: タコ中 (たこちゅう)
 - **Project Type**: Greenfield
 - **Start Date**: 2026-04-29T00:00:00Z
-- **Current Stage**: INCEPTION - Units Generation v1.0 ✅ **2026-04-29 ユーザー承認済み**（3 成果物 + 8 Unit）。**2026-05-08 v1.8 反映**: FR-6.3 ChatGPT GPT スコープ削除に伴い、Documentation (C8) セクションを廃止。INCEPTION フェーズ完了状態は維持／次フェーズ: **CONSTRUCTION**
+- **Current Stage**: INCEPTION フェーズ完了 ✅ **2026-05-08**（rework v2.0 完了: RA v2.0 / US v2.0 / WP v2.0 / AppDesign 復元 / UnitsGen 復元）／次フェーズ: **CONSTRUCTION**
 - **Hackathon**: AWS Summit Japan 2026 AI-DLC ハッカソン応募作品
 - **Critical Deadlines**:
   - 書類審査エントリー: 2026-05-10 23:59 JST
@@ -40,11 +40,11 @@
 ### INCEPTION Phase
 - [x] Workspace Detection (完了 - Greenfield と判定)
 - [x] Reverse Engineering (スキップ - Greenfield のため)
-- [x] Requirements Analysis (完了 - **2026-04-29 ユーザー承認済み**)
-- [x] User Stories (Part 1 + Part 2 完了 - **2026-04-29 ユーザー承認済み**)
-- [x] Workflow Planning (execution-plan.md v1.3 完了 - **2026-04-29 ユーザー承認済み**)
-- [x] Application Design (5 成果物 v1.0 完了 - **2026-04-29 ユーザー承認済み**: components / component-methods / services / component-dependency / application-design)
-- [x] Units Generation (3 成果物 v1.0 完了 - **2026-04-29 ユーザー承認済み**: unit-of-work / unit-of-work-dependency / unit-of-work-story-map / **8 Unit**。2026-05-08 v1.1 で Documentation セクション廃止)
+- [x] Requirements Analysis (完了 - **2026-05-08 v2.0 rework 承認済み** — Taco Tuesday 日本化 / 認知占有 / 強制主役 / 幸せなダメ を Concept Statement に明文化)
+- [x] User Stories (Part 1+2 完了 - **2026-05-08 v2.0 rework 完了** — personas v2.0 / stories v2.0（US-T15 追加・16 ストーリー）/ story-board v2.0（§11 認知占有の体験弧追加）)
+- [x] Workflow Planning (execution-plan.md v2.0 完了 - **2026-05-08 ユーザー承認済み**: AppDesign・UnitsGen はバックアップ復元、CONSTRUCTION へ直行)
+- [x] Application Design (バックアップ v1.1 復元 - **2026-05-08**: 機能変化なし、rework v2.0 復元注記追加)
+- [x] Units Generation (バックアップ v1.1 復元 - **2026-05-08**: 8 Unit 構成変化なし、rework v2.0 復元注記追加)
 
 ### CONSTRUCTION Phase
 - [ ] Per-Unit Loop

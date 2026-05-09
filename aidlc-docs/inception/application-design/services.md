@@ -5,8 +5,8 @@
 **Created**: 2026-04-29
 **Updated**:
 - 2026-05-08 v1.1: 要件 v1.8 / components v1.1 反映。**FR-6.3 廃止に伴い「Iteration 0 では未実装」リストから ChatGPT GPT アセット行を削除**
-**Status**: ✅ Approved (v1.0 2026-04-29) / Updated v1.1 2026-05-08 (Iteration 0 未実装リストから C8 削除)
-**Phase**: INCEPTION - Completed (Application Design Approved 2026-04-29 / v1.1 反映 2026-05-08)
+- 2026-05-08 v1.1（rework v2.0 復元）: ビジネス意図の深掘り rework に伴いバックアップから復元。サービス定義は変化なし。
+**Phase**: INCEPTION - Completed (2026-04-29 承認 / 2026-05-08 v1.1 / 2026-05-09 rework 復元)
 
 ---
 
@@ -200,7 +200,7 @@ Rules:
       - Lambda: api-monolith  # C7 通知用
 ```
 
-> **設計意図**: スケジューラ Lambda 5 個 + ApiMonolith 1 個の構造を維持するため、EventBridge イベントの受信先も `api-monolith` に集約する。Iteration 1+ で traffic が増えたら専用 Lambda に分離する。
+> **設計意図**: スケジューラ Lambda 5 個 + ApiMonolith 1 個の構造を維持するため、EventBridge イベントの受信先も `api-monolith` に集約する。Iteration 1+ で trafffic が増えたら専用 Lambda に分離する。
 
 ---
 

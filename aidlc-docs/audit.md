@@ -742,3 +742,137 @@ v1.3 で抜本変更されたセクション:
 - 監査・トラブルシュート目的で時系列が必要になった場合は、`git log` のコミットタイムスタンプを参照する方が正確。
 
 ---
+
+## Change Request - Requirements Analysis（rework）
+**Timestamp**: 2026-05-08T10:56:58Z
+**Request**: "ビジネス意図のreview feedback指摘を解決したい。タコスである理由と人はダメになると言う意味をふかぼってINCEPTIONを直したい。"
+**Current State**: INCEPTION - Units Generation v1.0 完了（次フェーズ: CONSTRUCTION）
+**Impact Assessment**: Requirements Analysis から Units Generation までの 5 stage（完了済み `[x]` のみ）を rework 対象とする。Per-Unit Loop / Build and Test は未着手のため対象外。Workspace Detection / Reverse Engineering は Greenfield ベース判定に関わるため保持。
+**User Confirmation**: go（plan-mode 承認 = rework 実行プランへの同意）
+**Action Taken**: 19 ファイルのバックアップ作成（`*.backup.20260508T105658Z` 命名）、aidlc-state.md の Stage Progress（5 stage を `[x]` → `[ ]`）と Current Stage 行を rework target に書き戻し、本エントリで audit.md 追記
+**Artifacts Affected**:
+- aidlc-docs/inception/requirements/requirements.md (v1.8) → requirements.md.backup.20260508T105658Z
+- aidlc-docs/inception/requirements/requirement-verification-questions.md → requirement-verification-questions.md.backup.20260508T105658Z
+- aidlc-docs/inception/user-stories/personas.md (v1.2) → personas.md.backup.20260508T105658Z
+- aidlc-docs/inception/user-stories/stories.md (v1.4) → stories.md.backup.20260508T105658Z
+- aidlc-docs/inception/user-stories/story-board.md (v1.4) → story-board.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/execution-plan.md (v1.4) → execution-plan.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/story-generation-plan.md → story-generation-plan.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/story-generation-clarification-questions.md → story-generation-clarification-questions.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/user-stories-assessment.md → user-stories-assessment.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/application-design-plan.md → application-design-plan.md.backup.20260508T105658Z
+- aidlc-docs/inception/plans/unit-of-work-plan.md → unit-of-work-plan.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/application-design.md (v1.1) → application-design.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/components.md (v1.1) → components.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/component-methods.md (v1.1) → component-methods.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/component-dependency.md (v1.1) → component-dependency.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/services.md (v1.1) → services.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/unit-of-work.md (v1.1) → unit-of-work.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/unit-of-work-dependency.md (v1.1) → unit-of-work-dependency.md.backup.20260508T105658Z
+- aidlc-docs/inception/application-design/unit-of-work-story-map.md (v1.1) → unit-of-work-story-map.md.backup.20260508T105658Z
+
+---
+
+## Requirements Analysis（rework）— 質問ファイル提示
+**Timestamp**: 2026-05-08T10:58:00Z
+**User Input**: "Requirements Analysis を再実行して。タコスである理由（他の食材では達成できない必然性）と、"人をダメにする" が意味する依存構造（侵食・強制・逃げ場喪失のメカニズム）を Concept Statement と設計原則に深掘りして書き直してほしい。"
+**AI Response**: requirement-verification-questions.md を作成し、5 つの質問（Q1: タコスの必然性 / Q2: "ダメになる" エンドステート / Q3: 依存メカニズムの主役 / Q4: ポジティブ/ネガティブの描写トーン / Q5: Concept Statement への説明明示方針）を提示。ユーザーの回答待ち。
+**Context**: INCEPTION - Requirements Analysis（rework） Step 6 質問提示フェーズ
+
+---
+
+## Requirements Analysis（rework）— ユーザー回答受領・requirements.md v2.0 生成
+**Timestamp**: 2026-05-08T11:00:00Z
+**User Input**: "done"（requirement-verification-questions.md に全回答記入済み）
+**Answers**:
+- Q1: B「Taco Tuesday 文化を日本に根づかせたい」（文化移植ミッション）
+- Q2: B「思考の占有（認知占有）」——タコスが頭の中に住み着く状態
+- Q3: B「強制が主役」——外圧でコントロールを奪うコントロール喪失の笑い
+- Q4: A「幸せなダメになり方（ポジティブ）」——「最高じゃないですか」のトーン
+- Q5: A「明示的に説明を入れる」——Concept Statement に「なぜタコスか」を一文で
+**AI Response**: requirements.md v2.0 を生成。変更箇所: §1.1 User Request（文化移植ミッション追記）/ §1.3 Concept Statement（全面改訂: なぜタコス + 認知占有 + 幸せな降伏）/ §1.4 設計原則（7 原則に深化: 文化移植 / 頭に住み着く / 強制主役 / 作らせる / 幸せな降伏 / 逃げ場なし / AI は生成側）/ §9 Key Requirements Summary（ビジネス意図明文化）。機能要件・NFR・Tech Stack は v1.8 を継承。
+**Status**: ✅ Requirements Analysis v2.0 完了
+**Artifacts**:
+- aidlc-docs/inception/requirements/requirements.md (v2.0 新規)
+- aidlc-docs/inception/requirements/requirement-verification-questions.md (v2.0 回答済み)
+- aidlc-docs/aidlc-state.md（Requirements Analysis を `[x]` に更新、Current Stage を User Stories へ）
+**Context**: INCEPTION - Requirements Analysis（rework） Step 7〜9 完了
+
+---
+
+## Requirements Analysis（rework）— ユーザー承認
+**Timestamp**: 2026-05-08T11:05:00Z
+**User Input**: "Approve & Continue — 承認して User Stories の再実行へ進む"
+**AI Response**: Requirements Analysis v2.0 承認を記録し、User Stories rework を開始
+**Status**: ✅ Requirements Analysis v2.0 ユーザー承認済み
+**Next Stage**: INCEPTION - User Stories（rework）
+
+---
+
+## User Stories（rework）— PART 1 Planning 開始
+**Timestamp**: 2026-05-08T11:05:00Z
+**User Input**: （Requirements Analysis 承認に続いて自動遷移）
+**AI Response**: user-stories-assessment.md / story-generation-plan.md を作成し、3 つの質問（Q1: ペルソナ更新深度 / Q2: 文化移植ストーリー追加 / Q3: ストーリーボード再生成スコープ）を提示。ユーザーの回答待ち。
+**Context**: INCEPTION - User Stories（rework） PART 1 Step 1〜7
+
+---
+
+## User Stories（rework）— PART 1 回答受領 / PART 2 生成完了
+**Timestamp**: 2026-05-08T11:15:00Z
+**User Input**: story-generation-plan.md に全回答記入（Q1=B / Q2=B / Q3=B）、"done"
+**Answers**:
+- Q1: B — タロウの Goals / Pain Points も含めて更新（Taco Tuesday デフォルト化 / 火曜 21:00 不安）
+- Q2: B — US-T15（文化的受容ストーリー）を新規追加（Story Index 15 → 16）
+- Q3: B — §11「認知占有の体験弧（Week 0→4→12）」を新セクションとして追加（既存図は維持）
+**AI Response**: PART 2 を実行し、3 成果物を生成:
+1. `personas.md` v2.0: タロウ（キャッチコピー・Goals・Pain Points・Motivations・How タコ中 Affects・Quote を v2.0 整合に更新）、ミナミ（キャッチコピー・Goals・Motivations・How タコ中 Affects に「Taco Tuesday 文化伝道師」framing を追加）、「なぜこの 2 名か」を v2.0 で書き直し
+2. `stories.md` v2.0: US-T01/T13/T14/T07/M01/M04 の Story テキストを v2.0 framing で更新、US-T15（文化的受容・12 週 Taco Tuesday 定着）を新規追加（16 ストーリー）、Hackathon Theme Alignment に v2.0 観点を追加
+3. `story-board.md` v2.0: §11「認知占有の体験弧」（長期アーク図・フェーズ別内的状態・3 メカニズム・Week 12 達成描写・ミナミの文化伝播・審査員向け意味解説）を新セクションとして追加
+**Status**: ✅ User Stories v2.0 完了
+**Artifacts**:
+- aidlc-docs/inception/user-stories/personas.md (v2.0)
+- aidlc-docs/inception/user-stories/stories.md (v2.0、16 ストーリー)
+- aidlc-docs/inception/user-stories/story-board.md (v2.0、§11 追加)
+- aidlc-docs/inception/plans/user-stories-assessment.md (v2.0)
+- aidlc-docs/inception/plans/story-generation-plan.md (v2.0、全チェックボックス完了)
+- aidlc-docs/aidlc-state.md（User Stories を `[x]` に更新、Current Stage を Workflow Planning へ）
+**Context**: INCEPTION - User Stories（rework） PART 2 全 Step 完了
+
+---
+
+## User Stories（rework）— ユーザー承認 / Workflow Planning 開始
+**Timestamp**: 2026-05-08T11:25:00Z
+**User Input**: "Approve & Continue — 承認して Workflow Planning の再実行へ進む"
+**AI Response**: User Stories v2.0 承認を記録し、Workflow Planning を開始。execution-plan.md v2.0 を生成中。
+**Status**: ✅ User Stories v2.0 ユーザー承認済み
+**Next Stage**: INCEPTION - Workflow Planning
+
+---
+
+## Workflow Planning（rework）— execution-plan.md v2.0 提示
+**Timestamp**: 2026-05-08T11:28:00Z
+**User Input**: （User Stories 承認に続いて自動遷移）
+**AI Response**: execution-plan.md v2.0 を生成。分析結果: 機能要件・アーキテクチャ変化ゼロのため、Application Design / Units Generation はバックアップから復元（再実行不要）。CONSTRUCTION へ直行。Mermaid ワークフロー図を含む計画を提示。ユーザー承認待ち。
+**Context**: INCEPTION - Workflow Planning Step 2〜9
+
+---
+
+## Workflow Planning（rework）— ユーザー承認 / AppDesign・UnitsGen 復元完了
+**Timestamp**: 2026-05-08T11:30:00Z
+**User Input**: "承認して Application Design / Units Generation のバックアップ復元へ進む"
+**AI Response**: Workflow Planning v2.0 承認を記録。Application Design / Units Generation を `.backup.20260508T105658Z` から復元（10 ファイル）。各ファイルのフロントマターに rework v2.0 復元注記を追加。aidlc-state.md の全 INCEPTION stage を `[x]` に更新。INCEPTION フェーズ rework 完了。
+**Status**: ✅ INCEPTION フェーズ rework v2.0 完了
+**Restored Files (10)**:
+- aidlc-docs/inception/application-design/application-design.md (v1.1、復元注記追加)
+- aidlc-docs/inception/application-design/components.md (v1.1、復元注記追加)
+- aidlc-docs/inception/application-design/component-methods.md (v1.1、復元注記追加)
+- aidlc-docs/inception/application-design/component-dependency.md (v1.1、復元注記追加)
+- aidlc-docs/inception/application-design/services.md (v1.1、復元注記追加)
+- aidlc-docs/inception/application-design/unit-of-work.md (v1.1、復元注記追加)
+- aidlc-docs/inception/application-design/unit-of-work-dependency.md (v1.1、復元注記追加)
+- aidlc-docs/inception/application-design/unit-of-work-story-map.md (v1.1、復元注記追加)
+- aidlc-docs/inception/plans/application-design-plan.md (復元)
+- aidlc-docs/inception/plans/unit-of-work-plan.md (復元)
+**Next Phase**: CONSTRUCTION（書類審査（2026-05-10）後から開始）
+
+---
