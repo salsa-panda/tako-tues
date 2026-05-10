@@ -1,0 +1,219 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="component-dataflow" name="Component Data Flow">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1"
+                  tooltips="1" connect="1" arrows="1" fold="1" page="1"
+                  pageScale="1" pageWidth="1169" pageHeight="827"
+                  math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ======= Title ======= -->
+        <mxCell id="title" value="Tako-tues コンポーネント間データフロー" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="580" height="36" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= User / Client ======= -->
+        <mxCell id="v1" value="User" style="shape=mxgraph.basic.person;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=11;fontStyle=1;html=1;verticalLabelPosition=bottom;verticalAlign=top;labelPosition=center;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="310" width="50" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- PWA C7 -->
+        <mxCell id="v2" value="&lt;b&gt;C7 PwaFrontend&lt;/b&gt;&#xa;Vite + React&#xa;PWA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFA726;strokeColor=#E65100;fontSize=11;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="115" y="290" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Cognito -->
+        <mxCell id="v3" value="Cognito&#xa;User Pool" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cognito;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=#ffffff;fillColor=#DD344C;fontSize=11;html=1;" vertex="1" parent="1">
+          <mxGeometry x="148" y="430" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- CloudFront -->
+        <mxCell id="v4" value="CloudFront&#xa;+ S3" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=#ffffff;fillColor=#8C4FFF;fontSize=11;html=1;" vertex="1" parent="1">
+          <mxGeometry x="148" y="160" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= API Layer ======= -->
+        <!-- API Gateway -->
+        <mxCell id="v5" value="API Gateway&#xa;HTTP API&#xa;JWT Authorizer" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=#ffffff;fillColor=#8C4FFF;fontSize=11;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="290" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= Lambda Functions Swimlane ======= -->
+        <mxCell id="sw-bg" value="Lambda Functions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FFF0;strokeColor=#82B366;fontSize=13;fontStyle=1;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="415" y="100" width="240" height="610" as="geometry"/>
+        </mxCell>
+
+        <!-- api-monolith -->
+        <mxCell id="v6" value="&lt;b&gt;api-monolith&lt;/b&gt;&#xa;C1 OrderManagement&#xa;C2 DeliveryManager&#xa;C3 IntakeRecorder&#xa;C4 RecipeLibrary&#xa;C5 StimulusEngine&#xa;C6 Punishment" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=#ffffff;fillColor=#ED7100;fontSize=10;html=1;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="430" y="130" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-friday -->
+        <mxCell id="v7" value="scheduler-friday&#xa;(Fri 21:00 JST)" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=#ffffff;fillColor=#ED7100;fontSize=10;html=1;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="430" y="270" width="60" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-monday -->
+        <mxCell id="v8" value="scheduler-monday&#xa;(Mon 21:00 JST)" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=#ffffff;fillColor=#ED7100;fontSize=10;html=1;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="430" y="330" width="60" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-tuesday -->
+        <mxCell id="v9" value="scheduler-tuesday&#xa;(Tue 21:00 JST)" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=#ffffff;fillColor=#ED7100;fontSize=10;html=1;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="430" y="390" width="60" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-lunch -->
+        <mxCell id="v10" value="scheduler-lunch&#xa;(Weekday 12:00)" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=#ffffff;fillColor=#ED7100;fontSize=10;html=1;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="430" y="450" width="60" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-evening -->
+        <mxCell id="v11" value="scheduler-evening&#xa;(Weekday 18:00)" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;strokeColor=#ffffff;fillColor=#ED7100;fontSize=10;html=1;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="430" y="510" width="60" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- EB Scheduler -->
+        <mxCell id="v12" value="EventBridge&#xa;Scheduler" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=#ffffff;fillColor=#E7157B;fontSize=11;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="430" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= Data / Event Layer ======= -->
+        <!-- DynamoDB -->
+        <mxCell id="v13" value="DynamoDB&#xa;Single-table" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=#ffffff;fillColor=#527FFF;fontSize=11;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="230" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- EventBridge tako-bus -->
+        <mxCell id="v14" value="EventBridge&#xa;tako-bus" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=#ffffff;fillColor=#E7157B;fontSize=11;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="420" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- EventBridge events label box -->
+        <mxCell id="v14b" value="Events:&#xa;• OrderDecided&#xa;• Delivered&#xa;• IntakeRecorded&#xa;• EscalationLevelChanged&#xa;• PunishmentTriggered" style="text;html=1;strokeColor=#E7157B;fillColor=#FFF0F5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="710" y="530" width="180" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= External Services ======= -->
+        <!-- Amazon Bedrock -->
+        <mxCell id="v15" value="Amazon Bedrock&#xa;(Iteration 1+)" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=#ffffff;fillColor=#01A88D;fontSize=11;fontStyle=2;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="390" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Web Push VAPID -->
+        <mxCell id="v16" value="Web Push&#xa;VAPID" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;strokeColor=#ffffff;fillColor=#E7157B;fontSize=11;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="230" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= EDGES ======= -->
+
+        <!-- User → PWA -->
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;" edge="1" source="v1" target="v2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- User → CloudFront (static assets) -->
+        <mxCell id="e2" value="static&#xa;assets" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;html=1;fontSize=10;dashed=1;" edge="1" source="v1" target="v4" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- PWA → API GW -->
+        <mxCell id="e3" value="HTTPS API" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v2" target="v5" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- PWA → Cognito -->
+        <mxCell id="e4" value="Auth" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;html=1;fontSize=10;dashed=1;" edge="1" source="v2" target="v3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Cognito → API GW JWT verify -->
+        <mxCell id="e5" value="JWT verify" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;html=1;fontSize=10;dashed=1;" edge="1" source="v3" target="v5" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- API GW → api-monolith -->
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;" edge="1" source="v5" target="v6" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- api-monolith ↔ DDB -->
+        <mxCell id="e7" value="read/write" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;startArrow=classic;startFill=1;html=1;fontSize=10;" edge="1" source="v6" target="v13" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- api-monolith → EB bus (publish) -->
+        <mxCell id="e8" value="publish" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v6" target="v14" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- EB bus → api-monolith (route) -->
+        <mxCell id="e9" value="route" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classicThin;endFill=1;html=1;fontSize=10;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="v14" target="v6" parent="1">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="680" y="450"/><mxPoint x="680" y="160"/></Array></mxGeometry>
+        </mxCell>
+
+        <!-- EB Scheduler → scheduler-friday -->
+        <mxCell id="e10" value="cron Fri 21" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v12" target="v7" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- EB Scheduler → scheduler-monday -->
+        <mxCell id="e11" value="cron Mon 21" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v12" target="v8" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- EB Scheduler → scheduler-tuesday -->
+        <mxCell id="e12" value="cron Tue 21" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v12" target="v9" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- EB Scheduler → scheduler-lunch -->
+        <mxCell id="e13" value="cron 12:00" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v12" target="v10" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- EB Scheduler → scheduler-evening -->
+        <mxCell id="e14" value="cron 18:00" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v12" target="v11" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-friday → EB bus (OrderDecided) -->
+        <mxCell id="e15" value="OrderDecided" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v7" target="v14" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-monday → EB bus (Delivered) -->
+        <mxCell id="e16" value="Delivered" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v8" target="v14" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-tuesday → EB bus (PunishmentTriggered) -->
+        <mxCell id="e17" value="PunishmentTriggered" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v9" target="v14" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- schedulers ↔ DDB -->
+        <mxCell id="e18" value="read/write" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;startArrow=classic;startFill=1;html=1;fontSize=10;" edge="1" source="v8" target="v13" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-lunch/evening → Bedrock -->
+        <mxCell id="e19" value="invoke Bedrock&#xa;or Static" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;html=1;fontSize=10;dashed=1;" edge="1" source="v10" target="v15" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-lunch/evening → Web Push -->
+        <mxCell id="e20" value="send&#xa;notification" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v10" target="v16" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- scheduler-tuesday → Web Push -->
+        <mxCell id="e21" value="T-shirt +&#xa;Salsa loop" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=10;" edge="1" source="v9" target="v16" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

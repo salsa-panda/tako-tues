@@ -81,6 +81,10 @@ Application Design ステージの全成果物（components.md / component-metho
 
 タコ中の核心設計を視覚化した概念図。**AI を予測器でなく刺激生成器として使う**という逆張り設計の全体像。
 
+![逆比例発注ロジック & 3層AI生活侵食](./concept-diagram.png)
+
+<details><summary>Mermaid ソース（テキスト参照用）</summary>
+
 ```mermaid
 flowchart TD
     subgraph Logic["逆比例発注ロジック"]
@@ -101,11 +105,17 @@ flowchart TD
     R2 -->|外圧強化| L3
 ```
 
+</details>
+
 > 設計原則「強制 > 提案」「AI は欲を生成する側」「逃げ場をなくす」（requirements.md §1.4）
 
 ---
 
 ### 4.1 AWS アーキテクチャ図
+
+![AWS アーキテクチャ図 (ap-northeast-1)](./aws-architecture.png)
+
+<details><summary>Mermaid ソース（テキスト参照用）</summary>
 
 ```mermaid
 flowchart LR
@@ -157,6 +167,8 @@ flowchart LR
     style DDB fill:#C8E6C9,stroke:#1B5E20,color:#000
     style Bedrock fill:#FFEBEE,stroke:#B71C1C,color:#000
 ```
+
+</details>
 
 ---
 

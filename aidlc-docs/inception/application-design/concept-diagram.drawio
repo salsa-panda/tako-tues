@@ -1,0 +1,125 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="concept-diagram" name="Concept Diagram">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1"
+                  tooltips="1" connect="1" arrows="1" fold="1" page="1"
+                  pageScale="1" pageWidth="1169" pageHeight="827"
+                  math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ======= Title ======= -->
+        <mxCell id="title" value="タコ中 核心設計: 逆比例発注ロジック &amp; 3層AI生活侵食" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="15" width="980" height="36" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= LEFT GROUP: 逆比例発注ロジック ======= -->
+        <mxCell id="grp-left" value="逆比例発注ロジック" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDE7;strokeColor=#D6B656;fontSize=14;fontStyle=1;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="20" y="60" width="490" height="720" as="geometry"/>
+        </mxCell>
+
+        <!-- Design Principle label -->
+        <mxCell id="dp" value="設計原則: 強制 &gt; 提案 / AI は欲を生成する側" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="30" y="750" width="460" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- A: タコスを食べる -->
+        <mxCell id="v-a" value="&lt;b&gt;タコスを食べる&lt;/b&gt;&#xa;消費量 N ↑" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="50" y="140" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- B: タコスを食べない -->
+        <mxCell id="v-b" value="&lt;b&gt;タコスを食べない&lt;/b&gt;&#xa;消費量 N ↓" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=13;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="50" y="340" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- R1: 来週は少なめ -->
+        <mxCell id="v-r1" value="&lt;b&gt;来週は少なめ&lt;/b&gt;&#xa;(ご褒美)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="300" y="140" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- R2: 来週は地獄 -->
+        <mxCell id="v-r2" value="&lt;b&gt;来週は地獄 🌮&lt;/b&gt;&#xa;食べないほど増える&#xa;(外圧発動)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="300" y="330" width="180" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Formula -->
+        <mxCell id="v-formula" value="&lt;b&gt;発注量 = BASE + max(0, THRESHOLD − N) × MULTIPLIER&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="50" y="580" width="430" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- N label explanation -->
+        <mxCell id="v-nlabel" value="N = 当週の消費量 (記録したタコス数)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="650" width="430" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= EDGES LEFT BLOCK ======= -->
+
+        <!-- A → R1 -->
+        <mxCell id="e-ar1" value="発注量 ↓" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=11;strokeColor=#82B366;fontColor=#82B366;" edge="1" source="v-a" target="v-r1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- B → R2 -->
+        <mxCell id="e-br2" value="発注量 ↑" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=11;strokeColor=#B85450;fontColor=#B85450;" edge="1" source="v-b" target="v-r2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- R2 connects to formula (explain) -->
+        <mxCell id="e-r2f" value="" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;html=1;dashed=1;strokeColor=#D6B656;" edge="1" source="v-r2" target="v-formula" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= RIGHT GROUP: 3層AI生活侵食 ======= -->
+        <mxCell id="grp-right" value="3層 AI 生活侵食" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDF0FF;strokeColor=#9673A6;fontSize=14;fontStyle=1;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="540" y="60" width="610" height="720" as="geometry"/>
+        </mxCell>
+
+        <!-- L1: Bedrock 煽り文 -->
+        <mxCell id="v-l1" value="&lt;b&gt;Layer 1: ダッシュボード煽り文&lt;/b&gt;&#xa;Amazon Bedrock 生成 (FR-6.1)&#xa;「今週もタコスだね？覚悟は？」" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="570" y="140" width="550" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- L2: Web Push サルサ通知 -->
+        <mxCell id="v-l2" value="&lt;b&gt;Layer 2: Web Push サルサ通知&lt;/b&gt;&#xa;30分ループ / 逃げ場なし (FR-6.2)&#xa;「🫙 サルサが届いています。今すぐ確認」" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="570" y="330" width="550" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- L3: ChatGPT GPT -->
+        <mxCell id="v-l3" value="&lt;b&gt;Layer 3: 日常会話のタコス汚染&lt;/b&gt;&#xa;ChatGPT GPT 連携 (FR-6.3)&#xa;「そういえばタコスどうした？食べた？」" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="570" y="520" width="550" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= EDGES RIGHT BLOCK ======= -->
+
+        <!-- L1 → L2 -->
+        <mxCell id="e-l12" value="エスカレーション" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=11;strokeColor=#9673A6;fontColor=#9673A6;" edge="1" source="v-l1" target="v-l2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- L2 → L3 -->
+        <mxCell id="e-l23" value="エスカレーション" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;endFill=1;html=1;fontSize=11;strokeColor=#9673A6;fontColor=#9673A6;" edge="1" source="v-l2" target="v-l3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ======= CROSS EDGES: R2 → L1, L2, L3 (外圧強化) ======= -->
+
+        <!-- R2 → L1 -->
+        <mxCell id="e-r2l1" value="外圧強化" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;endFill=1;html=1;fontSize=11;strokeColor=#B85450;fontColor=#B85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="v-r2" target="v-l1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- R2 → L2 -->
+        <mxCell id="e-r2l2" value="外圧強化" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;endFill=1;html=1;fontSize=11;strokeColor=#B85450;fontColor=#B85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="v-r2" target="v-l2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- R2 → L3 -->
+        <mxCell id="e-r2l3" value="外圧強化" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;endFill=1;html=1;fontSize=11;strokeColor=#B85450;fontColor=#B85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="v-r2" target="v-l3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
