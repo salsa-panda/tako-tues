@@ -58,6 +58,10 @@
 
 ### 2.1 全体フロー（コンポーネント間）
 
+![コンポーネント間データフロー](./component-dataflow.png)
+
+<details><summary>Mermaid ソース（テキスト参照用）</summary>
+
 ```mermaid
 flowchart TB
     User((User))
@@ -127,6 +131,8 @@ flowchart TB
     style DDB fill:#C8E6C9,stroke:#1B5E20,color:#000
     style Bedrock fill:#FFEBEE,stroke:#B71C1C,color:#000
 ```
+
+</details>
 
 ### 2.2 ユースケース別シーケンス: 月曜夜の材料受領
 
